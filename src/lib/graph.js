@@ -307,47 +307,23 @@ export function buildGraphElements(schema, review = {}) {
   };
 }
 
-export function getLayoutOptions(layoutName, nodeCount) {
+export function getLayoutOptions(nodeCount) {
   const common = {
     animate: false,
     fit: true,
-    padding: 80,
+    padding: 58,
   };
-
-  if (layoutName === "circle") {
-    return { name: "circle", ...common, spacingFactor: nodeCount > 120 ? 1.35 : 1.1 };
-  }
-
-  if (layoutName === "radial") {
-    return {
-      name: "concentric",
-      ...common,
-      minNodeSpacing: nodeCount > 120 ? 18 : 34,
-      concentric: (node) => node.degree(),
-      levelWidth: () => 2,
-    };
-  }
-
-  if (layoutName === "hierarchy") {
-    return {
-      name: "breadthfirst",
-      ...common,
-      directed: true,
-      spacingFactor: nodeCount > 120 ? 1.0 : 1.25,
-      circle: false,
-      grid: true,
-    };
-  }
 
   return {
     name: "cose",
     ...common,
     randomize: false,
-    idealEdgeLength: nodeCount > 120 ? 95 : 125,
-    nodeOverlap: 12,
+    idealEdgeLength: nodeCount > 120 ? 76 : 118,
+    nodeOverlap: 18,
     refresh: 16,
-    componentSpacing: 90,
-    gravity: 0.85,
-    numIter: nodeCount > 120 ? 650 : 900,
+    componentSpacing: nodeCount > 120 ? 78 : 110,
+    gravity: nodeCount > 120 ? 0.72 : 0.58,
+    numIter: nodeCount > 120 ? 950 : 1100,
+    coolingFactor: 0.93,
   };
 }

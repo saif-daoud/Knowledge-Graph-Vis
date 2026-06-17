@@ -236,6 +236,15 @@ button {
   border-radius: 8px;
   cursor: pointer;
   text-align: left;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.kg-heading:hover {
+  background: #eef3f9;
+  border-color: #c8d5e8;
 }
 
 .kg-heading span:nth-child(2) {
@@ -252,10 +261,43 @@ button {
   border-radius: 8px;
 }
 
+.kg-chevron {
+  justify-self: center;
+  transition: transform 220ms ease;
+}
+
+.kg-section.collapsed .kg-chevron {
+  transform: rotate(-90deg);
+}
+
+.kg-items-frame {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    grid-template-rows 260ms ease,
+    opacity 180ms ease,
+    transform 220ms ease;
+}
+
+.kg-section.collapsed .kg-items-frame {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
 .kg-items {
   display: grid;
   gap: 6px;
+  min-height: 0;
+  overflow: hidden;
   padding: 8px 0 0 10px;
+  transition: padding 220ms ease;
+}
+
+.kg-section.collapsed .kg-items {
+  padding-top: 0;
 }
 
 .schema-item {
@@ -491,11 +533,6 @@ button {
   gap: 6px;
   padding: 0 10px;
   font-weight: 800;
-}
-
-.toolbar-actions select {
-  min-width: 96px;
-  padding: 0 8px;
 }
 
 .graph-panel {

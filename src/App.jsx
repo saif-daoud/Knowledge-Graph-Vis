@@ -2,7 +2,6 @@ import cytoscape from "cytoscape";
 import {
   BookOpen,
   ChevronDown,
-  ChevronRight,
   CircleDot,
   Database,
   Download,
@@ -40,13 +39,6 @@ import {
   nodeEntityKey,
   supportList,
 } from "./lib/graph.js";
-
-const LAYOUTS = [
-  { id: "force", label: "Force" },
-  { id: "radial", label: "Radial" },
-  { id: "hierarchy", label: "Hierarchy" },
-  { id: "circle", label: "Circle" },
-];
 
 const DEFAULT_ACCESS_CODE_HASH = "98a171c273aa30eacc9ffa54534ebeb7e33861d97665bdf3978308c5ee12f428";
 const AUTH_KEY = "kg_schema_editor_auth_v1";
@@ -289,15 +281,15 @@ function Sidebar({ index, activeId, onSelect, changeCounts }) {
         {(index?.kgs ?? []).map((kg) => {
           const isExpanded = expanded[kg.id];
           return (
-            <section className="kg-section" key={kg.id}>
+            <section className={`kg-section ${isExpanded ? "expanded" : "collapsed"}`} key={kg.id}>
               <button className="kg-heading" type="button" onClick={() => setExpanded((current) => ({ ...current, [kg.id]: !current[kg.id] }))}>
                 <span className="kg-accent" style={{ background: kg.accent }} />
                 <span>{kg.title}</span>
                 <small>{kg.stats?.books ?? 0} books</small>
-                {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                <ChevronDown className="kg-chevron" size={16} />
               </button>
 
-              {isExpanded && (
+              <div className="kg-items-frame" aria-hidden={!isExpanded}>
                 <div className="kg-items">
                   {(kg.items ?? []).map((item) => {
                     const active = item.id === activeId;
@@ -314,7 +306,7 @@ function Sidebar({ index, activeId, onSelect, changeCounts }) {
                     );
                   })}
                 </div>
-              )}
+              </div>
             </section>
           );
         })}
@@ -329,8 +321,6 @@ function Toolbar({
   category,
   setCategory,
   graph,
-  layout,
-  setLayout,
   showEdgeLabels,
   setShowEdgeLabels,
   onFit,
@@ -371,11 +361,6 @@ function Toolbar({
           <Workflow size={16} />
           Relation
         </button>
-        <select value={layout} onChange={(event) => setLayout(event.target.value)} aria-label="Layout">
-          {LAYOUTS.map((item) => (
-            <option key={item.id} value={item.id}>{item.label}</option>
-          ))}
-        </select>
         <button type="button" onClick={onRelayout} title="Run layout">
           <RefreshCw size={17} />
         </button>
@@ -738,7 +723,7 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevokeChange }) 
   );
 }
 
-function GraphCanvas({ graph, query, category, layout, showEdgeLabels, selected, setSelected, cyRef, relayoutSignal }) {
+function GraphCanvas({ graph, query, category, showEdgeLabels, selected, setSelected, cyRef, relayoutSignal }) {
   const containerRef = useRef(null);
   const layoutRef = useRef(null);
 
@@ -757,10 +742,14 @@ function GraphCanvas({ graph, query, category, layout, showEdgeLabels, selected,
   function runLayout(cy) {
     if (!cy || (typeof cy.destroyed === "function" && cy.destroyed())) return;
     stopActiveLayout();
-    const nextLayout = cy.layout(getLayoutOptions(layout, graph?.stats?.nodes ?? 0));
+    const nextLayout = cy.layout(getLayoutOptions(graph?.stats?.nodes ?? 0));
     layoutRef.current = nextLayout;
     nextLayout.one("layoutstop", () => {
       if (layoutRef.current === nextLayout) layoutRef.current = null;
+      requestAnimationFrame(() => {
+        if (!cy || (typeof cy.destroyed === "function" && cy.destroyed())) return;
+        cy.fit(cy.elements().not(".hidden-by-filter"), 58);
+      });
     });
     nextLayout.run();
   }
@@ -930,7 +919,21 @@ function GraphCanvas({ graph, query, category, layout, showEdgeLabels, selected,
 
   useEffect(() => {
     runLayout(cyRef.current);
-  }, [relayoutSignal, layout, graph, cyRef]);
+  }, [relayoutSignal, graph, cyRef]);
+
+  useEffect(() => {
+    const cy = cyRef.current;
+    const container = containerRef.current;
+    if (!cy || !container || typeof ResizeObserver === "undefined") return undefined;
+
+    const observer = new ResizeObserver(() => {
+      if (typeof cy.destroyed === "function" && cy.destroyed()) return;
+      cy.resize();
+      cy.fit(cy.elements().not(".hidden-by-filter"), 58);
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [cyRef, graph]);
 
   useEffect(() => {
     const cy = cyRef.current;
@@ -1031,8 +1034,7 @@ function ReviewWorkspace({ onLogout }) {
   const [activeChangeId, setActiveChangeId] = useState(null);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
-  const [layout, setLayout] = useState("force");
-  const [showEdgeLabels, setShowEdgeLabels] = useState(true);
+  const [showEdgeLabels, setShowEdgeLabels] = useState(false);
   const [relayoutSignal, setRelayoutSignal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -1438,7 +1440,11 @@ function ReviewWorkspace({ onLogout }) {
   const zoomGraph = (factor) => {
     const cy = cyRef.current;
     if (!cy) return;
-    cy.zoom({ level: cy.zoom() * factor, renderedPosition: { x: cy.width() / 2, y: cy.height() / 2 } });
+    const level = Math.max(cy.minZoom(), Math.min(cy.maxZoom(), cy.zoom() * factor));
+    cy.animate(
+      { zoom: { level, renderedPosition: { x: cy.width() / 2, y: cy.height() / 2 } } },
+      { duration: 180, easing: "ease-out" },
+    );
   };
 
   return (
@@ -1453,8 +1459,6 @@ function ReviewWorkspace({ onLogout }) {
           category={category}
           setCategory={setCategory}
           graph={graph}
-          layout={layout}
-          setLayout={setLayout}
           showEdgeLabels={showEdgeLabels}
           setShowEdgeLabels={setShowEdgeLabels}
           onFit={fitGraph}
@@ -1475,7 +1479,6 @@ function ReviewWorkspace({ onLogout }) {
               graph={graph}
               query={query}
               category={category}
-              layout={layout}
               showEdgeLabels={showEdgeLabels}
               selected={selected}
               setSelected={setSelected}
