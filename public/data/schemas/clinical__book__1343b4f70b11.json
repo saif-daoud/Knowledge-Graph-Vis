@@ -1,0 +1,593 @@
+{
+  "id": "clinical__book__1343b4f70b11",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Schema Therapy Farrell",
+  "kind": "book",
+  "book": "Schema Therapy Farrell",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Patient",
+      "description": "A person receiving schema therapy, with clinical and demographic information relevant to treatment planning.",
+      "properties": [
+        {
+          "name": "patient_id",
+          "description": "Unique identifier for the patient"
+        },
+        {
+          "name": "age",
+          "description": "Patient's age"
+        },
+        {
+          "name": "gender",
+          "description": "Patient's gender"
+        },
+        {
+          "name": "diagnoses",
+          "description": "List of clinical diagnoses"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Patient's cultural or religious background"
+        },
+        {
+          "name": "treatment_history",
+          "description": "Summary of previous treatments"
+        },
+        {
+          "name": "inclusion_exclusion_criteria",
+          "description": "Eligibility criteria for schema therapy"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 Introduction",
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions",
+        "Index"
+      ]
+    },
+    {
+      "type": "Therapist",
+      "description": "A clinician delivering schema therapy, including training, supervision, and role information.",
+      "properties": [
+        {
+          "name": "therapist_id",
+          "description": "Unique identifier for the therapist"
+        },
+        {
+          "name": "name",
+          "description": "Therapist's name"
+        },
+        {
+          "name": "certifications",
+          "description": "Professional certifications and schema therapy training"
+        },
+        {
+          "name": "roles",
+          "description": "Roles in therapy (e.g., lead, co-therapist)"
+        },
+        {
+          "name": "supervision_status",
+          "description": "Supervision and training status"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "About the Authors",
+        "6 Training, Supervision, Research, and Concluding Remarks",
+        "Foreword",
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "type": "SchemaMode",
+      "description": "A psychological state or mode (e.g., Vulnerable Child, Maladaptive Coping) relevant to schema therapy conceptualization and intervention.",
+      "properties": [
+        {
+          "name": "mode_name",
+          "description": "Name of the schema mode"
+        },
+        {
+          "name": "category",
+          "description": "Category of mode (e.g., Child, Parent, Coping, Healthy)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the mode's characteristics"
+        },
+        {
+          "name": "associated_needs",
+          "description": "Core needs linked to this mode"
+        },
+        {
+          "name": "typical_triggers",
+          "description": "Common triggers for this mode"
+        },
+        {
+          "name": "intervention_strategies",
+          "description": "Recommended interventions for this mode"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions",
+        "Index"
+      ]
+    },
+    {
+      "type": "EarlyMaladaptiveSchema",
+      "description": "A persistent, dysfunctional pattern of thoughts, feelings, and behaviors originating in childhood, as defined in schema therapy.",
+      "properties": [
+        {
+          "name": "schema_name",
+          "description": "Name of the early maladaptive schema"
+        },
+        {
+          "name": "content_area",
+          "description": "Content area grouping (e.g., Disconnection, Impaired Autonomy)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the schema"
+        },
+        {
+          "name": "associated_modes",
+          "description": "Schema modes commonly linked to this schema"
+        },
+        {
+          "name": "core_needs_unmet",
+          "description": "Core childhood needs unmet by this schema"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "4 The Group Schema Therapy Sessions",
+        "Index"
+      ]
+    },
+    {
+      "type": "CoreNeed",
+      "description": "A fundamental psychological need (e.g., secure attachment, autonomy) whose fulfillment or lack thereof shapes schema development.",
+      "properties": [
+        {
+          "name": "need_name",
+          "description": "Name of the core need"
+        },
+        {
+          "name": "description",
+          "description": "Description of the need"
+        },
+        {
+          "name": "developmental_relevance",
+          "description": "Relevance to childhood development and schema formation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "4 The Group Schema Therapy Sessions"
+      ]
+    },
+    {
+      "type": "TreatmentProgram",
+      "description": "A structured schema therapy program, including format, duration, and session types.",
+      "properties": [
+        {
+          "name": "program_name",
+          "description": "Name of the treatment program"
+        },
+        {
+          "name": "format",
+          "description": "Format (e.g., group, individual, integrated)"
+        },
+        {
+          "name": "duration",
+          "description": "Length of the program"
+        },
+        {
+          "name": "session_count",
+          "description": "Number of sessions"
+        },
+        {
+          "name": "setting",
+          "description": "Setting (e.g., inpatient, outpatient)"
+        },
+        {
+          "name": "adherence_criteria",
+          "description": "Criteria for program adherence"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 Introduction",
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "type": "Session",
+      "description": "A single therapy session, with details on type, focus, and interventions used.",
+      "properties": [
+        {
+          "name": "session_id",
+          "description": "Unique identifier for the session"
+        },
+        {
+          "name": "session_type",
+          "description": "Type of session (e.g., education, mode awareness, experiential)"
+        },
+        {
+          "name": "mode_focus",
+          "description": "Schema mode(s) targeted in the session"
+        },
+        {
+          "name": "interventions",
+          "description": "List of interventions used"
+        },
+        {
+          "name": "materials_used",
+          "description": "Handouts, exercises, or assignments used"
+        },
+        {
+          "name": "goals",
+          "description": "Session goals"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "type": "Intervention",
+      "description": "A specific therapeutic technique or strategy used in schema therapy.",
+      "properties": [
+        {
+          "name": "intervention_name",
+          "description": "Name of the intervention"
+        },
+        {
+          "name": "intervention_type",
+          "description": "Type (e.g., cognitive, behavioral, experiential)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the intervention"
+        },
+        {
+          "name": "applicable_modes",
+          "description": "Schema modes for which this intervention is used"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "type": "AssessmentTool",
+      "description": "A standardized tool or measure used for assessment in schema therapy (e.g., Schema Mode Inventory).",
+      "properties": [
+        {
+          "name": "tool_name",
+          "description": "Name of the assessment tool"
+        },
+        {
+          "name": "purpose",
+          "description": "Purpose of the tool"
+        },
+        {
+          "name": "reliability_validity",
+          "description": "Information on reliability and validity"
+        },
+        {
+          "name": "target_population",
+          "description": "Intended population for the tool"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "3 The Integrated Schema Therapy Treatment Program",
+        "References",
+        "Index"
+      ]
+    },
+    {
+      "type": "TreatmentSetting",
+      "description": "The clinical context in which schema therapy is delivered (e.g., inpatient, outpatient, day hospital).",
+      "properties": [
+        {
+          "name": "setting_type",
+          "description": "Type of setting"
+        },
+        {
+          "name": "description",
+          "description": "Description of the setting"
+        },
+        {
+          "name": "team_structure",
+          "description": "Structure of the treatment team"
+        },
+        {
+          "name": "physical_environment",
+          "description": "Physical environment details"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 Introduction",
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions"
+      ]
+    },
+    {
+      "type": "TherapistRole",
+      "description": "A specific role or function a therapist may take in schema therapy (e.g., lead, co-therapist, supervisor).",
+      "properties": [
+        {
+          "name": "role_name",
+          "description": "Name of the therapist role"
+        },
+        {
+          "name": "description",
+          "description": "Description of the role's responsibilities"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "4 The Group Schema Therapy Sessions",
+        "6 Training, Supervision, Research, and Concluding Remarks"
+      ]
+    },
+    {
+      "type": "CulturalConsideration",
+      "description": "Cultural or religious factors relevant to schema therapy, including Islamic-cultural alignment.",
+      "properties": [
+        {
+          "name": "consideration_name",
+          "description": "Name of the cultural consideration"
+        },
+        {
+          "name": "description",
+          "description": "Description of the consideration"
+        },
+        {
+          "name": "relevance_to_treatment",
+          "description": "How this consideration affects treatment planning"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 Introduction",
+        "3 The Integrated Schema Therapy Treatment Program"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Patient",
+      "relation": "HAS_SCHEMA_MODE",
+      "target_type": "SchemaMode",
+      "description": "Indicates that a patient exhibits or is conceptualized as having a particular schema mode.",
+      "properties": [
+        {
+          "name": "mode_intensity",
+          "description": "Degree to which the mode is present"
+        },
+        {
+          "name": "mode_frequency",
+          "description": "How often the mode is activated"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "HAS_EARLY_MALADAPTIVE_SCHEMA",
+      "target_type": "EarlyMaladaptiveSchema",
+      "description": "Indicates that a patient has a particular early maladaptive schema.",
+      "properties": [
+        {
+          "name": "schema_severity",
+          "description": "Severity of the schema"
+        },
+        {
+          "name": "schema_endorsement",
+          "description": "Patient's endorsement or identification with the schema"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "4 The Group Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "SchemaMode",
+      "relation": "DERIVES_FROM_SCHEMA",
+      "target_type": "EarlyMaladaptiveSchema",
+      "description": "Indicates that a schema mode is conceptually derived from or linked to a specific early maladaptive schema.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "4 The Group Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "EarlyMaladaptiveSchema",
+      "relation": "RESULTS_FROM_UNMET_NEED",
+      "target_type": "CoreNeed",
+      "description": "Indicates that an early maladaptive schema results from the unmet core need.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 The Basics of Schema Therapy",
+        "4 The Group Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "PARTICIPATES_IN_PROGRAM",
+      "target_type": "TreatmentProgram",
+      "description": "Indicates that a patient is enrolled in a specific schema therapy treatment program.",
+      "properties": [
+        {
+          "name": "enrollment_date",
+          "description": "Date of program enrollment"
+        },
+        {
+          "name": "completion_status",
+          "description": "Status of program completion"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 Introduction",
+        "3 The Integrated Schema Therapy Treatment Program"
+      ]
+    },
+    {
+      "source_type": "TreatmentProgram",
+      "relation": "INCLUDES_SESSION",
+      "target_type": "Session",
+      "description": "Indicates that a treatment program includes a specific session.",
+      "properties": [
+        {
+          "name": "session_sequence",
+          "description": "Order of the session in the program"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "3 The Integrated Schema Therapy Treatment Program",
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "Session",
+      "relation": "USES_INTERVENTION",
+      "target_type": "Intervention",
+      "description": "Indicates that a session uses a specific intervention.",
+      "properties": [
+        {
+          "name": "intervention_order",
+          "description": "Order in which the intervention is used in the session"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "Session",
+      "relation": "FOCUSES_ON_MODE",
+      "target_type": "SchemaMode",
+      "description": "Indicates that a session is focused on a particular schema mode.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "Session",
+      "relation": "USES_ASSESSMENT_TOOL",
+      "target_type": "AssessmentTool",
+      "description": "Indicates that a session uses a specific assessment tool.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "3 The Integrated Schema Therapy Treatment Program",
+        "References"
+      ]
+    },
+    {
+      "source_type": "Therapist",
+      "relation": "DELIVERS_SESSION",
+      "target_type": "Session",
+      "description": "Indicates that a therapist delivers or co-delivers a session.",
+      "properties": [
+        {
+          "name": "role",
+          "description": "Role of the therapist in the session (e.g., lead, co-therapist)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "4 The Group Schema Therapy Sessions",
+        "5 The Individual Schema Therapy Sessions"
+      ]
+    },
+    {
+      "source_type": "Therapist",
+      "relation": "HAS_ROLE",
+      "target_type": "TherapistRole",
+      "description": "Indicates that a therapist holds a specific role in the therapy process.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "4 The Group Schema Therapy Sessions",
+        "6 Training, Supervision, Research, and Concluding Remarks"
+      ]
+    },
+    {
+      "source_type": "TreatmentProgram",
+      "relation": "DELIVERED_IN_SETTING",
+      "target_type": "TreatmentSetting",
+      "description": "Indicates that a treatment program is delivered in a specific clinical setting.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 Introduction",
+        "3 The Integrated Schema Therapy Treatment Program"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "HAS_CULTURAL_CONSIDERATION",
+      "target_type": "CulturalConsideration",
+      "description": "Indicates that a patient's treatment planning is informed by a specific cultural or religious consideration.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 Introduction",
+        "3 The Integrated Schema Therapy Treatment Program"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 12,
+    "edges": 13,
+    "source_books": 0
+  }
+}

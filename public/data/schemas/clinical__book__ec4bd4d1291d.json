@@ -1,0 +1,327 @@
+{
+  "id": "clinical__book__ec4bd4d1291d",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Retrain Your Brain_ Cognitive Behavioral Therapy in 7 Weeks",
+  "kind": "book",
+  "book": "Retrain Your Brain_ Cognitive Behavioral Therapy in 7 Weeks",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "TherapyType",
+      "description": "A type or modality of psychological therapy, including its principles, techniques, and target conditions.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the therapy type (e.g., CBT, Psychoanalysis, Exposure and Response Prevention)"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the therapy's approach and principles"
+        },
+        {
+          "name": "target_conditions",
+          "description": "List of mental health conditions this therapy is used to treat"
+        },
+        {
+          "name": "key_techniques",
+          "description": "Core techniques or interventions used in this therapy"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of research evidence supporting this therapy"
+        },
+        {
+          "name": "session_structure",
+          "description": "Typical structure, duration, and format of sessions"
+        },
+        {
+          "name": "cultural_considerations",
+          "description": "Notes on cultural or religious alignment, if applicable"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT"
+      ]
+    },
+    {
+      "type": "MentalHealthCondition",
+      "description": "A diagnosable mental health disorder or syndrome, including its features, diagnostic criteria, and prevalence.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the mental health condition (e.g., Major Depressive Disorder, Panic Disorder)"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the condition and its impact"
+        },
+        {
+          "name": "diagnostic_criteria",
+          "description": "Key criteria for diagnosis (e.g., DSM-5)"
+        },
+        {
+          "name": "prevalence",
+          "description": "Prevalence statistics and demographic information"
+        },
+        {
+          "name": "risk_factors",
+          "description": "Known risk factors and vulnerabilities"
+        },
+        {
+          "name": "symptoms",
+          "description": "List of core symptoms"
+        },
+        {
+          "name": "subtypes_specifiers",
+          "description": "Recognized subtypes or specifiers (e.g., melancholic features, peripartum onset)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "type": "CBTPrinciple",
+      "description": "A core principle or foundational concept of Cognitive Behavioral Therapy.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the CBT principle (e.g., present-focused, goal-oriented)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the principle and its role in therapy"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT"
+      ]
+    },
+    {
+      "type": "CBTTechnique",
+      "description": "A specific intervention, exercise, or skill used within CBT.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the technique (e.g., exposure, cognitive restructuring, behavioral activation)"
+        },
+        {
+          "name": "description",
+          "description": "Description of how the technique is applied"
+        },
+        {
+          "name": "target_symptoms",
+          "description": "Symptoms or problems this technique addresses"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT",
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "type": "Symptom",
+      "description": "A psychological or physical symptom relevant to mental health conditions.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the symptom (e.g., low mood, panic attacks)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the symptom"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "type": "Goal",
+      "description": "A therapeutic or personal goal set during treatment planning.",
+      "properties": [
+        {
+          "name": "description",
+          "description": "Description of the goal"
+        },
+        {
+          "name": "is_individualized",
+          "description": "Whether the goal is tailored to the individual"
+        },
+        {
+          "name": "related_values",
+          "description": "Personal values connected to the goal"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "type": "Value",
+      "description": "A personal value or meaningful life domain identified in therapy.",
+      "properties": [
+        {
+          "name": "description",
+          "description": "Description of the value or life domain"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "type": "AssessmentTool",
+      "description": "A standardized or self-report tool for assessing symptoms or progress.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the assessment tool"
+        },
+        {
+          "name": "description",
+          "description": "Purpose and structure of the tool"
+        },
+        {
+          "name": "target_conditions",
+          "description": "Conditions or symptoms the tool assesses"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "type": "Medication",
+      "description": "A pharmacological treatment relevant to mental health conditions.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the medication (e.g., SSRI, benzodiazepine)"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the medication's use and effects"
+        },
+        {
+          "name": "target_conditions",
+          "description": "Conditions the medication is prescribed for"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "TherapyType",
+      "relation": "TREATS_CONDITION",
+      "target_type": "MentalHealthCondition",
+      "description": "Indicates that a therapy type is used to treat a specific mental health condition.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT",
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "source_type": "TherapyType",
+      "relation": "USES_TECHNIQUE",
+      "target_type": "CBTTechnique",
+      "description": "Indicates that a therapy type employs a specific technique or intervention.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT"
+      ]
+    },
+    {
+      "source_type": "CBTTechnique",
+      "relation": "TARGETS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a CBT technique is designed to address a particular symptom.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "source_type": "MentalHealthCondition",
+      "relation": "HAS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a mental health condition is characterized by a specific symptom.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "source_type": "CBTPrinciple",
+      "relation": "INFORMS_TECHNIQUE",
+      "target_type": "CBTTechnique",
+      "description": "Indicates that a CBT principle underlies or guides a specific technique.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT"
+      ]
+    },
+    {
+      "source_type": "Goal",
+      "relation": "ALIGNS_WITH_VALUE",
+      "target_type": "Value",
+      "description": "Indicates that a therapeutic goal is aligned with a personal value.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "source_type": "AssessmentTool",
+      "relation": "ASSESSES_CONDITION",
+      "target_type": "MentalHealthCondition",
+      "description": "Indicates that an assessment tool is used to evaluate a mental health condition.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2: Understanding Anxiety and Depression"
+      ]
+    },
+    {
+      "source_type": "Medication",
+      "relation": "TREATS_CONDITION",
+      "target_type": "MentalHealthCondition",
+      "description": "Indicates that a medication is used to treat a specific mental health condition.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1: Getting Familiar with CBT"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 9,
+    "edges": 8,
+    "source_books": 0
+  }
+}

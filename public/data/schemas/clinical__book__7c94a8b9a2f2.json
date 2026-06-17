@@ -1,0 +1,621 @@
+{
+  "id": "clinical__book__7c94a8b9a2f2",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Cognitive Therapy of Anxiety Disorders _ Science",
+  "kind": "book",
+  "book": "Cognitive Therapy of Anxiety Disorders _ Science",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Person",
+      "description": "An individual receiving or providing mental health care (e.g., client, therapist, family member).",
+      "properties": [
+        {
+          "name": "role",
+          "description": "Role of the person (e.g., client, therapist, family_member)"
+        },
+        {
+          "name": "gender",
+          "description": "Gender identity of the person"
+        },
+        {
+          "name": "age",
+          "description": "Age of the person"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Cultural or religious background, including Islamic identity if relevant"
+        },
+        {
+          "name": "occupation",
+          "description": "Occupation or employment status"
+        },
+        {
+          "name": "family_history",
+          "description": "Family history of mental health conditions"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 4",
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "AnxietyDisorder",
+      "description": "A specific type of anxiety disorder as defined by diagnostic criteria.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the anxiety disorder (e.g., Panic Disorder, GAD, OCD, PTSD, Social Phobia)"
+        },
+        {
+          "name": "diagnostic_criteria",
+          "description": "Formal diagnostic criteria (e.g., DSM-IV-TR)"
+        },
+        {
+          "name": "prevalence",
+          "description": "Epidemiological prevalence data"
+        },
+        {
+          "name": "onset_age",
+          "description": "Typical age of onset"
+        },
+        {
+          "name": "course",
+          "description": "Typical course (e.g., chronic, episodic)"
+        },
+        {
+          "name": "cultural_variability",
+          "description": "Known cultural or religious variations in presentation"
+        },
+        {
+          "name": "subtypes",
+          "description": "Recognized subtypes (e.g., GSP for Social Phobia, contamination for OCD)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "Symptom",
+      "description": "A psychological, physiological, or behavioral symptom relevant to anxiety disorders.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the symptom (e.g., worry, avoidance, panic attack, intrusive thought)"
+        },
+        {
+          "name": "modality",
+          "description": "Type of symptom (cognitive, behavioral, physiological, affective)"
+        },
+        {
+          "name": "severity",
+          "description": "Severity rating"
+        },
+        {
+          "name": "duration",
+          "description": "Duration or chronicity of the symptom"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 2",
+        "Chapter 3",
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "CognitiveSchema",
+      "description": "Enduring beliefs, appraisals, or cognitive structures relevant to anxiety and its treatment.",
+      "properties": [
+        {
+          "name": "schema_type",
+          "description": "Type of schema (e.g., threat, vulnerability, helplessness, responsibility, perfectionism)"
+        },
+        {
+          "name": "content",
+          "description": "Content or description of the schema"
+        },
+        {
+          "name": "maladaptive",
+          "description": "Whether the schema is maladaptive (true/false)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2",
+        "Chapter 3",
+        "Chapter 4",
+        "Chapter 6",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "CopingStrategy",
+      "description": "A behavioral or cognitive strategy used to manage anxiety or distress.",
+      "properties": [
+        {
+          "name": "strategy_type",
+          "description": "Type of strategy (e.g., avoidance, safety-seeking, exposure, cognitive restructuring, suppression, rumination)"
+        },
+        {
+          "name": "adaptive",
+          "description": "Whether the strategy is adaptive or maladaptive"
+        },
+        {
+          "name": "description",
+          "description": "Description of the strategy"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2",
+        "Chapter 3",
+        "Chapter 4",
+        "Chapter 5",
+        "Chapter 6",
+        "Chapter 7",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "AssessmentTool",
+      "description": "A standardized or idiographic tool for assessment or diagnosis of anxiety and related constructs.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the assessment tool (e.g., ADIS-IV, BAI, YBOCS)"
+        },
+        {
+          "name": "target_construct",
+          "description": "What the tool measures (e.g., anxiety severity, worry, obsessions)"
+        },
+        {
+          "name": "format",
+          "description": "Format (structured interview, self-report, clinician-rated)"
+        },
+        {
+          "name": "cultural_adaptation",
+          "description": "Notes on cultural or religious adaptation, if any"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11"
+      ]
+    },
+    {
+      "type": "TreatmentIntervention",
+      "description": "A specific intervention or technique used in the treatment of anxiety disorders.",
+      "properties": [
+        {
+          "name": "intervention_type",
+          "description": "Type of intervention (e.g., cognitive restructuring, exposure, response prevention, skills training, psychoeducation)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the intervention"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of empirical support"
+        },
+        {
+          "name": "cultural_considerations",
+          "description": "Cultural or religious considerations in implementation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 6",
+        "Chapter 7",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "Comorbidity",
+      "description": "A co-occurring mental health or medical condition relevant to anxiety disorders.",
+      "properties": [
+        {
+          "name": "condition_name",
+          "description": "Name of the comorbid condition (e.g., depression, substance use disorder, personality disorder, medical illness)"
+        },
+        {
+          "name": "type",
+          "description": "Type of comorbidity (psychiatric, medical)"
+        },
+        {
+          "name": "impact_on_treatment",
+          "description": "How the comorbidity affects treatment or prognosis"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "VulnerabilityFactor",
+      "description": "A biological, psychological, or environmental factor that increases risk for anxiety disorders.",
+      "properties": [
+        {
+          "name": "factor_type",
+          "description": "Type of vulnerability (e.g., genetic, temperament, cognitive, personality, life event)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the factor"
+        },
+        {
+          "name": "measurement_tool",
+          "description": "Assessment tool or method for measuring the factor"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 4",
+        "Chapter 10",
+        "Chapter 12"
+      ]
+    },
+    {
+      "type": "CulturalContext",
+      "description": "Cultural, religious, or societal context relevant to the presentation or treatment of anxiety disorders.",
+      "properties": [
+        {
+          "name": "culture_name",
+          "description": "Name or description of the cultural or religious context"
+        },
+        {
+          "name": "relevant_factors",
+          "description": "Cultural or religious factors influencing anxiety or its treatment"
+        },
+        {
+          "name": "adaptation_notes",
+          "description": "Notes on adaptation of assessment or intervention"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Person",
+      "relation": "HAS_ANXIETY_DISORDER",
+      "target_type": "AnxietyDisorder",
+      "description": "Indicates that a person has been diagnosed with a specific anxiety disorder.",
+      "properties": [
+        {
+          "name": "diagnosis_date",
+          "description": "Date of diagnosis"
+        },
+        {
+          "name": "diagnostic_tool",
+          "description": "Assessment tool or criteria used"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "AnxietyDisorder",
+      "relation": "HAS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a symptom is characteristic of a specific anxiety disorder.",
+      "properties": [
+        {
+          "name": "prevalence",
+          "description": "Prevalence of the symptom in the disorder"
+        },
+        {
+          "name": "severity_pattern",
+          "description": "Typical severity or course"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 2",
+        "Chapter 3",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "EXHIBITS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a person exhibits a particular symptom.",
+      "properties": [
+        {
+          "name": "onset_date",
+          "description": "Date of symptom onset"
+        },
+        {
+          "name": "severity",
+          "description": "Severity rating for the person"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_COGNITIVE_SCHEMA",
+      "target_type": "CognitiveSchema",
+      "description": "Indicates that a person holds a particular cognitive schema or belief relevant to anxiety.",
+      "properties": [
+        {
+          "name": "schema_strength",
+          "description": "Degree to which the schema is endorsed"
+        },
+        {
+          "name": "assessment_tool",
+          "description": "Tool used to assess the schema"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2",
+        "Chapter 3",
+        "Chapter 4",
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "USES_COPING_STRATEGY",
+      "target_type": "CopingStrategy",
+      "description": "Indicates that a person uses a specific coping strategy to manage anxiety.",
+      "properties": [
+        {
+          "name": "frequency",
+          "description": "How often the strategy is used"
+        },
+        {
+          "name": "effectiveness",
+          "description": "Perceived or measured effectiveness"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2",
+        "Chapter 3",
+        "Chapter 4",
+        "Chapter 5",
+        "Chapter 6",
+        "Chapter 7",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "UNDERGOES_TREATMENT_INTERVENTION",
+      "target_type": "TreatmentIntervention",
+      "description": "Indicates that a person is receiving or has received a specific treatment intervention.",
+      "properties": [
+        {
+          "name": "start_date",
+          "description": "Date treatment began"
+        },
+        {
+          "name": "end_date",
+          "description": "Date treatment ended"
+        },
+        {
+          "name": "outcome",
+          "description": "Outcome or response to the intervention"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 6",
+        "Chapter 7",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "AnxietyDisorder",
+      "relation": "TREATED_BY",
+      "target_type": "TreatmentIntervention",
+      "description": "Indicates that a treatment intervention is used to treat a specific anxiety disorder.",
+      "properties": [
+        {
+          "name": "evidence_level",
+          "description": "Level of empirical support for the intervention in this disorder"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 6",
+        "Chapter 7",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "ASSESSED_BY",
+      "target_type": "AssessmentTool",
+      "description": "Indicates that a person has been assessed using a specific tool.",
+      "properties": [
+        {
+          "name": "assessment_date",
+          "description": "Date of assessment"
+        },
+        {
+          "name": "score",
+          "description": "Score or result"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11"
+      ]
+    },
+    {
+      "source_type": "AnxietyDisorder",
+      "relation": "HAS_COMORBIDITY",
+      "target_type": "Comorbidity",
+      "description": "Indicates that a comorbid condition is commonly associated with a specific anxiety disorder.",
+      "properties": [
+        {
+          "name": "prevalence",
+          "description": "Prevalence of the comorbidity in the disorder"
+        },
+        {
+          "name": "impact_on_course",
+          "description": "Effect of comorbidity on disorder course or treatment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 8",
+        "Chapter 9",
+        "Chapter 10",
+        "Chapter 11",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_VULNERABILITY_FACTOR",
+      "target_type": "VulnerabilityFactor",
+      "description": "Indicates that a person has a specific vulnerability factor for anxiety.",
+      "properties": [
+        {
+          "name": "factor_strength",
+          "description": "Degree or measurement of the vulnerability"
+        },
+        {
+          "name": "assessment_tool",
+          "description": "Tool used to assess the factor"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 4",
+        "Chapter 10",
+        "Chapter 12"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "IN_CULTURAL_CONTEXT",
+      "target_type": "CulturalContext",
+      "description": "Indicates the cultural or religious context relevant to the person’s experience or treatment.",
+      "properties": [
+        {
+          "name": "relevance_notes",
+          "description": "Notes on how the context affects presentation or treatment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1",
+        "Chapter 5",
+        "Chapter 8",
+        "Chapter 9"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 10,
+    "edges": 11,
+    "source_books": 0
+  }
+}

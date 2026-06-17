@@ -1,0 +1,490 @@
+{
+  "id": "islamic__book__94f7ddf452dd",
+  "kg_id": "islamic",
+  "kg_title": "Islamic-Cultural KG",
+  "title": "Islamically Modified Cognitive Behavioural Therapy",
+  "kind": "book",
+  "book": "Islamically Modified Cognitive Behavioural Therapy",
+  "book_group": "islamic_cultural",
+  "schema_name": "Islamic-Cultural Alignment KG",
+  "module": "islamic_cultural_alignment",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "TherapeuticApproach",
+      "description": "A model or framework for delivering therapy, including its theoretical basis, guiding principles, and adaptation to Islamic and cultural contexts.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the therapeutic approach or model"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the approach and its core features"
+        },
+        {
+          "name": "islamic_integration_level",
+          "description": "Degree and method of Islamic integration (e.g., filter, integrationist, convert approach)"
+        },
+        {
+          "name": "core_principles",
+          "description": "Key guiding principles (e.g., fidelity, flexibility, evidence-based practice)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Preface",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Structure of the Book",
+        "Contents",
+        "Index"
+      ]
+    },
+    {
+      "type": "IslamicConcept",
+      "description": "A religious, spiritual, or ethical concept from Islamic tradition relevant to therapy (e.g., tawakkul, sabr, shukr, akhlaq).",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the Islamic concept"
+        },
+        {
+          "name": "definition",
+          "description": "Explanation or definition of the concept"
+        },
+        {
+          "name": "category",
+          "description": "Type of concept (e.g., spiritual practice, ethical value, explanatory model)"
+        },
+        {
+          "name": "source_text",
+          "description": "Primary Islamic source (e.g., Qur’an, Hadith, scholarly consensus)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Glossary",
+        "Title",
+        "Preface",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "type": "TherapeuticTechnique",
+      "description": "A specific intervention, strategy, or technique used in therapy, including Islamically modified or adapted CBT techniques.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the technique"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the technique and its purpose"
+        },
+        {
+          "name": "islamic_modification",
+          "description": "Details of how the technique is adapted to Islamic context"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of supporting evidence or rationale"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Contents",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index",
+        "References"
+      ]
+    },
+    {
+      "type": "CulturalFactor",
+      "description": "A cultural, family, or community factor relevant to therapy, including stigma, hospitality, language, and family roles.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the cultural factor"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the factor and its relevance"
+        },
+        {
+          "name": "domain",
+          "description": "Domain (e.g., family, community, language, stigma)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Series",
+        "Dedication",
+        "Contents",
+        "Preface",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "type": "ReligiousPractice",
+      "description": "A specific act of worship or religious practice relevant to therapy (e.g., prayer, dua, dhikr, fasting).",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the religious practice"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the practice"
+        },
+        {
+          "name": "therapeutic_role",
+          "description": "How the practice is used or referenced in therapy"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Glossary",
+        "Title",
+        "Preface",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "type": "ExplanatoryModel",
+      "description": "A model or framework for understanding mental health, integrating Islamic and psychological perspectives.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the explanatory model"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the model"
+        },
+        {
+          "name": "islamic_basis",
+          "description": "Islamic sources or concepts underpinning the model"
+        },
+        {
+          "name": "psychological_basis",
+          "description": "Psychological theories or constructs included"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Title",
+        "Glossary",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Index"
+      ]
+    },
+    {
+      "type": "TherapistCompetency",
+      "description": "A skill, knowledge area, or competency required for therapists to deliver Islamically aligned therapy.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the competency"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the competency"
+        },
+        {
+          "name": "domain",
+          "description": "Domain (e.g., cultural, religious, clinical, ethical)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Preface",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index",
+        "References"
+      ]
+    },
+    {
+      "type": "CaseExample",
+      "description": "A de-identified clinical case or scenario illustrating the application of Islamically Modified CBT.",
+      "properties": [
+        {
+          "name": "case_id",
+          "description": "Unique identifier or pseudonym for the case"
+        },
+        {
+          "name": "presenting_problem",
+          "description": "Summary of the client's presenting issue"
+        },
+        {
+          "name": "islamic_cultural_factors",
+          "description": "Relevant Islamic or cultural factors in the case"
+        },
+        {
+          "name": "interventions_used",
+          "description": "Therapeutic techniques or approaches applied"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Contents",
+        "Structure of the Book",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "type": "ReferenceSource",
+      "description": "A source text, research article, or scholarly work cited as evidence or guidance for Islamically aligned therapy.",
+      "properties": [
+        {
+          "name": "title",
+          "description": "Title of the source"
+        },
+        {
+          "name": "author",
+          "description": "Author(s) of the source"
+        },
+        {
+          "name": "type",
+          "description": "Type of source (e.g., Qur’an, Hadith, research article, guideline)"
+        },
+        {
+          "name": "relevance",
+          "description": "How the source informs therapy or the schema"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "References",
+        "Glossary",
+        "Index"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "TherapeuticApproach",
+      "relation": "USES_ISLAMIC_CONCEPT",
+      "target_type": "IslamicConcept",
+      "description": "Indicates that a therapeutic approach incorporates or is informed by a specific Islamic concept.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Preface",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapeuticApproach",
+      "relation": "INCLUDES_TECHNIQUE",
+      "target_type": "TherapeuticTechnique",
+      "description": "Indicates that a therapeutic approach includes or recommends a specific therapeutic technique.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Contents",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapeuticTechnique",
+      "relation": "MODIFIED_BY_ISLAMIC_CONCEPT",
+      "target_type": "IslamicConcept",
+      "description": "Indicates that a therapeutic technique is modified or adapted using a specific Islamic concept.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Glossary",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapeuticTechnique",
+      "relation": "INCORPORATES_RELIGIOUS_PRACTICE",
+      "target_type": "ReligiousPractice",
+      "description": "Indicates that a therapeutic technique incorporates or references a specific religious practice.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Glossary",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapeuticApproach",
+      "relation": "ADDRESSES_CULTURAL_FACTOR",
+      "target_type": "CulturalFactor",
+      "description": "Indicates that a therapeutic approach addresses or adapts to a specific cultural, family, or community factor.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Series",
+        "Dedication",
+        "Contents",
+        "Preface",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapeuticApproach",
+      "relation": "USES_EXPLANATORY_MODEL",
+      "target_type": "ExplanatoryModel",
+      "description": "Indicates that a therapeutic approach is based on or utilizes a specific explanatory model of mental health.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Title",
+        "Glossary",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapistCompetency",
+      "relation": "REQUIRED_FOR_APPROACH",
+      "target_type": "TherapeuticApproach",
+      "description": "Indicates that a specific therapist competency is required to deliver a therapeutic approach.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Preface",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index",
+        "References"
+      ]
+    },
+    {
+      "source_type": "CaseExample",
+      "relation": "ILLUSTRATES_TECHNIQUE",
+      "target_type": "TherapeuticTechnique",
+      "description": "Indicates that a case example illustrates the use of a specific therapeutic technique.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Contents",
+        "Structure of the Book",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "CaseExample",
+      "relation": "HIGHLIGHTS_CULTURAL_FACTOR",
+      "target_type": "CulturalFactor",
+      "description": "Indicates that a case example highlights the relevance of a specific cultural, family, or community factor.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Contents",
+        "Structure of the Book",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "CaseExample",
+      "relation": "DEMONSTRATES_ISLAMIC_CONCEPT",
+      "target_type": "IslamicConcept",
+      "description": "Indicates that a case example demonstrates the application of a specific Islamic concept.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Half Title",
+        "Contents",
+        "Structure of the Book",
+        "Part I Foundations",
+        "Part II Theoretical Framework",
+        "Part III Practice",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "ReferenceSource",
+      "relation": "INFORMS_NODE",
+      "target_type": "TherapeuticApproach",
+      "description": "Indicates that a reference source informs or supports a therapeutic approach.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "References",
+        "Glossary",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "ReferenceSource",
+      "relation": "INFORMS_NODE",
+      "target_type": "TherapeuticTechnique",
+      "description": "Indicates that a reference source informs or supports a therapeutic technique.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "References",
+        "Glossary",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "ReferenceSource",
+      "relation": "INFORMS_NODE",
+      "target_type": "IslamicConcept",
+      "description": "Indicates that a reference source informs or supports an Islamic concept.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "References",
+        "Glossary",
+        "Index"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 9,
+    "edges": 13,
+    "source_books": 0
+  }
+}

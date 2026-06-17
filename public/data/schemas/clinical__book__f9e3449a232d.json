@@ -1,0 +1,532 @@
+{
+  "id": "clinical__book__f9e3449a232d",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Handbook of Cognitive-Behavioral Therapies, Fourth Edition",
+  "kind": "book",
+  "book": "Handbook of Cognitive-Behavioral Therapies, Fourth Edition",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "TherapyApproach",
+      "description": "A specific cognitive-behavioral therapy model or approach (e.g., Cognitive Therapy, REBT, DBT, Schema Therapy, Mindfulness-Based Therapy, etc.)",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the therapy approach"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the approach"
+        },
+        {
+          "name": "core_principles",
+          "description": "Key principles or mechanisms"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of empirical support"
+        },
+        {
+          "name": "delivery_modes",
+          "description": "Formats in which the therapy is delivered (individual, group, digital, etc.)"
+        },
+        {
+          "name": "target_populations",
+          "description": "Populations for which the approach is designed or adapted"
+        },
+        {
+          "name": "cultural_adaptations",
+          "description": "Adaptations for cultural or religious contexts, including Islamic alignment if present"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Preface",
+        "Contents",
+        "PART I HISTORICAL, PHILOSOPHICAL, AND SCIENTIFIC FOUNDATIONS",
+        "1 Historical and Philosophical Bases of the Cognitive-Behavioral Therapies",
+        "2 Empirical Validation and the Cognitive-Behavioral Therapies",
+        "3 Cognitive Science Foundations of Cognitive-Behavioral Therapy",
+        "PART III THE THERAPIES",
+        "7 Emotion-Centered Problem-Solving Therapy",
+        "8 Rational Emotive Behavior Therapy",
+        "9 Cognitive Therapy",
+        "10 Schema Therapy",
+        "11 Mindfulness and Acceptance Interventions in Cognitive-Behavioral Therapy",
+        "12 Dialectical Behavior Therapy - A Comprehensive Cognitive-Behavioral Treatment for Borderline Personality Disorder, Emotion Dysregulation, and Difficult-to-Treat Behaviors",
+        "13 Cognitive-Behavioral Therapy and Psychotherapy Integration",
+        "Index"
+      ]
+    },
+    {
+      "type": "ClinicalAssessment",
+      "description": "A method, tool, or process for evaluating client symptoms, functioning, or treatment progress",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the assessment tool or method"
+        },
+        {
+          "name": "assessment_type",
+          "description": "Type of assessment (e.g., self-report, interview, behavioral observation, physiological)"
+        },
+        {
+          "name": "target_constructs",
+          "description": "Psychological constructs or symptoms assessed"
+        },
+        {
+          "name": "psychometric_properties",
+          "description": "Reliability, validity, and other measurement properties"
+        },
+        {
+          "name": "cultural_considerations",
+          "description": "Notes on cultural adaptation or appropriateness"
+        },
+        {
+          "name": "application_context",
+          "description": "When and how the assessment is used (diagnosis, progress monitoring, outcome evaluation)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "PART II ASSESSMENT CONSIDERATIONS",
+        "4 Cognitive Assessment - Issues and Methods",
+        "5 Clinical Assessment in Cognitive-Behavioral Therapies",
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "Index"
+      ]
+    },
+    {
+      "type": "CaseFormulation",
+      "description": "A structured, individualized conceptualization of a client's presenting problems, mechanisms, and treatment plan",
+      "properties": [
+        {
+          "name": "problem_list",
+          "description": "List of presenting problems across domains"
+        },
+        {
+          "name": "diagnoses",
+          "description": "Formal diagnoses assigned"
+        },
+        {
+          "name": "mechanisms",
+          "description": "Psychological mechanisms (e.g., dysfunctional beliefs, emotion regulation problems)"
+        },
+        {
+          "name": "precipitants",
+          "description": "Identified stressors or triggers"
+        },
+        {
+          "name": "origins",
+          "description": "Developmental or historical factors"
+        },
+        {
+          "name": "treatment_targets",
+          "description": "Key targets for intervention"
+        },
+        {
+          "name": "progress_markers",
+          "description": "Indicators for monitoring progress"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "5 Clinical Assessment in Cognitive-Behavioral Therapies",
+        "Index"
+      ]
+    },
+    {
+      "type": "ClientProfile",
+      "description": "A representation of an individual client, including demographics, clinical characteristics, and cultural context",
+      "properties": [
+        {
+          "name": "age",
+          "description": "Client's age"
+        },
+        {
+          "name": "gender",
+          "description": "Client's gender identity"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Ethnic, religious, and cultural background"
+        },
+        {
+          "name": "presenting_problems",
+          "description": "Summary of presenting issues"
+        },
+        {
+          "name": "diagnoses",
+          "description": "Diagnosed mental health conditions"
+        },
+        {
+          "name": "comorbidities",
+          "description": "Co-occurring conditions"
+        },
+        {
+          "name": "functioning",
+          "description": "Level of psychosocial functioning"
+        },
+        {
+          "name": "treatment_history",
+          "description": "Previous treatments received"
+        },
+        {
+          "name": "preferences",
+          "description": "Client's preferences, values, and goals"
+        },
+        {
+          "name": "risk_factors",
+          "description": "Identified risk factors (e.g., suicidality, aggression)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "PART IV APPLICATIONS TO SPECIFIC POPULATIONS",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "16 Cognitive-Behavioral Therapy for Comorbidity and Transdiagnostic Populations",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "18 Affirmative Cognitive-Behavioral Therapy with Culturally Diverse Populations",
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "Index"
+      ]
+    },
+    {
+      "type": "TreatmentPlan",
+      "description": "A structured plan outlining therapeutic goals, selected interventions, and monitoring strategies for a client",
+      "properties": [
+        {
+          "name": "goals",
+          "description": "Therapeutic goals (short- and long-term)"
+        },
+        {
+          "name": "selected_interventions",
+          "description": "Chosen therapy approaches and techniques"
+        },
+        {
+          "name": "session_structure",
+          "description": "Planned session format and frequency"
+        },
+        {
+          "name": "progress_monitoring",
+          "description": "Methods for tracking progress"
+        },
+        {
+          "name": "adaptations",
+          "description": "Cultural, developmental, or contextual adaptations"
+        },
+        {
+          "name": "risk_management",
+          "description": "Strategies for managing clinical risks"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "15 Cognitive-Behavioral Prevention Programs",
+        "16 Cognitive-Behavioral Therapy for Comorbidity and Transdiagnostic Populations",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "18 Affirmative Cognitive-Behavioral Therapy with Culturally Diverse Populations",
+        "Index"
+      ]
+    },
+    {
+      "type": "PopulationGroup",
+      "description": "A defined group of clients sharing demographic, diagnostic, or contextual characteristics relevant to treatment adaptation",
+      "properties": [
+        {
+          "name": "group_type",
+          "description": "Type of group (e.g., youth, couples, comorbid, culturally diverse, prevention)"
+        },
+        {
+          "name": "defining_characteristics",
+          "description": "Key features of the group"
+        },
+        {
+          "name": "treatment_adaptations",
+          "description": "Adaptations or considerations for this group"
+        },
+        {
+          "name": "common_risks",
+          "description": "Risks or challenges specific to the group"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "PART IV APPLICATIONS TO SPECIFIC POPULATIONS",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "15 Cognitive-Behavioral Prevention Programs",
+        "16 Cognitive-Behavioral Therapy for Comorbidity and Transdiagnostic Populations",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "18 Affirmative Cognitive-Behavioral Therapy with Culturally Diverse Populations",
+        "Index"
+      ]
+    },
+    {
+      "type": "TherapistProfile",
+      "description": "A representation of a therapist, including training, competencies, and cultural alignment",
+      "properties": [
+        {
+          "name": "training_background",
+          "description": "Therapist's education and training"
+        },
+        {
+          "name": "competencies",
+          "description": "Therapist's clinical skills and areas of expertise"
+        },
+        {
+          "name": "cultural_competence",
+          "description": "Level and type of cultural competence"
+        },
+        {
+          "name": "supervision_experience",
+          "description": "Experience with supervision and ongoing training"
+        },
+        {
+          "name": "personal_alignment",
+          "description": "Therapist's alignment with client values (e.g., religious, cultural)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "19 Going Beyond Didactic Training - How to Increase Utilization of Cognitive-Behavioral Therapy",
+        "18 Affirmative Cognitive-Behavioral Therapy with Culturally Diverse Populations",
+        "Index"
+      ]
+    },
+    {
+      "type": "InterventionTechnique",
+      "description": "A specific therapeutic technique, exercise, or skill used within CBT approaches",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the technique"
+        },
+        {
+          "name": "description",
+          "description": "Summary of the technique"
+        },
+        {
+          "name": "target_mechanism",
+          "description": "Psychological process or symptom targeted"
+        },
+        {
+          "name": "delivery_format",
+          "description": "How the technique is delivered (individual, group, digital, etc.)"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Empirical support for the technique"
+        },
+        {
+          "name": "cultural_adaptations",
+          "description": "Adaptations for cultural or religious contexts"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "7 Emotion-Centered Problem-Solving Therapy",
+        "8 Rational Emotive Behavior Therapy",
+        "9 Cognitive Therapy",
+        "10 Schema Therapy",
+        "11 Mindfulness and Acceptance Interventions in Cognitive-Behavioral Therapy",
+        "12 Dialectical Behavior Therapy - A Comprehensive Cognitive-Behavioral Treatment for Borderline Personality Disorder, Emotion Dysregulation, and Difficult-to-Treat Behaviors",
+        "13 Cognitive-Behavioral Therapy and Psychotherapy Integration",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "15 Cognitive-Behavioral Prevention Programs",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "Index"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "TherapyApproach",
+      "relation": "USES_TECHNIQUE",
+      "target_type": "InterventionTechnique",
+      "description": "Indicates that a therapy approach employs a specific intervention technique",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "7 Emotion-Centered Problem-Solving Therapy",
+        "8 Rational Emotive Behavior Therapy",
+        "9 Cognitive Therapy",
+        "10 Schema Therapy",
+        "11 Mindfulness and Acceptance Interventions in Cognitive-Behavioral Therapy",
+        "12 Dialectical Behavior Therapy - A Comprehensive Cognitive-Behavioral Treatment for Borderline Personality Disorder, Emotion Dysregulation, and Difficult-to-Treat Behaviors",
+        "13 Cognitive-Behavioral Therapy and Psychotherapy Integration",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapyApproach",
+      "relation": "EVIDENCE_BASED_FOR",
+      "target_type": "PopulationGroup",
+      "description": "Indicates that a therapy approach has empirical support for use with a specific population group",
+      "properties": [
+        {
+          "name": "effect_size",
+          "description": "Summary of effect size or efficacy"
+        },
+        {
+          "name": "study_type",
+          "description": "Type of supporting studies (RCT, meta-analysis, etc.)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Empirical Validation and the Cognitive-Behavioral Therapies",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "15 Cognitive-Behavioral Prevention Programs",
+        "16 Cognitive-Behavioral Therapy for Comorbidity and Transdiagnostic Populations",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "ClientProfile",
+      "relation": "HAS_CASE_FORMULATION",
+      "target_type": "CaseFormulation",
+      "description": "Links a client profile to their individualized case formulation",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "CaseFormulation",
+      "relation": "INFORMS_TREATMENT_PLAN",
+      "target_type": "TreatmentPlan",
+      "description": "Indicates that a case formulation is used to develop a treatment plan",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TreatmentPlan",
+      "relation": "TARGETS_PROBLEM",
+      "target_type": "ClientProfile",
+      "description": "Indicates that a treatment plan is designed to address specific problems or diagnoses in a client profile",
+      "properties": [
+        {
+          "name": "targeted_problem",
+          "description": "Specific problem or diagnosis targeted"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "16 Cognitive-Behavioral Therapy for Comorbidity and Transdiagnostic Populations",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TreatmentPlan",
+      "relation": "INCLUDES_INTERVENTION",
+      "target_type": "InterventionTechnique",
+      "description": "Indicates that a treatment plan includes specific intervention techniques",
+      "properties": [
+        {
+          "name": "sequence",
+          "description": "Order or phase in which the technique is applied"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "7 Emotion-Centered Problem-Solving Therapy",
+        "8 Rational Emotive Behavior Therapy",
+        "9 Cognitive Therapy",
+        "10 Schema Therapy",
+        "11 Mindfulness and Acceptance Interventions in Cognitive-Behavioral Therapy",
+        "12 Dialectical Behavior Therapy - A Comprehensive Cognitive-Behavioral Treatment for Borderline Personality Disorder, Emotion Dysregulation, and Difficult-to-Treat Behaviors",
+        "13 Cognitive-Behavioral Therapy and Psychotherapy Integration",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "15 Cognitive-Behavioral Prevention Programs",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "ClinicalAssessment",
+      "relation": "APPLIED_TO",
+      "target_type": "ClientProfile",
+      "description": "Indicates that a clinical assessment is used to evaluate a client profile",
+      "properties": [
+        {
+          "name": "assessment_timepoint",
+          "description": "When the assessment is applied (intake, progress, outcome)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "4 Cognitive Assessment - Issues and Methods",
+        "5 Clinical Assessment in Cognitive-Behavioral Therapies",
+        "6 Case Formulation-Driven Cognitive-Behavioral Therapy",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapistProfile",
+      "relation": "DELIVERS_TREATMENT",
+      "target_type": "TreatmentPlan",
+      "description": "Indicates that a therapist is responsible for delivering a treatment plan",
+      "properties": [
+        {
+          "name": "delivery_mode",
+          "description": "Mode of delivery (in-person, telehealth, group, etc.)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "19 Going Beyond Didactic Training - How to Increase Utilization of Cognitive-Behavioral Therapy",
+        "14 Cognitive-Behavioral Therapy with Youth",
+        "17 Cognitive-Behavioral Couple Therapy",
+        "18 Affirmative Cognitive-Behavioral Therapy with Culturally Diverse Populations",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapistProfile",
+      "relation": "HAS_CULTURAL_ALIGNMENT_WITH",
+      "target_type": "ClientProfile",
+      "description": "Indicates the degree of cultural, religious, or value alignment between therapist and client",
+      "properties": [
+        {
+          "name": "alignment_type",
+          "description": "Type of alignment (e.g., religious, linguistic, cultural)"
+        },
+        {
+          "name": "alignment_level",
+          "description": "Degree of alignment (e.g., high, moderate, low)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "18 Affirmative Cognitive-Behavioral Therapy with Culturally Diverse Populations",
+        "Index"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 9,
+    "source_books": 0
+  }
+}

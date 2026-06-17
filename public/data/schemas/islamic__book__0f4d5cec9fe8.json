@@ -1,0 +1,549 @@
+{
+  "id": "islamic__book__0f4d5cec9fe8",
+  "kg_id": "islamic",
+  "kg_title": "Islamic-Cultural KG",
+  "title": "Islāmic Counselling and Psychotherapy",
+  "kind": "book",
+  "book": "Islāmic Counselling and Psychotherapy",
+  "book_group": "islamic_cultural",
+  "schema_name": "Islamic-Cultural Alignment KG",
+  "module": "islamic_cultural_alignment",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "TherapistType",
+      "description": "A mental health professional practicing or integrating Islamic counselling and psychotherapy.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Full name of the therapist"
+        },
+        {
+          "name": "credentials",
+          "description": "Professional qualifications and certifications"
+        },
+        {
+          "name": "islamic_training",
+          "description": "Details of Islamic-specific training or education"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Therapist's cultural and religious background"
+        },
+        {
+          "name": "roles",
+          "description": "Roles undertaken (e.g., counsellor, psychotherapist, imam)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Contents",
+        "Preface",
+        "Preface to the second edition",
+        "Index"
+      ]
+    },
+    {
+      "type": "ClientType",
+      "description": "A recipient of mental health support, with attributes relevant to Islamic-cultural alignment.",
+      "properties": [
+        {
+          "name": "age",
+          "description": "Client's age"
+        },
+        {
+          "name": "gender",
+          "description": "Client's gender"
+        },
+        {
+          "name": "cultural_identity",
+          "description": "Client's cultural and religious identity"
+        },
+        {
+          "name": "presenting_issues",
+          "description": "Presenting mental health or psychosocial issues"
+        },
+        {
+          "name": "spiritual_needs",
+          "description": "Client's expressed spiritual or religious needs"
+        },
+        {
+          "name": "family_context",
+          "description": "Relevant family or community context"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Title",
+        "Preface",
+        "Part I The essence of Islāmic therapy: context and background illuminated",
+        "Index"
+      ]
+    },
+    {
+      "type": "IslamicConceptType",
+      "description": "A core Islamic concept, value, or principle relevant to psychotherapy (e.g., tawhīd, fitrah, sabr).",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the concept"
+        },
+        {
+          "name": "category",
+          "description": "Type (e.g., theological, ethical, spiritual practice)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the concept"
+        },
+        {
+          "name": "quranic_basis",
+          "description": "Qur’ānic verses supporting the concept"
+        },
+        {
+          "name": "hadith_basis",
+          "description": "Relevant hādīths"
+        },
+        {
+          "name": "therapeutic_relevance",
+          "description": "How the concept is used in therapy"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Title",
+        "Part I The essence of Islāmic therapy: context and background illuminated",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "type": "TherapeuticApproachType",
+      "description": "A psychotherapeutic approach or modality, including Islamic, Western, and integrative models.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the approach (e.g., CBT, narrative therapy, Siraat Al-Islāmic Psychotherapy Practice Model)"
+        },
+        {
+          "name": "origin",
+          "description": "Cultural or theoretical origin"
+        },
+        {
+          "name": "core_principles",
+          "description": "Key principles and techniques"
+        },
+        {
+          "name": "islamic_alignment",
+          "description": "Degree and nature of alignment with Islamic principles"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of supporting evidence"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Contents",
+        "Preface to the second edition",
+        "Part II The intersection of Islām and psychotherapy: understanding congruent and non-congruent psychotherapeutic approaches",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "type": "IslamicPracticeType",
+      "description": "A specific Islamic spiritual or religious practice relevant to therapy (e.g., salah, dhikr, ruqya, dream interpretation).",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the practice"
+        },
+        {
+          "name": "category",
+          "description": "Type (e.g., ritual, supplication, healing practice)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the practice"
+        },
+        {
+          "name": "therapeutic_application",
+          "description": "How the practice is used in therapy"
+        },
+        {
+          "name": "authenticity_basis",
+          "description": "Sources supporting the practice (Qur’ān, Sunnah, scholarly consensus)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Contents",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "type": "EthicalFrameworkType",
+      "description": "An ethical principle, guideline, or framework relevant to Islamic psychotherapy.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the ethical principle or framework"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the principle"
+        },
+        {
+          "name": "islamic_basis",
+          "description": "Islamic sources or reasoning supporting the principle"
+        },
+        {
+          "name": "clinical_implications",
+          "description": "How the principle affects clinical practice"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Title",
+        "Contents",
+        "Preface to the second edition",
+        "Part I The essence of Islāmic therapy: context and background illuminated",
+        "Index"
+      ]
+    },
+    {
+      "type": "ClassicalScholarType",
+      "description": "A classical or contemporary Islamic scholar whose work informs Islamic psychotherapy.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Scholar's name"
+        },
+        {
+          "name": "era",
+          "description": "Historical period"
+        },
+        {
+          "name": "major_works",
+          "description": "Key works relevant to mental health"
+        },
+        {
+          "name": "contributions",
+          "description": "Summary of contributions to Islamic psychology or psychotherapy"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Acknowledgements",
+        "Part I The essence of Islāmic therapy: context and background illuminated",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index",
+        "List of tables"
+      ]
+    },
+    {
+      "type": "MentalHealthConditionType",
+      "description": "A mental health condition or psychosocial issue relevant to Islamic psychotherapy.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the condition (e.g., anxiety, depression, addiction)"
+        },
+        {
+          "name": "description",
+          "description": "Brief description"
+        },
+        {
+          "name": "islamic_perspective",
+          "description": "Islamic understanding or framing of the condition"
+        },
+        {
+          "name": "cultural_factors",
+          "description": "Cultural or religious factors influencing the condition"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "type": "TreatmentPlanType",
+      "description": "A structured plan for therapeutic intervention, including Islamic-cultural alignment elements.",
+      "properties": [
+        {
+          "name": "goals",
+          "description": "Therapeutic goals"
+        },
+        {
+          "name": "selected_approaches",
+          "description": "Chosen therapeutic approaches and practices"
+        },
+        {
+          "name": "islamic_elements",
+          "description": "Islamic concepts or practices integrated"
+        },
+        {
+          "name": "cultural_considerations",
+          "description": "Cultural adaptations or sensitivities"
+        },
+        {
+          "name": "risk_management",
+          "description": "Considerations for ethical and cultural risks"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Contents",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "type": "ResearchMethodologyType",
+      "description": "A research methodology or framework relevant to Islamic psychotherapy.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the methodology"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the methodology"
+        },
+        {
+          "name": "islamic_alignment",
+          "description": "How the methodology aligns with Islamic epistemology"
+        },
+        {
+          "name": "application_context",
+          "description": "Contexts in which the methodology is used"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Preface to the second edition",
+        "Index",
+        "List of figures"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "TherapistType",
+      "relation": "PROVIDES_THERAPY_TO",
+      "target_type": "ClientType",
+      "description": "Indicates that a therapist provides therapy or counselling to a client.",
+      "properties": [
+        {
+          "name": "modality",
+          "description": "Type of therapy provided"
+        },
+        {
+          "name": "duration",
+          "description": "Duration or frequency of sessions"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Preface",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy"
+      ]
+    },
+    {
+      "source_type": "TherapistType",
+      "relation": "USES_THERAPEUTIC_APPROACH",
+      "target_type": "TherapeuticApproachType",
+      "description": "Indicates that a therapist employs a specific therapeutic approach.",
+      "properties": [
+        {
+          "name": "adaptation_details",
+          "description": "Details of any Islamic or cultural adaptation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Contents",
+        "Preface to the second edition",
+        "Part II The intersection of Islām and psychotherapy: understanding congruent and non-congruent psychotherapeutic approaches"
+      ]
+    },
+    {
+      "source_type": "TherapeuticApproachType",
+      "relation": "INTEGRATES_ISLAMIC_CONCEPT",
+      "target_type": "IslamicConceptType",
+      "description": "Indicates that a therapeutic approach integrates a specific Islamic concept or value.",
+      "properties": [
+        {
+          "name": "integration_method",
+          "description": "How the concept is integrated (e.g., psychoeducation, spiritual practice)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Title",
+        "Part I The essence of Islāmic therapy: context and background illuminated",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy"
+      ]
+    },
+    {
+      "source_type": "TherapeuticApproachType",
+      "relation": "USES_ISLAMIC_PRACTICE",
+      "target_type": "IslamicPracticeType",
+      "description": "Indicates that a therapeutic approach employs a specific Islamic practice.",
+      "properties": [
+        {
+          "name": "practice_context",
+          "description": "Context or indication for use"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Contents",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy"
+      ]
+    },
+    {
+      "source_type": "TherapistType",
+      "relation": "FOLLOWS_ETHICAL_FRAMEWORK",
+      "target_type": "EthicalFrameworkType",
+      "description": "Indicates that a therapist adheres to a specific ethical framework or principle.",
+      "properties": [
+        {
+          "name": "application_context",
+          "description": "Context in which the ethical framework is applied"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Endorsements",
+        "Half Title",
+        "Title",
+        "Contents",
+        "Preface to the second edition",
+        "Part I The essence of Islāmic therapy: context and background illuminated"
+      ]
+    },
+    {
+      "source_type": "IslamicPracticeType",
+      "relation": "DERIVED_FROM_SCHOLAR",
+      "target_type": "ClassicalScholarType",
+      "description": "Indicates that a practice is derived from or supported by the work of a classical or contemporary scholar.",
+      "properties": [
+        {
+          "name": "reference_work",
+          "description": "Specific work or teaching referenced"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Acknowledgements",
+        "Part I The essence of Islāmic therapy: context and background illuminated",
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "ClientType",
+      "relation": "PRESENTS_WITH_CONDITION",
+      "target_type": "MentalHealthConditionType",
+      "description": "Indicates that a client presents with a specific mental health condition.",
+      "properties": [
+        {
+          "name": "severity",
+          "description": "Severity or stage of the condition"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TreatmentPlanType",
+      "relation": "ADDRESSES_CONDITION",
+      "target_type": "MentalHealthConditionType",
+      "description": "Indicates that a treatment plan addresses a specific mental health condition.",
+      "properties": [
+        {
+          "name": "intervention_type",
+          "description": "Type of intervention used"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TreatmentPlanType",
+      "relation": "INCLUDES_ISLAMIC_PRACTICE",
+      "target_type": "IslamicPracticeType",
+      "description": "Indicates that a treatment plan includes a specific Islamic practice.",
+      "properties": [
+        {
+          "name": "rationale",
+          "description": "Reason for including the practice"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III The healing path: practical intervention strategies in Islāmic psychotherapy",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "ResearchMethodologyType",
+      "relation": "APPLIED_TO_THERAPEUTIC_APPROACH",
+      "target_type": "TherapeuticApproachType",
+      "description": "Indicates that a research methodology is used to evaluate or develop a therapeutic approach.",
+      "properties": [
+        {
+          "name": "study_type",
+          "description": "Type of study (e.g., qualitative, quantitative, mixed-methods)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Preface to the second edition",
+        "Index",
+        "List of figures"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 10,
+    "edges": 10,
+    "source_books": 0
+  }
+}

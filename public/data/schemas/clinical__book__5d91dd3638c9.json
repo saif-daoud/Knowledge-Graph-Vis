@@ -1,0 +1,542 @@
+{
+  "id": "clinical__book__5d91dd3638c9",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Cognitive-Behavioral Therapy for OCD and Its Subtypes",
+  "kind": "book",
+  "book": "Cognitive-Behavioral Therapy for OCD and Its Subtypes",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Person",
+      "description": "An individual receiving or providing mental health care (client/patient or therapist).",
+      "properties": [
+        {
+          "name": "role",
+          "description": "Role of the person (e.g., client, therapist)"
+        },
+        {
+          "name": "gender",
+          "description": "Gender identity of the person"
+        },
+        {
+          "name": "age",
+          "description": "Age of the person"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Cultural or religious background, including Islamic identity if relevant"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1 Diagnosis, Phenomenology, and Comorbidity",
+        "CHAPTER 6 The Therapeutic Relationship",
+        "CHAPTER 8 Goals, Education, and Cognitive Interventions"
+      ]
+    },
+    {
+      "type": "Diagnosis",
+      "description": "A clinical diagnosis or classification relevant to mental health (e.g., OCD, comorbid disorders, subtypes).",
+      "properties": [
+        {
+          "name": "diagnosis_name",
+          "description": "Name of the diagnosis (e.g., OCD, depression, tic disorder)"
+        },
+        {
+          "name": "onset_age",
+          "description": "Age at onset of the diagnosis"
+        },
+        {
+          "name": "severity",
+          "description": "Severity rating or description"
+        },
+        {
+          "name": "insight_level",
+          "description": "Level of insight (good, poor, absent/delusional)"
+        },
+        {
+          "name": "specifiers",
+          "description": "Diagnostic specifiers (e.g., tic-related, subtype)"
+        },
+        {
+          "name": "cultural_factors",
+          "description": "Cultural or religious factors influencing diagnosis"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1 Diagnosis, Phenomenology, and Comorbidity",
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "type": "Symptom",
+      "description": "A specific symptom, obsession, compulsion, or related experience.",
+      "properties": [
+        {
+          "name": "symptom_type",
+          "description": "Type of symptom (e.g., obsession, compulsion, avoidance, neutralization)"
+        },
+        {
+          "name": "content",
+          "description": "Content or theme of the symptom (e.g., contamination, harm, religious)"
+        },
+        {
+          "name": "frequency",
+          "description": "Frequency of the symptom"
+        },
+        {
+          "name": "intensity",
+          "description": "Intensity or distress level"
+        },
+        {
+          "name": "duration",
+          "description": "Duration of the symptom"
+        },
+        {
+          "name": "insight",
+          "description": "Insight into the symptom"
+        },
+        {
+          "name": "ego_dystonicity",
+          "description": "Degree to which the symptom is ego-dystonic"
+        },
+        {
+          "name": "cultural_context",
+          "description": "Cultural or religious context of the symptom"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1 Diagnosis, Phenomenology, and Comorbidity",
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 3 Compulsions, Neutralization, and Control",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "type": "CognitiveConstruct",
+      "description": "A cognitive belief, appraisal, or process relevant to OCD and its treatment.",
+      "properties": [
+        {
+          "name": "construct_type",
+          "description": "Type of cognitive construct (e.g., inflated responsibility, thought-action fusion, perfectionism, intolerance of uncertainty, overvalued ideation)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the construct"
+        },
+        {
+          "name": "severity",
+          "description": "Severity or prominence in the case"
+        },
+        {
+          "name": "cultural_relevance",
+          "description": "Cultural or religious relevance (e.g., scrupulosity, Islamic beliefs)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 3 Compulsions, Neutralization, and Control",
+        "CHAPTER 5 The Cognitive-Behavioral Model - THEORY AND RESEARCH",
+        "CHAPTER 7 Assessment and Case Formulation",
+        "CHAPTER 8 Goals, Education, and Cognitive Interventions",
+        "CHAPTER 9 Empirical Hypothesis-Testing Experiments",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "type": "AssessmentTool",
+      "description": "A standardized or idiographic tool used for assessment or measurement.",
+      "properties": [
+        {
+          "name": "tool_name",
+          "description": "Name of the assessment tool (e.g., YBOCS, OBQ-44, DPSS)"
+        },
+        {
+          "name": "target_construct",
+          "description": "What the tool measures (e.g., symptom severity, cognitive beliefs)"
+        },
+        {
+          "name": "format",
+          "description": "Format of the tool (e.g., interview, self-report, questionnaire)"
+        },
+        {
+          "name": "cultural_adaptation",
+          "description": "Cultural or religious adaptation, if any"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 3 Compulsions, Neutralization, and Control",
+        "CHAPTER 7 Assessment and Case Formulation",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "type": "TreatmentProtocol",
+      "description": "A structured treatment protocol or intervention approach.",
+      "properties": [
+        {
+          "name": "protocol_name",
+          "description": "Name of the protocol (e.g., ERP, CBT, DIRT, ACT, mindfulness)"
+        },
+        {
+          "name": "components",
+          "description": "Key components or steps of the protocol"
+        },
+        {
+          "name": "target_symptoms",
+          "description": "Symptoms or subtypes targeted"
+        },
+        {
+          "name": "cultural_considerations",
+          "description": "Cultural or religious considerations in protocol adaptation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 4 Exposure and Response Prevention - THEORY AND PRACTICE",
+        "CHAPTER 5 The Cognitive-Behavioral Model - THEORY AND RESEARCH",
+        "CHAPTER 8 Goals, Education, and Cognitive Interventions",
+        "CHAPTER 9 Empirical Hypothesis-Testing Experiments",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "type": "CaseFormulation",
+      "description": "A case-specific conceptualization integrating symptoms, cognitive constructs, and treatment planning.",
+      "properties": [
+        {
+          "name": "primary_obsessions",
+          "description": "Primary obsessions identified in the case"
+        },
+        {
+          "name": "faulty_appraisals",
+          "description": "Key maladaptive beliefs or appraisals"
+        },
+        {
+          "name": "neutralization_strategies",
+          "description": "Compulsions or strategies used to manage obsessions"
+        },
+        {
+          "name": "treatment_plan",
+          "description": "Planned interventions and rationale"
+        },
+        {
+          "name": "cultural_context",
+          "description": "Cultural or religious context relevant to the case"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 7 Assessment and Case Formulation",
+        "CHAPTER 8 Goals, Education, and Cognitive Interventions",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "type": "TherapeuticRelationship",
+      "description": "The quality and features of the relationship between therapist and client.",
+      "properties": [
+        {
+          "name": "alliance_quality",
+          "description": "Quality of the therapeutic alliance"
+        },
+        {
+          "name": "collaboration_level",
+          "description": "Degree of collaboration and shared decision-making"
+        },
+        {
+          "name": "ruptures",
+          "description": "Noted ruptures or threats to the relationship"
+        },
+        {
+          "name": "cultural_alignment",
+          "description": "Degree of cultural or religious alignment or sensitivity"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 6 The Therapeutic Relationship"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Person",
+      "relation": "HAS_DIAGNOSIS",
+      "target_type": "Diagnosis",
+      "description": "Indicates that a person has received a specific diagnosis.",
+      "properties": [
+        {
+          "name": "diagnosis_date",
+          "description": "Date of diagnosis"
+        },
+        {
+          "name": "diagnosed_by",
+          "description": "Clinician or tool used for diagnosis"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1 Diagnosis, Phenomenology, and Comorbidity",
+        "CHAPTER 7 Assessment and Case Formulation"
+      ]
+    },
+    {
+      "source_type": "Diagnosis",
+      "relation": "HAS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Links a diagnosis to its associated symptoms.",
+      "properties": [
+        {
+          "name": "symptom_onset",
+          "description": "Onset of the symptom relative to diagnosis"
+        },
+        {
+          "name": "symptom_severity",
+          "description": "Severity of the symptom in this diagnosis"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1 Diagnosis, Phenomenology, and Comorbidity",
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "source_type": "Symptom",
+      "relation": "IS_UNDERPINNED_BY",
+      "target_type": "CognitiveConstruct",
+      "description": "Indicates that a symptom is underpinned or maintained by a specific cognitive construct or belief.",
+      "properties": [
+        {
+          "name": "evidence_level",
+          "description": "Strength of evidence for this link in the case"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 3 Compulsions, Neutralization, and Control",
+        "CHAPTER 5 The Cognitive-Behavioral Model - THEORY AND RESEARCH",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a person experiences a specific symptom.",
+      "properties": [
+        {
+          "name": "first_reported",
+          "description": "Date or context of first report"
+        },
+        {
+          "name": "current_status",
+          "description": "Current status (active, remitted, etc.)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 1 Diagnosis, Phenomenology, and Comorbidity",
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 3 Compulsions, Neutralization, and Control"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_COGNITIVE_CONSTRUCT",
+      "target_type": "CognitiveConstruct",
+      "description": "Indicates that a person exhibits a particular cognitive belief or process.",
+      "properties": [
+        {
+          "name": "assessment_tool",
+          "description": "Tool or method used to assess the construct"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 2 Obsessions, Intrusions, and Their Correlates",
+        "CHAPTER 5 The Cognitive-Behavioral Model - THEORY AND RESEARCH",
+        "CHAPTER 7 Assessment and Case Formulation"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "ASSESSED_BY",
+      "target_type": "AssessmentTool",
+      "description": "Indicates that a person was assessed using a specific tool.",
+      "properties": [
+        {
+          "name": "assessment_date",
+          "description": "Date of assessment"
+        },
+        {
+          "name": "assessment_result",
+          "description": "Summary or score from the assessment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 7 Assessment and Case Formulation",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "source_type": "Diagnosis",
+      "relation": "ASSESSED_BY",
+      "target_type": "AssessmentTool",
+      "description": "Indicates that a diagnosis was established or supported using a specific assessment tool.",
+      "properties": [
+        {
+          "name": "assessment_date",
+          "description": "Date of assessment"
+        },
+        {
+          "name": "assessment_result",
+          "description": "Summary or score from the assessment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 7 Assessment and Case Formulation"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_TREATMENT_PROTOCOL",
+      "target_type": "TreatmentProtocol",
+      "description": "Indicates that a person is receiving or has received a specific treatment protocol.",
+      "properties": [
+        {
+          "name": "start_date",
+          "description": "Start date of the treatment"
+        },
+        {
+          "name": "end_date",
+          "description": "End date of the treatment"
+        },
+        {
+          "name": "treatment_outcome",
+          "description": "Outcome or response to the treatment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 4 Exposure and Response Prevention - THEORY AND PRACTICE",
+        "CHAPTER 8 Goals, Education, and Cognitive Interventions",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "source_type": "TreatmentProtocol",
+      "relation": "TARGETS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a treatment protocol targets a specific symptom or symptom subtype.",
+      "properties": [
+        {
+          "name": "treatment_rationale",
+          "description": "Rationale for targeting this symptom"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of empirical support"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 4 Exposure and Response Prevention - THEORY AND PRACTICE",
+        "CHAPTER 8 Goals, Education, and Cognitive Interventions",
+        "CHAPTER 10 Contamination OCD",
+        "CHAPTER 11 Doubt, Checking, and Repeating",
+        "CHAPTER 12 Harm, Sex, and Religious Obsessions",
+        "CHAPTER 13 Symmetry, Ordering, and Arranging"
+      ]
+    },
+    {
+      "source_type": "CaseFormulation",
+      "relation": "INFORMS_TREATMENT",
+      "target_type": "TreatmentProtocol",
+      "description": "Indicates that a case formulation informs or guides the selection of a treatment protocol.",
+      "properties": [
+        {
+          "name": "formulation_date",
+          "description": "Date of formulation"
+        },
+        {
+          "name": "treatment_rationale",
+          "description": "Rationale for treatment selection"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 7 Assessment and Case Formulation",
+        "CHAPTER 8 Goals, Education, and Cognitive Interventions"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_THERAPEUTIC_RELATIONSHIP",
+      "target_type": "TherapeuticRelationship",
+      "description": "Indicates that a person is involved in a therapeutic relationship (as client or therapist).",
+      "properties": [
+        {
+          "name": "relationship_start",
+          "description": "Start date of the therapeutic relationship"
+        },
+        {
+          "name": "relationship_status",
+          "description": "Current status (active, terminated, ruptured, etc.)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "CHAPTER 6 The Therapeutic Relationship"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 8,
+    "edges": 11,
+    "source_books": 0
+  }
+}

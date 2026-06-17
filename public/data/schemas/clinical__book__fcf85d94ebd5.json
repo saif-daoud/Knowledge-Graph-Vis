@@ -1,0 +1,494 @@
+{
+  "id": "clinical__book__fcf85d94ebd5",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Applications of the Unified Protocol for Transdiagnostic",
+  "kind": "book",
+  "book": "Applications of the Unified Protocol for Transdiagnostic",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Person",
+      "description": "A human individual involved in clinical mental health, including patients, therapists, contributors, and editors.",
+      "properties": [
+        {
+          "name": "full_name",
+          "description": "The person's full name"
+        },
+        {
+          "name": "role",
+          "description": "Role in the clinical context (e.g., patient, therapist, contributor, editor)"
+        },
+        {
+          "name": "credentials",
+          "description": "Professional degrees or certifications"
+        },
+        {
+          "name": "affiliation",
+          "description": "Institutional or organizational affiliation"
+        },
+        {
+          "name": "cultural_identity",
+          "description": "Cultural, ethnic, or religious identity relevant to treatment"
+        },
+        {
+          "name": "demographics",
+          "description": "Demographic information such as age, gender, etc."
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "About The Editors",
+        "Contributors",
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "16 CrossCultural Applications of the Unified Protocol",
+        "All clinical case chapters (3–14)"
+      ]
+    },
+    {
+      "type": "EmotionalDisorder",
+      "description": "A mental health disorder characterized by emotional dysregulation, including anxiety, mood, and related disorders.",
+      "properties": [
+        {
+          "name": "disorder_name",
+          "description": "Name of the disorder (e.g., Major Depressive Disorder, PTSD)"
+        },
+        {
+          "name": "dsm_code",
+          "description": "DSM-5 or ICD code, if applicable"
+        },
+        {
+          "name": "description",
+          "description": "Brief description of the disorder"
+        },
+        {
+          "name": "core_features",
+          "description": "Key symptoms or features"
+        },
+        {
+          "name": "comorbidities",
+          "description": "Common comorbid disorders"
+        },
+        {
+          "name": "cultural_variants",
+          "description": "Cultural or regional variants of the disorder"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 The Unified Protocol for Transdiagnostic Treatment of Emotional Disorders",
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)",
+        "16 CrossCultural Applications of the Unified Protocol",
+        "Index"
+      ]
+    },
+    {
+      "type": "UnifiedProtocolModule",
+      "description": "A core or optional module of the Unified Protocol for Transdiagnostic Treatment, representing a treatment component.",
+      "properties": [
+        {
+          "name": "module_name",
+          "description": "Name of the module (e.g., Mindful Emotion Awareness)"
+        },
+        {
+          "name": "module_type",
+          "description": "Core or optional module"
+        },
+        {
+          "name": "description",
+          "description": "Description of the module's focus and techniques"
+        },
+        {
+          "name": "targeted_processes",
+          "description": "Transdiagnostic processes or symptoms targeted"
+        },
+        {
+          "name": "recommended_order",
+          "description": "Suggested order in treatment sequence"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 The Unified Protocol for Transdiagnostic Treatment of Emotional Disorders",
+        "Chapters 3–14 (disorder-specific applications)",
+        "15 Group Treatment Applications of the Unified Protocol",
+        "17 The Unified Protocol",
+        "Index"
+      ]
+    },
+    {
+      "type": "AssessmentTool",
+      "description": "A standardized instrument or scale used to assess symptoms, severity, or treatment progress.",
+      "properties": [
+        {
+          "name": "tool_name",
+          "description": "Name of the assessment tool (e.g., OASIS, ODSIS, Y-BOCS-II)"
+        },
+        {
+          "name": "measured_constructs",
+          "description": "Symptoms or domains measured"
+        },
+        {
+          "name": "format",
+          "description": "Format (e.g., self-report, clinician-administered)"
+        },
+        {
+          "name": "cultural_adaptations",
+          "description": "Available cultural or language adaptations"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)",
+        "16 CrossCultural Applications of the Unified Protocol",
+        "Index"
+      ]
+    },
+    {
+      "type": "TreatmentPlan",
+      "description": "A structured plan outlining the course of treatment for a patient, including selected modules, goals, and adaptations.",
+      "properties": [
+        {
+          "name": "plan_id",
+          "description": "Unique identifier for the treatment plan"
+        },
+        {
+          "name": "goals",
+          "description": "Treatment goals and objectives"
+        },
+        {
+          "name": "selected_modules",
+          "description": "List of Unified Protocol modules included"
+        },
+        {
+          "name": "cultural_considerations",
+          "description": "Cultural or religious adaptations (e.g., Islamic alignment)"
+        },
+        {
+          "name": "format",
+          "description": "Delivery format (e.g., individual, group, technology-assisted)"
+        },
+        {
+          "name": "duration",
+          "description": "Planned duration or number of sessions"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)",
+        "15 Group Treatment Applications of the Unified Protocol",
+        "16 CrossCultural Applications of the Unified Protocol",
+        "17 The Unified Protocol"
+      ]
+    },
+    {
+      "type": "Symptom",
+      "description": "A specific psychological, emotional, or behavioral symptom relevant to emotional disorders.",
+      "properties": [
+        {
+          "name": "symptom_name",
+          "description": "Name of the symptom (e.g., avoidance, rumination, hyperarousal)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the symptom"
+        },
+        {
+          "name": "severity",
+          "description": "Severity rating (if available)"
+        },
+        {
+          "name": "duration",
+          "description": "Duration or frequency"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 The Unified Protocol for Transdiagnostic Treatment of Emotional Disorders",
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)",
+        "Index"
+      ]
+    },
+    {
+      "type": "CulturalContext",
+      "description": "A set of cultural, religious, or social factors relevant to case formulation and treatment adaptation.",
+      "properties": [
+        {
+          "name": "context_name",
+          "description": "Name or description of the cultural context (e.g., Japanese, Islamic, Colombian)"
+        },
+        {
+          "name": "relevant_factors",
+          "description": "Beliefs, values, or practices impacting mental health or treatment"
+        },
+        {
+          "name": "assessment_tools",
+          "description": "Tools used to assess cultural context (e.g., CFI, MEIM)"
+        },
+        {
+          "name": "adaptation_type",
+          "description": "Surface or deep structure adaptation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "16 CrossCultural Applications of the Unified Protocol",
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Index"
+      ]
+    },
+    {
+      "type": "EmotionRegulationProcess",
+      "description": "A psychological process or mechanism involved in the regulation of emotions, such as avoidance, cognitive reappraisal, or mindfulness.",
+      "properties": [
+        {
+          "name": "process_name",
+          "description": "Name of the process (e.g., experiential avoidance, cognitive flexibility)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the process"
+        },
+        {
+          "name": "maladaptive_or_adaptive",
+          "description": "Whether the process is considered maladaptive, adaptive, or context-dependent"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 The Unified Protocol for Transdiagnostic Treatment of Emotional Disorders",
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)",
+        "Index"
+      ]
+    },
+    {
+      "type": "CaseFormulation",
+      "description": "A structured clinical conceptualization of a patient's presenting problems, vulnerabilities, and maintaining factors.",
+      "properties": [
+        {
+          "name": "formulation_id",
+          "description": "Unique identifier for the case formulation"
+        },
+        {
+          "name": "presenting_problems",
+          "description": "List of presenting problems or symptoms"
+        },
+        {
+          "name": "vulnerabilities",
+          "description": "Temperamental, cognitive, or cultural vulnerabilities"
+        },
+        {
+          "name": "maintaining_factors",
+          "description": "Processes or behaviors maintaining the disorder"
+        },
+        {
+          "name": "cultural_factors",
+          "description": "Cultural or religious influences on formulation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)",
+        "16 CrossCultural Applications of the Unified Protocol"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Person",
+      "relation": "HAS_DIAGNOSIS",
+      "target_type": "EmotionalDisorder",
+      "description": "Indicates that a person has been diagnosed with a specific emotional disorder.",
+      "properties": [
+        {
+          "name": "diagnosis_date",
+          "description": "Date of diagnosis"
+        },
+        {
+          "name": "diagnostic_criteria",
+          "description": "Criteria or assessment used"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_TREATMENT_PLAN",
+      "target_type": "TreatmentPlan",
+      "description": "Links a person (typically a patient) to their individualized treatment plan.",
+      "properties": [
+        {
+          "name": "start_date",
+          "description": "Date treatment plan began"
+        },
+        {
+          "name": "end_date",
+          "description": "Date treatment plan ended or is expected to end"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)"
+      ]
+    },
+    {
+      "source_type": "TreatmentPlan",
+      "relation": "INCLUDES_MODULE",
+      "target_type": "UnifiedProtocolModule",
+      "description": "Indicates that a treatment plan includes a specific Unified Protocol module.",
+      "properties": [
+        {
+          "name": "module_sequence",
+          "description": "Order of the module in the treatment plan"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 The Unified Protocol for Transdiagnostic Treatment of Emotional Disorders",
+        "Chapters 3–14 (disorder-specific applications)",
+        "17 The Unified Protocol"
+      ]
+    },
+    {
+      "source_type": "TreatmentPlan",
+      "relation": "TARGETS_DISORDER",
+      "target_type": "EmotionalDisorder",
+      "description": "Indicates that a treatment plan is designed to address a specific emotional disorder.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapters 3–14 (disorder-specific applications)"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "ASSESSED_BY",
+      "target_type": "AssessmentTool",
+      "description": "Indicates that a person has been assessed using a specific tool or scale.",
+      "properties": [
+        {
+          "name": "assessment_date",
+          "description": "Date of assessment"
+        },
+        {
+          "name": "score",
+          "description": "Score or result of the assessment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)"
+      ]
+    },
+    {
+      "source_type": "EmotionalDisorder",
+      "relation": "HAS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a disorder is characterized by a specific symptom.",
+      "properties": [
+        {
+          "name": "prevalence",
+          "description": "Prevalence or frequency of the symptom in the disorder"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 The Unified Protocol for Transdiagnostic Treatment of Emotional Disorders",
+        "Chapters 3–14 (disorder-specific applications)",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "UnifiedProtocolModule",
+      "relation": "TARGETS_PROCESS",
+      "target_type": "EmotionRegulationProcess",
+      "description": "Indicates that a UP module is designed to target a specific emotion regulation process.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "1 The Unified Protocol for Transdiagnostic Treatment of Emotional Disorders",
+        "Chapters 3–14 (disorder-specific applications)",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "CaseFormulation",
+      "relation": "FORMULATED_FOR",
+      "target_type": "Person",
+      "description": "Indicates that a case formulation is created for a specific person (patient).",
+      "properties": [
+        {
+          "name": "formulation_date",
+          "description": "Date the formulation was created"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)"
+      ]
+    },
+    {
+      "source_type": "CaseFormulation",
+      "relation": "IDENTIFIES_VULNERABILITY",
+      "target_type": "EmotionRegulationProcess",
+      "description": "Indicates that a case formulation identifies a specific emotion regulation process as a vulnerability or maintaining factor.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "2 Transdiagnostic Assessment and Case Formulation",
+        "Chapters 3–14 (disorder-specific applications)"
+      ]
+    },
+    {
+      "source_type": "TreatmentPlan",
+      "relation": "ADAPTED_FOR_CULTURE",
+      "target_type": "CulturalContext",
+      "description": "Indicates that a treatment plan has been adapted for a specific cultural or religious context.",
+      "properties": [
+        {
+          "name": "adaptation_type",
+          "description": "Type of adaptation (surface or deep structure)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "16 CrossCultural Applications of the Unified Protocol"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_CULTURAL_CONTEXT",
+      "target_type": "CulturalContext",
+      "description": "Indicates that a person identifies with or is influenced by a specific cultural context.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "16 CrossCultural Applications of the Unified Protocol",
+        "2 Transdiagnostic Assessment and Case Formulation"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 9,
+    "edges": 11,
+    "source_books": 0
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "id": "clinical__book__d9fdc596f1f7",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "The Clinician’s Guide to CBT Using Mind Over Mood, Second",
+  "kind": "book",
+  "book": "The Clinician’s Guide to CBT Using Mind Over Mood, Second",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Person",
+      "description": "A human individual involved in therapy, including clients, therapists, authors, and mentors.",
+      "properties": [
+        {
+          "name": "full_name",
+          "description": "The person's full name"
+        },
+        {
+          "name": "role",
+          "description": "Role in therapy or book (e.g., client, therapist, author, mentor)"
+        },
+        {
+          "name": "credentials",
+          "description": "Professional degrees or certifications"
+        },
+        {
+          "name": "affiliation",
+          "description": "Institutional or organizational affiliation"
+        },
+        {
+          "name": "website",
+          "description": "Professional or personal website"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "About the Authors",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    },
+    {
+      "type": "Mood",
+      "description": "A specific emotional state relevant to clinical mental health (e.g., depression, anxiety, anger, guilt, shame).",
+      "properties": [
+        {
+          "name": "mood_type",
+          "description": "Type of mood (e.g., depression, anxiety)"
+        },
+        {
+          "name": "intensity",
+          "description": "Severity or rating of the mood"
+        },
+        {
+          "name": "duration",
+          "description": "How long the mood has persisted"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Preface",
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Appendix A Specific Mood Reading Guides from MOM2",
+        "Index"
+      ]
+    },
+    {
+      "type": "CBTConcept",
+      "description": "A core concept or construct in cognitive behavioral therapy (e.g., automatic thought, core belief, underlying assumption, five-part model).",
+      "properties": [
+        {
+          "name": "concept_name",
+          "description": "Name of the CBT concept"
+        },
+        {
+          "name": "description",
+          "description": "Definition or explanation of the concept"
+        },
+        {
+          "name": "level",
+          "description": "Cognitive level (e.g., automatic thought, assumption, core belief, schema)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Appendix B A Personal History of the 7-Column Thought Record",
+        "Index"
+      ]
+    },
+    {
+      "type": "Worksheet",
+      "description": "A structured tool or form used in CBT (e.g., Thought Record, Action Plan, Mood Inventory).",
+      "properties": [
+        {
+          "name": "worksheet_name",
+          "description": "Name of the worksheet"
+        },
+        {
+          "name": "purpose",
+          "description": "Intended use or therapeutic goal"
+        },
+        {
+          "name": "columns",
+          "description": "List of columns or sections in the worksheet"
+        },
+        {
+          "name": "version",
+          "description": "Version or edition of the worksheet"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Preface",
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Appendix B A Personal History of the 7-Column Thought Record",
+        "Index"
+      ]
+    },
+    {
+      "type": "TherapySession",
+      "description": "A discrete meeting or session between therapist and client(s), including individual, couple, or group formats.",
+      "properties": [
+        {
+          "name": "session_type",
+          "description": "Format of the session (individual, couple, group)"
+        },
+        {
+          "name": "date",
+          "description": "Date of the session"
+        },
+        {
+          "name": "duration",
+          "description": "Length of the session"
+        },
+        {
+          "name": "agenda",
+          "description": "Planned topics or activities"
+        },
+        {
+          "name": "outcome",
+          "description": "Summary of session results"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Preface",
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    },
+    {
+      "type": "TreatmentProtocol",
+      "description": "A structured set of therapeutic steps, guidelines, or modules for addressing specific clinical presentations.",
+      "properties": [
+        {
+          "name": "protocol_name",
+          "description": "Name of the protocol"
+        },
+        {
+          "name": "target_condition",
+          "description": "Clinical issue or diagnosis addressed"
+        },
+        {
+          "name": "steps",
+          "description": "Ordered list of steps or modules"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of supporting research"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Preface",
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Appendix A Specific Mood Reading Guides from MOM2",
+        "Index"
+      ]
+    },
+    {
+      "type": "Skill",
+      "description": "A specific therapeutic or coping skill taught or practiced in CBT (e.g., cognitive restructuring, behavioral activation, guided discovery).",
+      "properties": [
+        {
+          "name": "skill_name",
+          "description": "Name of the skill"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the skill"
+        },
+        {
+          "name": "application_context",
+          "description": "When or how the skill is used"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Appendix A Specific Mood Reading Guides from MOM2",
+        "Index"
+      ]
+    },
+    {
+      "type": "Measure",
+      "description": "A quantitative or qualitative assessment tool used to track progress, mood, or outcomes (e.g., mood inventory, activity record, Working Alliance Inventory).",
+      "properties": [
+        {
+          "name": "measure_name",
+          "description": "Name of the measure"
+        },
+        {
+          "name": "target",
+          "description": "What the measure assesses"
+        },
+        {
+          "name": "format",
+          "description": "Type of measure (e.g., self-report, clinician-rated)"
+        },
+        {
+          "name": "scoring_method",
+          "description": "How the measure is scored"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "References",
+        "Index"
+      ]
+    },
+    {
+      "type": "ClinicalIssue",
+      "description": "A mental health problem, diagnosis, or presenting issue (e.g., depression, anxiety, PTSD, OCD, substance misuse).",
+      "properties": [
+        {
+          "name": "issue_name",
+          "description": "Name of the clinical issue"
+        },
+        {
+          "name": "description",
+          "description": "Definition or explanation"
+        },
+        {
+          "name": "diagnostic_criteria",
+          "description": "Criteria or features of the issue"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Appendix A Specific Mood Reading Guides from MOM2",
+        "References",
+        "Index"
+      ]
+    },
+    {
+      "type": "CulturalFactor",
+      "description": "A cultural, religious, or contextual factor relevant to therapy (e.g., intersectionality, Islamic values, cultural competence).",
+      "properties": [
+        {
+          "name": "factor_name",
+          "description": "Name of the cultural or contextual factor"
+        },
+        {
+          "name": "description",
+          "description": "Explanation or relevance to therapy"
+        },
+        {
+          "name": "recommendations",
+          "description": "Guidance for clinical adaptation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Person",
+      "relation": "PARTICIPATES_IN",
+      "target_type": "TherapySession",
+      "description": "Indicates that a person (client or therapist) is present in a therapy session.",
+      "properties": [
+        {
+          "name": "role",
+          "description": "Role in the session (e.g., client, therapist, co-therapist)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapySession",
+      "relation": "ADDRESSES_MOOD",
+      "target_type": "Mood",
+      "description": "Indicates that a therapy session targets or discusses a specific mood.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Section I - Mind Over Mood Unpacked",
+        "Appendix A Specific Mood Reading Guides from MOM2",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapySession",
+      "relation": "USES_WORKSHEET",
+      "target_type": "Worksheet",
+      "description": "Indicates that a worksheet is used during a therapy session.",
+      "properties": [
+        {
+          "name": "assignment_status",
+          "description": "Whether the worksheet was assigned, completed, or reviewed"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Preface",
+        "Section I - Mind Over Mood Unpacked",
+        "Appendix B A Personal History of the 7-Column Thought Record",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapySession",
+      "relation": "TEACHES_SKILL",
+      "target_type": "Skill",
+      "description": "Indicates that a specific skill is taught or practiced in a session.",
+      "properties": [
+        {
+          "name": "skill_practice_type",
+          "description": "Type of practice (e.g., in-session, homework, role-play)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TherapySession",
+      "relation": "FOLLOWS_PROTOCOL",
+      "target_type": "TreatmentProtocol",
+      "description": "Indicates that a session follows a specific treatment protocol or module.",
+      "properties": [
+        {
+          "name": "protocol_step",
+          "description": "Step or module addressed in the session"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Preface",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TreatmentProtocol",
+      "relation": "TARGETS_ISSUE",
+      "target_type": "ClinicalIssue",
+      "description": "Indicates that a treatment protocol is designed to address a specific clinical issue.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Appendix A Specific Mood Reading Guides from MOM2",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "Worksheet",
+      "relation": "APPLIES_TO_CONCEPT",
+      "target_type": "CBTConcept",
+      "description": "Indicates that a worksheet is designed to operationalize or apply a specific CBT concept.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Contents",
+        "Section I - Mind Over Mood Unpacked",
+        "Appendix B A Personal History of the 7-Column Thought Record",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "Skill",
+      "relation": "SUPPORTS_CONCEPT",
+      "target_type": "CBTConcept",
+      "description": "Indicates that a skill is used to teach, reinforce, or operationalize a CBT concept.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "Measure",
+      "relation": "TRACKS_MOOD",
+      "target_type": "Mood",
+      "description": "Indicates that a measure is used to assess or track a specific mood.",
+      "properties": [
+        {
+          "name": "timepoint",
+          "description": "When the measure was administered (e.g., baseline, follow-up)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Section I - Mind Over Mood Unpacked",
+        "Section II Mind Over Mood in Context",
+        "References",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_CULTURAL_FACTOR",
+      "target_type": "CulturalFactor",
+      "description": "Indicates that a person has a relevant cultural, religious, or contextual factor influencing therapy.",
+      "properties": [
+        {
+          "name": "relevance",
+          "description": "How the factor influences therapy or treatment planning"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Section II Mind Over Mood in Context",
+        "Index"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 10,
+    "edges": 10,
+    "source_books": 0
+  }
+}

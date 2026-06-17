@@ -1,0 +1,665 @@
+{
+  "id": "clinical__book__d68325baaa7f",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Cognitive Processing Therapy for PTSD_ A Comprehensive",
+  "kind": "book",
+  "book": "Cognitive Processing Therapy for PTSD_ A Comprehensive",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Client",
+      "description": "An individual receiving mental health treatment, including demographic, clinical, and trauma-related information.",
+      "properties": [
+        {
+          "name": "client_id",
+          "description": "Unique identifier for the client"
+        },
+        {
+          "name": "age",
+          "description": "Client's age"
+        },
+        {
+          "name": "gender",
+          "description": "Client's gender"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Client's cultural or religious background"
+        },
+        {
+          "name": "education_level",
+          "description": "Client's education level"
+        },
+        {
+          "name": "index_trauma",
+          "description": "Primary traumatic event causing PTSD symptoms"
+        },
+        {
+          "name": "comorbid_conditions",
+          "description": "List of comorbid mental or physical health conditions"
+        },
+        {
+          "name": "risk_factors",
+          "description": "Risk factors such as suicidality, substance use, etc."
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    },
+    {
+      "type": "Therapist",
+      "description": "A mental health professional delivering treatment, including qualifications and experience.",
+      "properties": [
+        {
+          "name": "therapist_id",
+          "description": "Unique identifier for the therapist"
+        },
+        {
+          "name": "name",
+          "description": "Therapist's name"
+        },
+        {
+          "name": "credentials",
+          "description": "Professional qualifications and certifications"
+        },
+        {
+          "name": "experience_years",
+          "description": "Years of clinical experience"
+        },
+        {
+          "name": "cultural_competence",
+          "description": "Experience with cultural or religious adaptations"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "About the Authors",
+        "Part II. Setting the Stage Clinically",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    },
+    {
+      "type": "Diagnosis",
+      "description": "A clinical diagnosis assigned to a client, including PTSD and comorbidities.",
+      "properties": [
+        {
+          "name": "diagnosis_id",
+          "description": "Unique identifier for the diagnosis"
+        },
+        {
+          "name": "diagnosis_type",
+          "description": "Type of diagnosis (e.g., PTSD, depression, substance use disorder)"
+        },
+        {
+          "name": "diagnostic_criteria",
+          "description": "Criteria used (e.g., DSM-5, ICD-10)"
+        },
+        {
+          "name": "date_diagnosed",
+          "description": "Date of diagnosis"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part III. CPT Manual",
+        "Index"
+      ]
+    },
+    {
+      "type": "AssessmentMeasure",
+      "description": "A standardized tool or questionnaire used to assess symptoms, functioning, or risk.",
+      "properties": [
+        {
+          "name": "measure_id",
+          "description": "Unique identifier for the assessment measure"
+        },
+        {
+          "name": "name",
+          "description": "Name of the assessment (e.g., PCL-5, PHQ-9, CAPS)"
+        },
+        {
+          "name": "target_symptoms",
+          "description": "Symptoms or domains assessed"
+        },
+        {
+          "name": "administration_format",
+          "description": "Format (e.g., self-report, clinician-administered)"
+        },
+        {
+          "name": "scoring_method",
+          "description": "How the measure is scored"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "References",
+        "Index"
+      ]
+    },
+    {
+      "type": "Symptom",
+      "description": "A specific psychological or physical symptom experienced by a client.",
+      "properties": [
+        {
+          "name": "symptom_id",
+          "description": "Unique identifier for the symptom"
+        },
+        {
+          "name": "name",
+          "description": "Symptom name (e.g., intrusive memories, avoidance, hyperarousal)"
+        },
+        {
+          "name": "symptom_cluster",
+          "description": "Cluster/category (e.g., cognition, mood, arousal)"
+        },
+        {
+          "name": "severity",
+          "description": "Severity rating"
+        },
+        {
+          "name": "onset_date",
+          "description": "Date of symptom onset"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part II. Setting the Stage Clinically",
+        "Part III. CPT Manual",
+        "Index"
+      ]
+    },
+    {
+      "type": "TreatmentProtocol",
+      "description": "A structured set of procedures or manualized therapy (e.g., CPT, CPT+A, group CPT).",
+      "properties": [
+        {
+          "name": "protocol_id",
+          "description": "Unique identifier for the protocol"
+        },
+        {
+          "name": "name",
+          "description": "Name of the protocol (e.g., CPT, CPT+A, CPT-SA)"
+        },
+        {
+          "name": "delivery_format",
+          "description": "Format (e.g., individual, group, telehealth)"
+        },
+        {
+          "name": "session_count",
+          "description": "Number of sessions"
+        },
+        {
+          "name": "adaptations",
+          "description": "Adaptations for special populations or cultural contexts"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Contents",
+        "Index"
+      ]
+    },
+    {
+      "type": "Session",
+      "description": "A single therapy session within a treatment protocol, including session content and assignments.",
+      "properties": [
+        {
+          "name": "session_id",
+          "description": "Unique identifier for the session"
+        },
+        {
+          "name": "session_number",
+          "description": "Order of the session in the protocol"
+        },
+        {
+          "name": "date",
+          "description": "Date of the session"
+        },
+        {
+          "name": "topics_covered",
+          "description": "Key topics or interventions addressed"
+        },
+        {
+          "name": "assignments_given",
+          "description": "Practice assignments or worksheets assigned"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III. CPT Manual",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    },
+    {
+      "type": "PracticeAssignment",
+      "description": "A homework or in-session assignment given to clients (e.g., Impact Statement, ABC Worksheet).",
+      "properties": [
+        {
+          "name": "assignment_id",
+          "description": "Unique identifier for the assignment"
+        },
+        {
+          "name": "name",
+          "description": "Assignment name (e.g., Impact Statement, Challenging Beliefs Worksheet)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the assignment"
+        },
+        {
+          "name": "target_cognitive_theme",
+          "description": "Cognitive theme addressed (e.g., safety, trust, esteem)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III. CPT Manual",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    },
+    {
+      "type": "StuckPoint",
+      "description": "A maladaptive trauma-related belief or cognitive distortion identified in therapy.",
+      "properties": [
+        {
+          "name": "stuck_point_id",
+          "description": "Unique identifier for the stuck point"
+        },
+        {
+          "name": "belief_text",
+          "description": "Text of the maladaptive belief"
+        },
+        {
+          "name": "cognitive_theme",
+          "description": "Theme (e.g., safety, trust, power/control, esteem, intimacy)"
+        },
+        {
+          "name": "type",
+          "description": "Assimilated or overaccommodated"
+        },
+        {
+          "name": "identified_date",
+          "description": "Date identified"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part III. CPT Manual",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    },
+    {
+      "type": "CognitiveTheme",
+      "description": "A core belief domain affected by trauma (e.g., safety, trust, power/control, esteem, intimacy).",
+      "properties": [
+        {
+          "name": "theme_id",
+          "description": "Unique identifier for the cognitive theme"
+        },
+        {
+          "name": "name",
+          "description": "Theme name"
+        },
+        {
+          "name": "description",
+          "description": "Description of the theme"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part III. CPT Manual",
+        "Index"
+      ]
+    },
+    {
+      "type": "TraumaEvent",
+      "description": "A traumatic event experienced by a client, relevant to PTSD diagnosis and treatment.",
+      "properties": [
+        {
+          "name": "event_id",
+          "description": "Unique identifier for the trauma event"
+        },
+        {
+          "name": "event_type",
+          "description": "Type of trauma (e.g., combat, sexual assault, disaster)"
+        },
+        {
+          "name": "date",
+          "description": "Date of the event"
+        },
+        {
+          "name": "description",
+          "description": "Narrative description of the event"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    },
+    {
+      "type": "TreatmentOutcome",
+      "description": "The result or effect of a treatment protocol, including symptom change and functional improvement.",
+      "properties": [
+        {
+          "name": "outcome_id",
+          "description": "Unique identifier for the outcome"
+        },
+        {
+          "name": "symptom_change",
+          "description": "Change in symptom severity"
+        },
+        {
+          "name": "functioning_change",
+          "description": "Change in psychosocial or occupational functioning"
+        },
+        {
+          "name": "assessment_date",
+          "description": "Date outcome was assessed"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "References",
+        "Index"
+      ]
+    },
+    {
+      "type": "CulturalAdaptation",
+      "description": "An adaptation of treatment or assessment for cultural, religious, or population-specific needs.",
+      "properties": [
+        {
+          "name": "adaptation_id",
+          "description": "Unique identifier for the adaptation"
+        },
+        {
+          "name": "description",
+          "description": "Description of the adaptation"
+        },
+        {
+          "name": "target_population",
+          "description": "Population or culture for which adaptation is made"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Client",
+      "relation": "HAS_DIAGNOSIS",
+      "target_type": "Diagnosis",
+      "description": "Indicates that a client has been assigned a specific diagnosis.",
+      "properties": [
+        {
+          "name": "diagnosed_by",
+          "description": "Therapist or clinician who made the diagnosis"
+        },
+        {
+          "name": "date",
+          "description": "Date of diagnosis"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "EXPERIENCED_TRAUMA",
+      "target_type": "TraumaEvent",
+      "description": "Links a client to a traumatic event they have experienced.",
+      "properties": [
+        {
+          "name": "role",
+          "description": "Role in the event (e.g., victim, witness)"
+        },
+        {
+          "name": "age_at_event",
+          "description": "Client's age at the time of the event"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "HAS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a client is experiencing a specific symptom.",
+      "properties": [
+        {
+          "name": "onset_date",
+          "description": "Date symptom began"
+        },
+        {
+          "name": "severity",
+          "description": "Severity of the symptom"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part III. CPT Manual"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "RECEIVES_TREATMENT",
+      "target_type": "TreatmentProtocol",
+      "description": "Indicates that a client is receiving or has received a specific treatment protocol.",
+      "properties": [
+        {
+          "name": "start_date",
+          "description": "Date treatment began"
+        },
+        {
+          "name": "end_date",
+          "description": "Date treatment ended"
+        },
+        {
+          "name": "status",
+          "description": "Current status (e.g., ongoing, completed, dropped out)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "Part IV. Alternatives in Delivery and Special Considerations",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "Therapist",
+      "relation": "DELIVERS_TREATMENT",
+      "target_type": "TreatmentProtocol",
+      "description": "Indicates that a therapist delivers a specific treatment protocol.",
+      "properties": [
+        {
+          "name": "setting",
+          "description": "Setting of delivery (e.g., VA, private practice, telehealth)"
+        },
+        {
+          "name": "experience_level",
+          "description": "Therapist's experience with the protocol"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "About the Authors",
+        "Part II. Setting the Stage Clinically",
+        "Part IV. Alternatives in Delivery and Special Considerations"
+      ]
+    },
+    {
+      "source_type": "Session",
+      "relation": "PART_OF_PROTOCOL",
+      "target_type": "TreatmentProtocol",
+      "description": "Indicates that a session is part of a specific treatment protocol.",
+      "properties": [
+        {
+          "name": "session_number",
+          "description": "Order of the session in the protocol"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III. CPT Manual",
+        "Part IV. Alternatives in Delivery and Special Considerations"
+      ]
+    },
+    {
+      "source_type": "Session",
+      "relation": "ASSIGNS_PRACTICE",
+      "target_type": "PracticeAssignment",
+      "description": "Indicates that a session assigns a specific practice assignment to the client.",
+      "properties": [
+        {
+          "name": "due_date",
+          "description": "Date assignment is due"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III. CPT Manual",
+        "Part IV. Alternatives in Delivery and Special Considerations"
+      ]
+    },
+    {
+      "source_type": "PracticeAssignment",
+      "relation": "TARGETS_COGNITIVE_THEME",
+      "target_type": "CognitiveTheme",
+      "description": "Indicates that a practice assignment targets a specific cognitive theme.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III. CPT Manual",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "IDENTIFIES_STUCK_POINT",
+      "target_type": "StuckPoint",
+      "description": "Indicates that a client has identified a specific stuck point during therapy.",
+      "properties": [
+        {
+          "name": "session_id",
+          "description": "Session in which the stuck point was identified"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part III. CPT Manual",
+        "Part IV. Alternatives in Delivery and Special Considerations"
+      ]
+    },
+    {
+      "source_type": "StuckPoint",
+      "relation": "RELATES_TO_THEME",
+      "target_type": "CognitiveTheme",
+      "description": "Indicates that a stuck point is related to a specific cognitive theme.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part III. CPT Manual"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "UNDERGOES_ASSESSMENT",
+      "target_type": "AssessmentMeasure",
+      "description": "Indicates that a client has completed a specific assessment measure.",
+      "properties": [
+        {
+          "name": "date_administered",
+          "description": "Date the assessment was administered"
+        },
+        {
+          "name": "score",
+          "description": "Score or result of the assessment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part II. Setting the Stage Clinically",
+        "References",
+        "Index"
+      ]
+    },
+    {
+      "source_type": "TreatmentProtocol",
+      "relation": "HAS_ADAPTATION",
+      "target_type": "CulturalAdaptation",
+      "description": "Indicates that a treatment protocol has a specific cultural or population adaptation.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "Part IV. Alternatives in Delivery and Special Considerations"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "ACHIEVES_OUTCOME",
+      "target_type": "TreatmentOutcome",
+      "description": "Indicates that a client has achieved a specific treatment outcome.",
+      "properties": [
+        {
+          "name": "date",
+          "description": "Date outcome was achieved"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Part I. Background on Posttraumatic Stress Disorder and Cognitive Processing Therapy",
+        "References"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 13,
+    "edges": 13,
+    "source_books": 0
+  }
+}

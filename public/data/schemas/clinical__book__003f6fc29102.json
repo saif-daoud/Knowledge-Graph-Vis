@@ -1,0 +1,595 @@
+{
+  "id": "clinical__book__003f6fc29102",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Mastery of Your Anxiety and Panic_ Workbook",
+  "kind": "book",
+  "book": "Mastery of Your Anxiety and Panic_ Workbook",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Person",
+      "description": "An individual receiving or providing mental health support, including patients and helpers.",
+      "properties": [
+        {
+          "name": "role",
+          "description": "Role of the person (e.g., patient, helper, therapist, family_member)"
+        },
+        {
+          "name": "age",
+          "description": "Age of the person"
+        },
+        {
+          "name": "gender",
+          "description": "Gender of the person"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Cultural or religious background, including Islamic alignment if relevant"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 10 Involving Others"
+      ]
+    },
+    {
+      "type": "Symptom",
+      "description": "A physical or psychological symptom experienced during anxiety or panic.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the symptom (e.g., dizziness, heart rate increase)"
+        },
+        {
+          "name": "symptom_type",
+          "description": "Type of symptom (physical, psychological)"
+        },
+        {
+          "name": "intensity_scale",
+          "description": "Intensity of the symptom on a 0-10 scale"
+        },
+        {
+          "name": "duration",
+          "description": "Duration of the symptom"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 4 Panic Attacks Are Not Harmful",
+        "Chapter 6 Breathing Skills",
+        "Chapter 8 Facing Physical Symptoms"
+      ]
+    },
+    {
+      "type": "PanicAttack",
+      "description": "An episode of intense fear or discomfort with abrupt onset and specific symptoms.",
+      "properties": [
+        {
+          "name": "date_time",
+          "description": "Date and time of the panic attack"
+        },
+        {
+          "name": "expected",
+          "description": "Whether the attack was expected or unexpected"
+        },
+        {
+          "name": "maximum_fear_scale",
+          "description": "Maximum fear experienced (0-10 scale)"
+        },
+        {
+          "name": "context",
+          "description": "Context or situation in which the attack occurred"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 4 Panic Attacks Are Not Harmful",
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations"
+      ]
+    },
+    {
+      "type": "AgoraphobiaSituation",
+      "description": "A specific situation or environment that provokes anxiety or is avoided due to fear of panic.",
+      "properties": [
+        {
+          "name": "description",
+          "description": "Description of the situation"
+        },
+        {
+          "name": "anxiety_level",
+          "description": "Level of anxiety provoked (0-10 scale)"
+        },
+        {
+          "name": "distance_from_home",
+          "description": "Distance from home in the situation"
+        },
+        {
+          "name": "proximity_to_exit",
+          "description": "Proximity to exits"
+        },
+        {
+          "name": "time_of_day",
+          "description": "Time of day the situation occurs"
+        },
+        {
+          "name": "number_of_people",
+          "description": "Number of people present"
+        },
+        {
+          "name": "accompanied",
+          "description": "Whether the person is alone or accompanied"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5 Establishing Your Hierarchy of Agoraphobia Situations",
+        "Chapter 9 Facing Agoraphobia Situations"
+      ]
+    },
+    {
+      "type": "NegativeThought",
+      "description": "A negative or catastrophic thought related to anxiety, panic, or agoraphobia.",
+      "properties": [
+        {
+          "name": "content",
+          "description": "Content of the negative thought"
+        },
+        {
+          "name": "odds_estimate",
+          "description": "Estimated odds of the feared event (0-100 scale)"
+        },
+        {
+          "name": "thought_error_type",
+          "description": "Type of thinking error (e.g., catastrophizing, jumping to conclusions)"
+        },
+        {
+          "name": "evidence_for",
+          "description": "Evidence supporting the thought"
+        },
+        {
+          "name": "evidence_against",
+          "description": "Evidence against the thought"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 4 Panic Attacks Are Not Harmful",
+        "Chapter 7 Thinking Skills",
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations"
+      ]
+    },
+    {
+      "type": "CopingSkill",
+      "description": "A skill or technique used to manage anxiety, panic, or agoraphobia.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the coping skill (e.g., breathing, cognitive restructuring)"
+        },
+        {
+          "name": "skill_type",
+          "description": "Type of skill (e.g., breathing, thinking, exposure)"
+        },
+        {
+          "name": "instructions",
+          "description": "Instructions or steps for the skill"
+        },
+        {
+          "name": "practice_frequency",
+          "description": "Recommended frequency of practice"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 6 Breathing Skills",
+        "Chapter 7 Thinking Skills",
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations",
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    },
+    {
+      "type": "SafetyBehavior",
+      "description": "A behavior, object, or strategy used to prevent or reduce anxiety, often reinforcing avoidance.",
+      "properties": [
+        {
+          "name": "description",
+          "description": "Description of the safety behavior or object"
+        },
+        {
+          "name": "behavior_type",
+          "description": "Type (e.g., superstitious object, safety signal, distraction)"
+        },
+        {
+          "name": "effectiveness",
+          "description": "Perceived effectiveness by the person"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5 Establishing Your Hierarchy of Agoraphobia Situations",
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations"
+      ]
+    },
+    {
+      "type": "Medication",
+      "description": "A pharmacological treatment used for anxiety or panic.",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Name of the medication"
+        },
+        {
+          "name": "medication_class",
+          "description": "Class of medication (e.g., SSRI, SNRI, benzodiazepine, beta-blocker)"
+        },
+        {
+          "name": "dosage",
+          "description": "Dosage information"
+        },
+        {
+          "name": "side_effects",
+          "description": "Common side effects"
+        },
+        {
+          "name": "withdrawal_risks",
+          "description": "Risks associated with discontinuation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations",
+        "Chapter 11 Medications"
+      ]
+    },
+    {
+      "type": "MoodRecord",
+      "description": "A record of daily mood, anxiety, depression, and worry levels.",
+      "properties": [
+        {
+          "name": "date",
+          "description": "Date of the record"
+        },
+        {
+          "name": "anxiety_level",
+          "description": "Average anxiety level (0-10 scale)"
+        },
+        {
+          "name": "depression_level",
+          "description": "Average depression level (0-10 scale)"
+        },
+        {
+          "name": "worry_level",
+          "description": "Worry about panic (0-10 scale)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 5 Establishing Your Hierarchy of Agoraphobia Situations",
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    },
+    {
+      "type": "ProgressRecord",
+      "description": "A structured record of treatment progress, including frequency and severity of panic attacks, changes in thoughts, and avoidance behaviors.",
+      "properties": [
+        {
+          "name": "date_range",
+          "description": "Time period covered by the record"
+        },
+        {
+          "name": "panic_attack_count",
+          "description": "Number of panic attacks"
+        },
+        {
+          "name": "average_anxiety",
+          "description": "Average anxiety level"
+        },
+        {
+          "name": "thought_change",
+          "description": "Change in negative thoughts"
+        },
+        {
+          "name": "avoidance_change",
+          "description": "Change in avoidance behaviors"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    },
+    {
+      "type": "PracticePlan",
+      "description": "A plan for ongoing practice of coping skills, exposure, and maintenance strategies.",
+      "properties": [
+        {
+          "name": "goals",
+          "description": "Long-term and short-term goals"
+        },
+        {
+          "name": "planned_activities",
+          "description": "List of planned practice activities"
+        },
+        {
+          "name": "revision_frequency",
+          "description": "How often the plan is revised"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Person",
+      "relation": "EXPERIENCES_PANIC_ATTACK",
+      "target_type": "PanicAttack",
+      "description": "Indicates that a person has experienced a specific panic attack.",
+      "properties": [
+        {
+          "name": "recorded_by",
+          "description": "Who recorded the attack (self, helper, therapist)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 4 Panic Attacks Are Not Harmful"
+      ]
+    },
+    {
+      "source_type": "PanicAttack",
+      "relation": "HAS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Links a panic attack to the symptoms experienced during the episode.",
+      "properties": [
+        {
+          "name": "symptom_intensity",
+          "description": "Intensity of the symptom during the attack"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 4 Panic Attacks Are Not Harmful"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "AVOIDS_SITUATION",
+      "target_type": "AgoraphobiaSituation",
+      "description": "Indicates that a person avoids a specific situation due to anxiety or panic.",
+      "properties": [
+        {
+          "name": "avoidance_level",
+          "description": "Degree of avoidance (0-10 scale)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5 Establishing Your Hierarchy of Agoraphobia Situations",
+        "Chapter 9 Facing Agoraphobia Situations"
+      ]
+    },
+    {
+      "source_type": "AgoraphobiaSituation",
+      "relation": "PROVOKES_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a situation provokes specific symptoms.",
+      "properties": [
+        {
+          "name": "provocation_intensity",
+          "description": "Intensity of symptom provocation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5 Establishing Your Hierarchy of Agoraphobia Situations",
+        "Chapter 8 Facing Physical Symptoms"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_NEGATIVE_THOUGHT",
+      "target_type": "NegativeThought",
+      "description": "Indicates that a person has a specific negative thought related to anxiety or panic.",
+      "properties": [
+        {
+          "name": "thought_frequency",
+          "description": "How often the thought occurs"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 7 Thinking Skills",
+        "Chapter 8 Facing Physical Symptoms"
+      ]
+    },
+    {
+      "source_type": "NegativeThought",
+      "relation": "CHALLENGED_BY",
+      "target_type": "CopingSkill",
+      "description": "Indicates that a coping skill is used to challenge or reframe a negative thought.",
+      "properties": [
+        {
+          "name": "challenge_method",
+          "description": "Method used to challenge the thought"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 7 Thinking Skills",
+        "Chapter 9 Facing Agoraphobia Situations"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "USES_COPING_SKILL",
+      "target_type": "CopingSkill",
+      "description": "Indicates that a person uses a specific coping skill.",
+      "properties": [
+        {
+          "name": "usage_frequency",
+          "description": "How often the skill is used"
+        },
+        {
+          "name": "context_of_use",
+          "description": "Context in which the skill is applied"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3 Negative Cycles of Panic and Agoraphobia",
+        "Chapter 6 Breathing Skills",
+        "Chapter 7 Thinking Skills",
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations",
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "USES_SAFETY_BEHAVIOR",
+      "target_type": "SafetyBehavior",
+      "description": "Indicates that a person uses a safety behavior or object to manage anxiety.",
+      "properties": [
+        {
+          "name": "frequency",
+          "description": "How often the safety behavior is used"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5 Establishing Your Hierarchy of Agoraphobia Situations",
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "TAKES_MEDICATION",
+      "target_type": "Medication",
+      "description": "Indicates that a person is prescribed or takes a specific medication.",
+      "properties": [
+        {
+          "name": "start_date",
+          "description": "Date medication was started"
+        },
+        {
+          "name": "end_date",
+          "description": "Date medication was stopped"
+        },
+        {
+          "name": "dosage",
+          "description": "Dosage taken"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 8 Facing Physical Symptoms",
+        "Chapter 9 Facing Agoraphobia Situations",
+        "Chapter 11 Medications"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "RECORDS_MOOD",
+      "target_type": "MoodRecord",
+      "description": "Indicates that a person has recorded their mood, anxiety, and depression levels.",
+      "properties": [
+        {
+          "name": "recording_method",
+          "description": "Method or form used for recording"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 5 Establishing Your Hierarchy of Agoraphobia Situations",
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_PROGRESS_RECORD",
+      "target_type": "ProgressRecord",
+      "description": "Indicates that a person has a structured record of their treatment progress.",
+      "properties": [
+        {
+          "name": "recording_period",
+          "description": "Time period covered by the progress record"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2 Learning to Record Panic and Anxiety",
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "HAS_PRACTICE_PLAN",
+      "target_type": "PracticePlan",
+      "description": "Indicates that a person has a plan for ongoing practice and maintenance.",
+      "properties": [
+        {
+          "name": "plan_start_date",
+          "description": "Date the plan was started"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 12 Accomplishments, Maintenance, and Relapse Prevention"
+      ]
+    },
+    {
+      "source_type": "Person",
+      "relation": "SUPPORTED_BY",
+      "target_type": "Person",
+      "description": "Indicates that a person (patient) is supported by another person (helper, family member, therapist) in their treatment.",
+      "properties": [
+        {
+          "name": "support_type",
+          "description": "Type of support provided (e.g., emotional, practical, skill prompting)"
+        },
+        {
+          "name": "support_frequency",
+          "description": "How often support is provided"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 10 Involving Others"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 11,
+    "edges": 13,
+    "source_books": 0
+  }
+}

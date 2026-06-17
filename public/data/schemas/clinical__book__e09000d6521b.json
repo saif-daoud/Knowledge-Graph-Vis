@@ -1,0 +1,754 @@
+{
+  "id": "clinical__book__e09000d6521b",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "The Comprehensive Clinician_s Guide to_ Cognitive Behavioral",
+  "kind": "book",
+  "book": "The Comprehensive Clinician_s Guide to_ Cognitive Behavioral",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Client",
+      "description": "A person receiving mental health treatment; stores demographic, clinical, and psychosocial information relevant to therapy.",
+      "properties": [
+        {
+          "name": "age",
+          "description": "Client's age"
+        },
+        {
+          "name": "gender",
+          "description": "Client's gender"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Client's cultural or religious background"
+        },
+        {
+          "name": "presenting_problem",
+          "description": "Primary reason for seeking therapy"
+        },
+        {
+          "name": "history_of_present_illness",
+          "description": "Narrative of current symptoms and their development"
+        },
+        {
+          "name": "personal_history",
+          "description": "Relevant personal, social, and medical history"
+        },
+        {
+          "name": "mental_status",
+          "description": "Summary of client's current mental state"
+        },
+        {
+          "name": "strengths",
+          "description": "Client's identified strengths and resources"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "Diagnosis",
+      "description": "A formal clinical diagnosis assigned to a client, including DSM-5/ICD-10 codes and disorder details.",
+      "properties": [
+        {
+          "name": "diagnosis_name",
+          "description": "Name of the disorder"
+        },
+        {
+          "name": "diagnosis_code",
+          "description": "DSM-5 or ICD-10 code"
+        },
+        {
+          "name": "diagnosis_date",
+          "description": "Date diagnosis was made"
+        },
+        {
+          "name": "diagnostic_criteria",
+          "description": "Criteria met for diagnosis"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "Symptom",
+      "description": "A psychological, emotional, behavioral, or physiological symptom experienced by the client.",
+      "properties": [
+        {
+          "name": "symptom_type",
+          "description": "Type of symptom (e.g., emotional, cognitive, behavioral, physiological)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the symptom"
+        },
+        {
+          "name": "severity",
+          "description": "Severity rating (e.g., Likert scale)"
+        },
+        {
+          "name": "onset_date",
+          "description": "Date symptom began"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "CoreBelief",
+      "description": "A deeply held, often negative, belief about the self, others, or the world (e.g., 'I am unlovable').",
+      "properties": [
+        {
+          "name": "belief_content",
+          "description": "Text of the core belief"
+        },
+        {
+          "name": "domain",
+          "description": "Domain of belief (e.g., self, world, future, social, achievement)"
+        },
+        {
+          "name": "origin",
+          "description": "Origin or shaping experience of the belief"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "AutomaticThought",
+      "description": "An immediate, often unconscious, thought triggered by an event or situation.",
+      "properties": [
+        {
+          "name": "thought_content",
+          "description": "Text of the automatic thought"
+        },
+        {
+          "name": "trigger",
+          "description": "Event or situation that triggered the thought"
+        },
+        {
+          "name": "associated_emotion",
+          "description": "Emotion linked to the thought"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "Emotion",
+      "description": "An emotional state experienced by the client in response to thoughts or situations.",
+      "properties": [
+        {
+          "name": "emotion_type",
+          "description": "Type of emotion (e.g., sadness, anxiety, anger)"
+        },
+        {
+          "name": "intensity",
+          "description": "Intensity rating (e.g., 0-10 scale)"
+        },
+        {
+          "name": "duration",
+          "description": "Duration of the emotion"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "Behavior",
+      "description": "A specific action or behavioral pattern exhibited by the client, including adaptive and maladaptive behaviors.",
+      "properties": [
+        {
+          "name": "behavior_type",
+          "description": "Type of behavior (e.g., avoidance, social withdrawal, self-harm)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the behavior"
+        },
+        {
+          "name": "frequency",
+          "description": "How often the behavior occurs"
+        },
+        {
+          "name": "context",
+          "description": "Situation or context in which the behavior occurs"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "CompensatoryStrategy",
+      "description": "A behavioral or cognitive strategy used to cope with or compensate for negative beliefs or emotions.",
+      "properties": [
+        {
+          "name": "strategy_type",
+          "description": "Type of strategy (e.g., avoidance, perfectionism, safety behavior)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the strategy"
+        },
+        {
+          "name": "effectiveness",
+          "description": "Perceived effectiveness of the strategy"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "Trigger",
+      "description": "An internal or external event or stimulus that initiates a cognitive, emotional, or behavioral response.",
+      "properties": [
+        {
+          "name": "trigger_type",
+          "description": "Type of trigger (e.g., situation, thought, physiological sensation)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the trigger"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 4: Case Write-Up",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality"
+      ]
+    },
+    {
+      "type": "TreatmentGoal",
+      "description": "A specific, measurable objective collaboratively set for therapy.",
+      "properties": [
+        {
+          "name": "goal_description",
+          "description": "Text of the treatment goal"
+        },
+        {
+          "name": "domain",
+          "description": "Life domain (e.g., psychological, interpersonal, occupational)"
+        },
+        {
+          "name": "status",
+          "description": "Current status (e.g., in progress, achieved)"
+        },
+        {
+          "name": "date_set",
+          "description": "Date goal was established"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "Intervention",
+      "description": "A specific therapeutic technique or strategy applied in treatment.",
+      "properties": [
+        {
+          "name": "intervention_type",
+          "description": "Type of intervention (e.g., cognitive restructuring, exposure, behavioral activation)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the intervention"
+        },
+        {
+          "name": "rationale",
+          "description": "Reason for selecting the intervention"
+        },
+        {
+          "name": "session_number",
+          "description": "Session in which intervention was applied"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "Worksheet",
+      "description": "A structured tool or template used to guide client reflection, assessment, or intervention.",
+      "properties": [
+        {
+          "name": "worksheet_type",
+          "description": "Type of worksheet (e.g., thought record, activity schedule, anger log)"
+        },
+        {
+          "name": "description",
+          "description": "Purpose and content of the worksheet"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "type": "CulturalFactor",
+      "description": "A cultural, religious, or value-based factor relevant to the client's conceptualization or treatment.",
+      "properties": [
+        {
+          "name": "factor_type",
+          "description": "Type of factor (e.g., religious belief, cultural norm, value)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the factor"
+        },
+        {
+          "name": "relevance",
+          "description": "How the factor influences conceptualization or treatment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up"
+      ]
+    },
+    {
+      "type": "Therapist",
+      "description": "A mental health professional providing treatment to the client.",
+      "properties": [
+        {
+          "name": "therapist_id",
+          "description": "Unique identifier for the therapist"
+        },
+        {
+          "name": "name",
+          "description": "Therapist's name"
+        },
+        {
+          "name": "credentials",
+          "description": "Professional credentials"
+        },
+        {
+          "name": "cultural_alignment",
+          "description": "Therapist's cultural or religious alignment, if relevant"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up"
+      ]
+    },
+    {
+      "type": "Session",
+      "description": "A single therapy session, including agenda, interventions, and outcomes.",
+      "properties": [
+        {
+          "name": "session_number",
+          "description": "Session sequence number"
+        },
+        {
+          "name": "date",
+          "description": "Date of the session"
+        },
+        {
+          "name": "agenda",
+          "description": "Planned topics or goals for the session"
+        },
+        {
+          "name": "summary",
+          "description": "Summary of session content and outcomes"
+        },
+        {
+          "name": "homework_assigned",
+          "description": "Homework or tasks assigned to the client"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Client",
+      "relation": "HAS_DIAGNOSIS",
+      "target_type": "Diagnosis",
+      "description": "Indicates that a client has been assigned a specific diagnosis.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "EXHIBITS_SYMPTOM",
+      "target_type": "Symptom",
+      "description": "Indicates that a client is experiencing a particular symptom.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "HOLDS_CORE_BELIEF",
+      "target_type": "CoreBelief",
+      "description": "Indicates that a client holds a specific core belief.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "HAS_AUTOMATIC_THOUGHT",
+      "target_type": "AutomaticThought",
+      "description": "Indicates that a client experiences a specific automatic thought.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "AutomaticThought",
+      "relation": "TRIGGERS_EMOTION",
+      "target_type": "Emotion",
+      "description": "Indicates that an automatic thought leads to a specific emotional response.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Emotion",
+      "relation": "LEADS_TO_BEHAVIOR",
+      "target_type": "Behavior",
+      "description": "Indicates that an emotional state leads to a specific behavior.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Behavior",
+      "relation": "IS_COMPENSATORY_STRATEGY",
+      "target_type": "CompensatoryStrategy",
+      "description": "Indicates that a behavior serves as a compensatory strategy for coping with distress or negative beliefs.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Trigger",
+      "relation": "INITIATES_AUTOMATIC_THOUGHT",
+      "target_type": "AutomaticThought",
+      "description": "Indicates that a trigger initiates a specific automatic thought.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 4: Case Write-Up",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality"
+      ]
+    },
+    {
+      "source_type": "CoreBelief",
+      "relation": "INFLUENCES_AUTOMATIC_THOUGHT",
+      "target_type": "AutomaticThought",
+      "description": "Indicates that a core belief shapes or biases the content of an automatic thought.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "HAS_TREATMENT_GOAL",
+      "target_type": "TreatmentGoal",
+      "description": "Indicates that a client has a specific treatment goal.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "TreatmentGoal",
+      "relation": "ADDRESSED_BY_INTERVENTION",
+      "target_type": "Intervention",
+      "description": "Indicates that a specific intervention is used to address a treatment goal.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Intervention",
+      "relation": "UTILIZES_WORKSHEET",
+      "target_type": "Worksheet",
+      "description": "Indicates that an intervention involves the use of a specific worksheet or tool.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: The Cognitive Model",
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up",
+        "Chapter 5: Depression",
+        "Chapter 6: Anxiety",
+        "Chapter 7: Anger",
+        "Chapter 8: Substance Use Disorders",
+        "Chapter 9: Personality Disorders, Self-Harm, and Suicidality",
+        "Chapter 10: Psychosis"
+      ]
+    },
+    {
+      "source_type": "Client",
+      "relation": "INFLUENCED_BY_CULTURAL_FACTOR",
+      "target_type": "CulturalFactor",
+      "description": "Indicates that a client's conceptualization or treatment is influenced by a specific cultural or religious factor.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Cognitive Conceptualization: Understanding the Client",
+        "Chapter 4: Case Write-Up"
+      ]
+    },
+    {
+      "source_type": "Therapist",
+      "relation": "CONDUCTS_SESSION",
+      "target_type": "Session",
+      "description": "Indicates that a therapist conducts a specific therapy session.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up"
+      ]
+    },
+    {
+      "source_type": "Session",
+      "relation": "INCLUDES_INTERVENTION",
+      "target_type": "Intervention",
+      "description": "Indicates that a specific intervention was delivered during a session.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up"
+      ]
+    },
+    {
+      "source_type": "Session",
+      "relation": "ASSIGNS_HOMEWORK",
+      "target_type": "Worksheet",
+      "description": "Indicates that a worksheet or homework was assigned during a session.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Goal-Directed Therapy",
+        "Chapter 4: Case Write-Up"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 15,
+    "edges": 16,
+    "source_books": 0
+  }
+}

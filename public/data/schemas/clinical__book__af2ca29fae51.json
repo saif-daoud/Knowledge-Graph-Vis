@@ -1,0 +1,529 @@
+{
+  "id": "clinical__book__af2ca29fae51",
+  "kg_id": "clinical",
+  "kg_title": "Clinical KG",
+  "title": "Overcoming Insomnia_ A Cognitive-Behavioral Therapy",
+  "kind": "book",
+  "book": "Overcoming Insomnia_ A Cognitive-Behavioral Therapy",
+  "book_group": "clinical",
+  "schema_name": "Clinical Mental Health KG",
+  "module": "clinical_core",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "Patient",
+      "description": "An individual receiving clinical assessment and treatment for insomnia or related sleep disorders.",
+      "properties": [
+        {
+          "name": "patient_id",
+          "description": "Unique identifier for the patient"
+        },
+        {
+          "name": "age",
+          "description": "Age of the patient"
+        },
+        {
+          "name": "gender",
+          "description": "Gender of the patient"
+        },
+        {
+          "name": "medical_history",
+          "description": "Relevant medical and psychiatric history"
+        },
+        {
+          "name": "cultural_background",
+          "description": "Cultural or religious background, including Islamic alignment if relevant"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "Therapist",
+      "description": "A healthcare provider delivering CBT or other treatments for insomnia.",
+      "properties": [
+        {
+          "name": "therapist_id",
+          "description": "Unique identifier for the therapist"
+        },
+        {
+          "name": "credentials",
+          "description": "Professional qualifications and certifications"
+        },
+        {
+          "name": "specializations",
+          "description": "Areas of clinical expertise"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "InsomniaDisorder",
+      "description": "A clinical diagnosis of insomnia, including subtypes and comorbidities.",
+      "properties": [
+        {
+          "name": "diagnosis_code",
+          "description": "Standardized diagnostic code (e.g., DSM-5)"
+        },
+        {
+          "name": "onset_type",
+          "description": "Predisposing, precipitating, or perpetuating factors"
+        },
+        {
+          "name": "comorbid_conditions",
+          "description": "Associated medical or psychiatric conditions"
+        },
+        {
+          "name": "severity",
+          "description": "Severity of insomnia (e.g., mild, moderate, severe)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "AssessmentTool",
+      "description": "A standardized instrument or questionnaire used to assess insomnia and related symptoms.",
+      "properties": [
+        {
+          "name": "tool_name",
+          "description": "Name of the assessment tool"
+        },
+        {
+          "name": "purpose",
+          "description": "What the tool measures"
+        },
+        {
+          "name": "validated",
+          "description": "Whether the tool is validated for clinical use"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "SleepDiary",
+      "description": "A record of a patient's sleep patterns and behaviors over time.",
+      "properties": [
+        {
+          "name": "start_date",
+          "description": "Date the diary was started"
+        },
+        {
+          "name": "end_date",
+          "description": "Date the diary was completed"
+        },
+        {
+          "name": "entries",
+          "description": "List of daily sleep records"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 5: Follow-Up Sessions"
+      ]
+    },
+    {
+      "type": "CBTSession",
+      "description": "A structured therapy session as part of a CBT protocol for insomnia.",
+      "properties": [
+        {
+          "name": "session_number",
+          "description": "Order of the session in the treatment protocol"
+        },
+        {
+          "name": "session_type",
+          "description": "Type of session (e.g., assessment, behavioral, cognitive, follow-up)"
+        },
+        {
+          "name": "date",
+          "description": "Date of the session"
+        },
+        {
+          "name": "goals",
+          "description": "Session objectives"
+        },
+        {
+          "name": "homework_assigned",
+          "description": "Homework or tasks assigned to the patient"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 5: Follow-Up Sessions"
+      ]
+    },
+    {
+      "type": "CBTTechnique",
+      "description": "A specific cognitive or behavioral intervention used in CBT for insomnia.",
+      "properties": [
+        {
+          "name": "technique_name",
+          "description": "Name of the technique (e.g., stimulus control, sleep restriction, Constructive Worry)"
+        },
+        {
+          "name": "technique_type",
+          "description": "Cognitive or behavioral"
+        },
+        {
+          "name": "description",
+          "description": "Details of the technique"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Summary of supporting research"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 5: Follow-Up Sessions",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "Medication",
+      "description": "A pharmacological agent used in the management of insomnia.",
+      "properties": [
+        {
+          "name": "medication_name",
+          "description": "Name of the medication"
+        },
+        {
+          "name": "medication_class",
+          "description": "Class of medication (e.g., benzodiazepine, melatonin agonist)"
+        },
+        {
+          "name": "indications",
+          "description": "Clinical indications for use"
+        },
+        {
+          "name": "risks",
+          "description": "Known risks and side effects"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "ComorbidCondition",
+      "description": "A medical, psychiatric, or sleep disorder co-occurring with insomnia.",
+      "properties": [
+        {
+          "name": "condition_name",
+          "description": "Name of the comorbid condition"
+        },
+        {
+          "name": "condition_type",
+          "description": "Type (medical, psychiatric, sleep)"
+        },
+        {
+          "name": "impact_on_insomnia",
+          "description": "How the condition affects insomnia or its treatment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "TreatmentRecommendation",
+      "description": "A clinical recommendation for insomnia treatment, including rationale and supporting evidence.",
+      "properties": [
+        {
+          "name": "recommendation_text",
+          "description": "Text of the recommendation"
+        },
+        {
+          "name": "rationale",
+          "description": "Reasoning behind the recommendation"
+        },
+        {
+          "name": "evidence_level",
+          "description": "Strength of supporting evidence"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "type": "CulturalConsideration",
+      "description": "Cultural or religious factors relevant to insomnia assessment or treatment, including Islamic perspectives.",
+      "properties": [
+        {
+          "name": "consideration_text",
+          "description": "Description of the cultural or religious consideration"
+        },
+        {
+          "name": "relevance",
+          "description": "How it impacts assessment or treatment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "Patient",
+      "relation": "HAS_DIAGNOSIS",
+      "target_type": "InsomniaDisorder",
+      "description": "Indicates that a patient has been diagnosed with a specific insomnia disorder.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 2: Pre-Treatment Assessment"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "HAS_COMORBID_CONDITION",
+      "target_type": "ComorbidCondition",
+      "description": "Links a patient to a comorbid medical, psychiatric, or sleep disorder.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "COMPLETED_ASSESSMENT",
+      "target_type": "AssessmentTool",
+      "description": "Indicates that a patient has completed a specific assessment tool.",
+      "properties": [
+        {
+          "name": "date_completed",
+          "description": "Date the assessment was completed"
+        },
+        {
+          "name": "score",
+          "description": "Score or result of the assessment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "KEPT_SLEEP_DIARY",
+      "target_type": "SleepDiary",
+      "description": "Indicates that a patient has maintained a sleep diary.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Pre-Treatment Assessment",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 5: Follow-Up Sessions"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "ATTENDED_SESSION",
+      "target_type": "CBTSession",
+      "description": "Indicates that a patient attended a specific CBT session.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 5: Follow-Up Sessions"
+      ]
+    },
+    {
+      "source_type": "CBTSession",
+      "relation": "INCLUDES_TECHNIQUE",
+      "target_type": "CBTTechnique",
+      "description": "Indicates that a specific CBT technique was used in a session.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 5: Follow-Up Sessions"
+      ]
+    },
+    {
+      "source_type": "CBTTechnique",
+      "relation": "RECOMMENDED_FOR",
+      "target_type": "InsomniaDisorder",
+      "description": "Indicates that a CBT technique is recommended for a specific insomnia disorder or presentation.",
+      "properties": [
+        {
+          "name": "evidence_level",
+          "description": "Strength of supporting evidence"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "source_type": "CBTTechnique",
+      "relation": "ADAPTED_FOR",
+      "target_type": "ComorbidCondition",
+      "description": "Indicates that a CBT technique has been adapted for use with a specific comorbid condition.",
+      "properties": [
+        {
+          "name": "adaptation_description",
+          "description": "Details of the adaptation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "RECEIVED_MEDICATION",
+      "target_type": "Medication",
+      "description": "Indicates that a patient has been prescribed or has used a specific medication.",
+      "properties": [
+        {
+          "name": "start_date",
+          "description": "Date medication was started"
+        },
+        {
+          "name": "end_date",
+          "description": "Date medication was stopped"
+        },
+        {
+          "name": "dosage",
+          "description": "Dosage prescribed"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "source_type": "Medication",
+      "relation": "USED_FOR",
+      "target_type": "InsomniaDisorder",
+      "description": "Indicates that a medication is used for the treatment of a specific insomnia disorder.",
+      "properties": [
+        {
+          "name": "evidence_level",
+          "description": "Strength of supporting evidence"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists"
+      ]
+    },
+    {
+      "source_type": "CBTSession",
+      "relation": "GENERATED_RECOMMENDATION",
+      "target_type": "TreatmentRecommendation",
+      "description": "Indicates that a treatment recommendation was made during a specific session.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components",
+        "Chapter 5: Follow-Up Sessions"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "RECEIVED_RECOMMENDATION",
+      "target_type": "TreatmentRecommendation",
+      "description": "Indicates that a patient received a specific treatment recommendation.",
+      "properties": [
+        {
+          "name": "date_given",
+          "description": "Date the recommendation was provided"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 3: Session 1: Psychoeducational and Behavioral Therapy Components",
+        "Chapter 4: Session 2: Cognitive Therapy Components"
+      ]
+    },
+    {
+      "source_type": "Patient",
+      "relation": "HAS_CULTURAL_CONSIDERATION",
+      "target_type": "CulturalConsideration",
+      "description": "Indicates that a patient's treatment or assessment is influenced by a specific cultural or religious consideration.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    },
+    {
+      "source_type": "Therapist",
+      "relation": "DELIVERED_SESSION",
+      "target_type": "CBTSession",
+      "description": "Indicates that a therapist delivered a specific CBT session.",
+      "properties": [],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Introductory Information for Therapists",
+        "Chapter 6: Considerations in CBT Delivery"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 11,
+    "edges": 14,
+    "source_books": 0
+  }
+}

@@ -1,0 +1,625 @@
+{
+  "id": "islamic__book__60a46fe87cec",
+  "kg_id": "islamic",
+  "kg_title": "Islamic-Cultural KG",
+  "title": "Counseling Muslims handbook of mental health issues",
+  "kind": "book",
+  "book": "Counseling Muslims handbook of mental health issues",
+  "book_group": "islamic_cultural",
+  "schema_name": "Islamic-Cultural Alignment KG",
+  "module": "islamic_cultural_alignment",
+  "schema_version": "",
+  "fusion_method": "",
+  "source_books": [],
+  "node_types": [
+    {
+      "type": "MuslimClientProfile",
+      "description": "Stores demographic, religious, cultural, and psychosocial information about a Muslim client relevant to mental health care.",
+      "properties": [
+        {
+          "name": "age",
+          "description": "Client's age"
+        },
+        {
+          "name": "gender",
+          "description": "Client's gender"
+        },
+        {
+          "name": "ethnic_background",
+          "description": "Client's ethnic or cultural background"
+        },
+        {
+          "name": "country_of_origin",
+          "description": "Country or region of origin"
+        },
+        {
+          "name": "immigration_status",
+          "description": "Immigration or refugee status"
+        },
+        {
+          "name": "religiosity_level",
+          "description": "Degree of religious commitment or practice"
+        },
+        {
+          "name": "sectarian_affiliation",
+          "description": "Islamic sect or school of thought"
+        },
+        {
+          "name": "language_proficiency",
+          "description": "Languages spoken and proficiency"
+        },
+        {
+          "name": "acculturation_level",
+          "description": "Degree of adaptation to host culture"
+        },
+        {
+          "name": "family_structure",
+          "description": "Family composition and roles"
+        },
+        {
+          "name": "education_level",
+          "description": "Highest level of education attained"
+        },
+        {
+          "name": "socioeconomic_status",
+          "description": "Socioeconomic background"
+        },
+        {
+          "name": "presenting_problem",
+          "description": "Main mental health concern or reason for seeking help"
+        },
+        {
+          "name": "cultural_identity",
+          "description": "Self-identified cultural and social identities"
+        },
+        {
+          "name": "discrimination_experience",
+          "description": "Experiences of discrimination or Islamophobia"
+        },
+        {
+          "name": "modesty_practices",
+          "description": "Practices related to Islamic modesty (e.g., hijab, niqab, gender interaction norms)"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 4: Mental Health Interview and Cultural Formulation",
+        "Chapter 5: Psychological Testing and Assessment",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 13: Converts to Islam",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees"
+      ]
+    },
+    {
+      "type": "IslamicBeliefPractice",
+      "description": "Stores information about Islamic beliefs, practices, and values relevant to mental health and therapy.",
+      "properties": [
+        {
+          "name": "belief_or_practice",
+          "description": "Name of the belief or practice (e.g., tawakkul, salah, zakat, fasting)"
+        },
+        {
+          "name": "category",
+          "description": "Type (e.g., core belief, pillar, ritual, value)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the belief or practice"
+        },
+        {
+          "name": "relevance_to_mental_health",
+          "description": "How this belief or practice impacts mental health or therapy"
+        },
+        {
+          "name": "associated_terms",
+          "description": "Related Islamic concepts or terms"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 2: Conceptualizations of Mental Health, Illness, and Healing",
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 6: Individual Psychotherapy/Counseling: Psychodynamic, Cognitive-Behavioral, and Humanistic-Experiential Models",
+        "Chapter 8: Islamic-Based Interventions",
+        "Chapter 9: Community-Based Prevention and Intervention",
+        "Chapter 10: Inpatient Psychiatric Units",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees",
+        "Chapter 16 : Domestic Violence",
+        "Chapter 17: Sexuality and Sexual Dysfunctions",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "type": "CulturalExplanatoryModel",
+      "description": "Stores explanatory models of mental health, illness, and healing as understood in Islamic and cultural contexts.",
+      "properties": [
+        {
+          "name": "model_type",
+          "description": "Type of explanatory model (e.g., biological, psychological, spiritual, supernatural)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the model"
+        },
+        {
+          "name": "cultural_variation",
+          "description": "How the model varies across cultures or communities"
+        },
+        {
+          "name": "implications_for_treatment",
+          "description": "How the model affects help-seeking and treatment"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Conceptualizations of Mental Health, Illness, and Healing",
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 4: Mental Health Interview and Cultural Formulation",
+        "Chapter 13: Converts to Islam",
+        "Chapter 15: Refugees"
+      ]
+    },
+    {
+      "type": "CopingStrategy",
+      "description": "Stores religious, cultural, and traditional coping strategies used by Muslim clients for mental health concerns.",
+      "properties": [
+        {
+          "name": "strategy_name",
+          "description": "Name of the coping strategy (e.g., prayer, ruqyah, consulting imam)"
+        },
+        {
+          "name": "strategy_type",
+          "description": "Type (e.g., religious, family-based, community-based, traditional healer)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the strategy"
+        },
+        {
+          "name": "context_of_use",
+          "description": "When or why the strategy is used"
+        },
+        {
+          "name": "effectiveness_evidence",
+          "description": "Evidence or case examples of effectiveness"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Conceptualizations of Mental Health, Illness, and Healing",
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 8: Islamic-Based Interventions",
+        "Chapter 9: Community-Based Prevention and Intervention",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "type": "CommunityResource",
+      "description": "Stores information about community resources relevant to Muslim mental health support.",
+      "properties": [
+        {
+          "name": "resource_type",
+          "description": "Type of resource (e.g., mosque, imam, outreach program, school, support group)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the resource"
+        },
+        {
+          "name": "accessibility",
+          "description": "How accessible the resource is to clients"
+        },
+        {
+          "name": "cultural_alignment",
+          "description": "Degree of alignment with Islamic and cultural values"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 9: Community-Based Prevention and Intervention",
+        "Chapter 10: Inpatient Psychiatric Units",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 15: Refugees"
+      ]
+    },
+    {
+      "type": "TherapeuticApproach",
+      "description": "Stores information about psychotherapeutic models and their adaptation for Muslim clients.",
+      "properties": [
+        {
+          "name": "approach_name",
+          "description": "Name of the therapeutic approach (e.g., CBT, psychodynamic, Islamic counseling)"
+        },
+        {
+          "name": "description",
+          "description": "Description of the approach"
+        },
+        {
+          "name": "cultural_adaptations",
+          "description": "Adaptations made for Islamic or cultural alignment"
+        },
+        {
+          "name": "compatibility_with_islam",
+          "description": "Degree and nature of compatibility with Islamic beliefs"
+        },
+        {
+          "name": "evidence_base",
+          "description": "Evidence or case examples for effectiveness with Muslims"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Conceptualizations of Mental Health, Illness, and Healing",
+        "Chapter 6: Individual Psychotherapy/Counseling: Psychodynamic, Cognitive-Behavioral, and Humanistic-Experiential Models",
+        "Chapter 7: Family Systems Therapy and Postmodern Approaches",
+        "Chapter 8: Islamic-Based Interventions",
+        "Chapter 16 : Domestic Violence",
+        "Chapter 17: Sexuality and Sexual Dysfunctions",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "type": "ClinicalConsideration",
+      "description": "Stores clinical considerations, accommodations, and barriers relevant to providing culturally competent care to Muslim clients.",
+      "properties": [
+        {
+          "name": "consideration_type",
+          "description": "Type of consideration (e.g., confidentiality, gender norms, dietary needs, language, stigma)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the consideration"
+        },
+        {
+          "name": "clinical_implication",
+          "description": "How this affects clinical care or treatment planning"
+        },
+        {
+          "name": "recommended_accommodation",
+          "description": "Suggested accommodation or adaptation"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 4: Mental Health Interview and Cultural Formulation",
+        "Chapter 5: Psychological Testing and Assessment",
+        "Chapter 10: Inpatient Psychiatric Units",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 13: Converts to Islam",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees",
+        "Chapter 16 : Domestic Violence",
+        "Chapter 17: Sexuality and Sexual Dysfunctions",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "type": "FamilySystem",
+      "description": "Stores information about family structure, roles, and dynamics relevant to Muslim mental health.",
+      "properties": [
+        {
+          "name": "family_type",
+          "description": "Type of family (e.g., nuclear, extended, patriarchal, multigenerational)"
+        },
+        {
+          "name": "roles_and_hierarchy",
+          "description": "Roles and hierarchy within the family"
+        },
+        {
+          "name": "cultural_and_religious_influences",
+          "description": "How culture and religion shape family dynamics"
+        },
+        {
+          "name": "common_issues",
+          "description": "Common mental health or relational issues in the family system"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 7: Family Systems Therapy and Postmodern Approaches",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 13: Converts to Islam",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees",
+        "Chapter 16 : Domestic Violence"
+      ]
+    },
+    {
+      "type": "SociopoliticalContext",
+      "description": "Stores information about sociopolitical factors affecting Muslim mental health (e.g., Islamophobia, discrimination, migration, legislation).",
+      "properties": [
+        {
+          "name": "context_type",
+          "description": "Type of sociopolitical factor (e.g., discrimination, migration, legislation, media portrayal)"
+        },
+        {
+          "name": "description",
+          "description": "Explanation of the factor"
+        },
+        {
+          "name": "impact_on_mental_health",
+          "description": "How this factor affects mental health or help-seeking"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 13: Converts to Islam",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees"
+      ]
+    },
+    {
+      "type": "IslamicLegalFramework",
+      "description": "Stores information about Islamic legal sources and rulings relevant to mental health, family, and social issues.",
+      "properties": [
+        {
+          "name": "source_type",
+          "description": "Type of legal source (e.g., Qur’an, hadith, shariah, fiqh, ijma, qiyas, istihsan)"
+        },
+        {
+          "name": "relevant_ruling",
+          "description": "Specific ruling or guidance"
+        },
+        {
+          "name": "application_area",
+          "description": "Area of application (e.g., confidentiality, insanity defense, child custody, marriage, substance use, sexuality)"
+        },
+        {
+          "name": "interpretation_variation",
+          "description": "Variation in interpretation across sects or cultures"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 16 : Domestic Violence",
+        "Chapter 17: Sexuality and Sexual Dysfunctions",
+        "Chapter 18: Substance Abuse"
+      ]
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "MuslimClientProfile",
+      "relation": "USES_COPING_STRATEGY",
+      "target_type": "CopingStrategy",
+      "description": "Indicates that a client uses a particular coping strategy for mental health concerns.",
+      "properties": [
+        {
+          "name": "frequency",
+          "description": "How often the strategy is used"
+        },
+        {
+          "name": "perceived_effectiveness",
+          "description": "Client's perception of effectiveness"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Conceptualizations of Mental Health, Illness, and Healing",
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 8: Islamic-Based Interventions",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "source_type": "MuslimClientProfile",
+      "relation": "SEEKS_HELP_FROM",
+      "target_type": "CommunityResource",
+      "description": "Indicates that a client seeks help from a specific community resource.",
+      "properties": [
+        {
+          "name": "reason_for_help_seeking",
+          "description": "Reason for choosing this resource"
+        },
+        {
+          "name": "help_seeking_outcome",
+          "description": "Outcome or satisfaction with help received"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 9: Community-Based Prevention and Intervention",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 13: Converts to Islam"
+      ]
+    },
+    {
+      "source_type": "MuslimClientProfile",
+      "relation": "HAS_FAMILY_SYSTEM",
+      "target_type": "FamilySystem",
+      "description": "Links a client to their family system, structure, and dynamics.",
+      "properties": [
+        {
+          "name": "role_in_family",
+          "description": "Client's role in the family system"
+        },
+        {
+          "name": "family_support_level",
+          "description": "Level of support provided by family"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 7: Family Systems Therapy and Postmodern Approaches",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 13: Converts to Islam",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees"
+      ]
+    },
+    {
+      "source_type": "MuslimClientProfile",
+      "relation": "INFLUENCED_BY",
+      "target_type": "SociopoliticalContext",
+      "description": "Indicates that a client's mental health or identity is influenced by a sociopolitical context.",
+      "properties": [
+        {
+          "name": "impact_type",
+          "description": "Type of impact (e.g., stress, stigma, identity conflict)"
+        },
+        {
+          "name": "severity",
+          "description": "Severity of the impact"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 13: Converts to Islam",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees"
+      ]
+    },
+    {
+      "source_type": "MuslimClientProfile",
+      "relation": "HOLDS_BELIEF_PRACTICE",
+      "target_type": "IslamicBeliefPractice",
+      "description": "Indicates that a client holds or practices a specific Islamic belief or ritual.",
+      "properties": [
+        {
+          "name": "practice_frequency",
+          "description": "How often the belief or practice is observed"
+        },
+        {
+          "name": "personal_importance",
+          "description": "Importance of the belief or practice to the client"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 2: Conceptualizations of Mental Health, Illness, and Healing",
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 8: Islamic-Based Interventions",
+        "Chapter 10: Inpatient Psychiatric Units",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 14: Adolescents and Emerging Adults",
+        "Chapter 15: Refugees",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "source_type": "MuslimClientProfile",
+      "relation": "USES_EXPLANATORY_MODEL",
+      "target_type": "CulturalExplanatoryModel",
+      "description": "Indicates that a client uses a particular explanatory model to understand their mental health or illness.",
+      "properties": [
+        {
+          "name": "model_salience",
+          "description": "How salient this model is for the client"
+        },
+        {
+          "name": "model_combination",
+          "description": "Whether the client uses multiple models"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 2: Conceptualizations of Mental Health, Illness, and Healing",
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 4: Mental Health Interview and Cultural Formulation",
+        "Chapter 13: Converts to Islam"
+      ]
+    },
+    {
+      "source_type": "TherapeuticApproach",
+      "relation": "REQUIRES_CLINICAL_CONSIDERATION",
+      "target_type": "ClinicalConsideration",
+      "description": "Indicates that a therapeutic approach requires specific clinical considerations or accommodations for Muslim clients.",
+      "properties": [
+        {
+          "name": "adaptation_detail",
+          "description": "Details of the adaptation or consideration"
+        },
+        {
+          "name": "risk_of_non_adaptation",
+          "description": "Risks if not adapted"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 5: Psychological Testing and Assessment",
+        "Chapter 6: Individual Psychotherapy/Counseling: Psychodynamic, Cognitive-Behavioral, and Humanistic-Experiential Models",
+        "Chapter 7: Family Systems Therapy and Postmodern Approaches",
+        "Chapter 8: Islamic-Based Interventions",
+        "Chapter 10: Inpatient Psychiatric Units",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 16 : Domestic Violence",
+        "Chapter 17: Sexuality and Sexual Dysfunctions",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "source_type": "IslamicLegalFramework",
+      "relation": "INFORMS_CLINICAL_CONSIDERATION",
+      "target_type": "ClinicalConsideration",
+      "description": "Indicates that an Islamic legal framework informs or shapes a clinical consideration.",
+      "properties": [
+        {
+          "name": "legal_basis",
+          "description": "Islamic legal basis for the consideration"
+        },
+        {
+          "name": "interpretation_notes",
+          "description": "Notes on interpretation or application"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 1: Islam, Muslims, and Mental Health",
+        "Chapter 16 : Domestic Violence",
+        "Chapter 17: Sexuality and Sexual Dysfunctions",
+        "Chapter 18: Substance Abuse"
+      ]
+    },
+    {
+      "source_type": "CommunityResource",
+      "relation": "PROVIDES_SUPPORT_FOR",
+      "target_type": "MuslimClientProfile",
+      "description": "Indicates that a community resource provides support or services to a client.",
+      "properties": [
+        {
+          "name": "support_type",
+          "description": "Type of support provided"
+        },
+        {
+          "name": "frequency",
+          "description": "How often support is provided"
+        }
+      ],
+      "supported_by_books": [],
+      "supported_by_chapters": [
+        "Chapter 3: Traditional Mental Health Coping and Help-Seeking",
+        "Chapter 9: Community-Based Prevention and Intervention",
+        "Chapter 10: Inpatient Psychiatric Units",
+        "Chapter 11: Home-Based Social Services",
+        "Chapter 12: University Counseling Centers",
+        "Chapter 15: Refugees"
+      ]
+    }
+  ],
+  "stats": {
+    "nodes": 10,
+    "edges": 9,
+    "source_books": 0
+  }
+}
