@@ -95,6 +95,22 @@ export function itemSearchText(item) {
     .toLowerCase();
 }
 
+function nodeVisualMetrics(node) {
+  const labelLength = String(node?.type ?? "").length;
+  const propertyCount = Array.isArray(node?.properties) ? node.properties.length : 0;
+  const labelSize =
+    labelLength <= 8 ? 52 :
+    labelLength <= 14 ? 64 :
+    labelLength <= 22 ? 82 :
+    labelLength <= 34 ? 102 :
+    120;
+  const nodeSize = Math.min(128, labelSize + Math.min(16, Math.sqrt(propertyCount) * 4));
+  return {
+    nodeSize,
+    textMaxWidth: Math.max(46, nodeSize * 0.82),
+  };
+}
+
 function changeClasses(entityKey, review = {}) {
   const latest = review.latestByEntity?.get(entityKey);
   const classes = [];
@@ -118,6 +134,7 @@ function ensureNode(nodeMap, elements, type, review, options = {}) {
   };
   const category = getCategory(placeholder);
   const id = nodeId(type);
+  const visual = nodeVisualMetrics(placeholder);
   nodeMap.set(type, id);
   elements.push({
     group: "nodes",
@@ -129,6 +146,8 @@ function ensureNode(nodeMap, elements, type, review, options = {}) {
       category: category.id,
       categoryLabel: category.label,
       color: category.color,
+      nodeSize: visual.nodeSize,
+      textMaxWidth: visual.textMaxWidth,
       description: placeholder.description,
       properties: placeholder.properties ?? [],
       supported_by_books: placeholder.supported_by_books ?? [],
@@ -225,6 +244,7 @@ export function buildGraphElements(schema, review = {}) {
     const entityKey = nodeEntityKey(node.type);
     const id = nodeId(node.type);
     const category = getCategory(node);
+    const visual = nodeVisualMetrics(node);
     nodeMap.set(node.type, id);
     elements.push({
       group: "nodes",
@@ -236,6 +256,8 @@ export function buildGraphElements(schema, review = {}) {
         category: category.id,
         categoryLabel: category.label,
         color: category.color,
+        nodeSize: visual.nodeSize,
+        textMaxWidth: visual.textMaxWidth,
         description: node.description,
         properties: node.properties ?? [],
         supported_by_books: node.supported_by_books ?? [],

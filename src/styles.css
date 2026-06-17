@@ -627,6 +627,11 @@ button {
 .graph-canvas {
   position: absolute;
   inset: 0;
+  outline: none;
+}
+
+.graph-canvas canvas {
+  outline: none;
 }
 
 .graph-readout {

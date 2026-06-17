@@ -193,6 +193,140 @@ function fieldPathFor(entityKey, field, propertyIndex = null, propertyName = "")
   return `${entityKey}.properties.${propertyIndex}.${propertyName || "property"}.${field}`;
 }
 
+function nodeTypeFromEntityKey(entityKey) {
+  return String(entityKey ?? "").replace(/^node:/, "");
+}
+
+function sameEdge(edge, reference) {
+  if (!edge || !reference) return false;
+  return edge.source_type === reference.source_type && edge.relation === reference.relation && edge.target_type === reference.target_type;
+}
+
+function findNodeIndex(schema, ...types) {
+  const wanted = new Set(types.filter(Boolean));
+  return (schema?.node_types ?? []).findIndex((node) => wanted.has(node.type));
+}
+
+function findEdgeIndex(schema, change, ...references) {
+  const edges = schema?.edge_types ?? [];
+  const preferred = [change?.oldEntity, change?.newEntity, ...references].filter((edge) => edge?.source_type || edge?.relation || edge?.target_type);
+  for (const reference of preferred) {
+    const index = edges.findIndex((edge) => sameEdge(edge, reference));
+    if (index >= 0) return index;
+  }
+
+  const entityKey = change?.entityKey;
+  if (entityKey) {
+    const index = edges.findIndex((edge, edgeIndex) => edgeEntityKey(edge, edgeIndex) === entityKey);
+    if (index >= 0) return index;
+  }
+
+  if (Number.isInteger(change?.edgeIndex) && edges[change.edgeIndex]) return change.edgeIndex;
+  return -1;
+}
+
+function upsertNode(schema, node, ...oldTypes) {
+  if (!node?.type) return;
+  const nextNode = deepClone(node);
+  delete nextNode.removedEdges;
+  const index = findNodeIndex(schema, ...oldTypes, nextNode.type);
+  if (index >= 0) schema.node_types[index] = nextNode;
+  else schema.node_types = [...(schema.node_types ?? []), nextNode];
+}
+
+function upsertEdge(schema, edge, change) {
+  if (!edge?.source_type || !edge?.relation || !edge?.target_type) return;
+  const index = findEdgeIndex(schema, change, edge);
+  if (index >= 0) schema.edge_types[index] = deepClone(edge);
+  else schema.edge_types = [...(schema.edge_types ?? []), deepClone(edge)];
+}
+
+function replacePropertyOwner(schema, change, owner) {
+  if (!owner) return;
+  if (change.ownerKind === "node") {
+    upsertNode(schema, owner, change.oldEntity?.type, nodeTypeFromEntityKey(change.entityKey));
+    return;
+  }
+  upsertEdge(schema, owner, change);
+}
+
+function propertyIndexFromChange(change) {
+  const match = String(change?.fieldPath ?? "").match(/\.properties\.(\d+)\./);
+  return match ? Number(match[1]) : -1;
+}
+
+function applyChangeToSchema(schema, change) {
+  const next = deepClone(schema);
+  next.node_types = Array.isArray(next.node_types) ? next.node_types : [];
+  next.edge_types = Array.isArray(next.edge_types) ? next.edge_types : [];
+
+  if (change.entityKind === "node") {
+    const oldType = change.oldEntity?.type ?? nodeTypeFromEntityKey(change.affectedKeys?.[0] ?? change.entityKey);
+    const newNode = change.newEntity ?? change.newValue;
+    if (change.action === "add") {
+      upsertNode(next, newNode);
+    } else if (change.action === "edit") {
+      upsertNode(next, newNode, oldType);
+      if (oldType && newNode?.type && oldType !== newNode.type) {
+        next.edge_types = next.edge_types.map((edge) => ({
+          ...edge,
+          source_type: edge.source_type === oldType ? newNode.type : edge.source_type,
+          target_type: edge.target_type === oldType ? newNode.type : edge.target_type,
+        }));
+      }
+    } else if (change.action === "delete") {
+      next.node_types = next.node_types.filter((node) => node.type !== oldType);
+      next.edge_types = next.edge_types.filter((edge) => edge.source_type !== oldType && edge.target_type !== oldType);
+    }
+    return next;
+  }
+
+  if (change.entityKind === "edge") {
+    if (change.action === "add") {
+      upsertEdge(next, change.newEntity ?? change.newValue, change);
+    } else if (change.action === "edit") {
+      upsertEdge(next, change.newEntity, change);
+    } else if (change.action === "delete") {
+      const index = findEdgeIndex(next, change, change.oldEntity);
+      if (index >= 0) next.edge_types.splice(index, 1);
+    }
+    return next;
+  }
+
+  if (change.entityKind === "property") {
+    if ((change.action === "add" || change.action === "edit") && change.newEntity) {
+      replacePropertyOwner(next, change, change.newEntity);
+    } else if (change.action === "delete") {
+      if (change.ownerKind === "node") {
+        const index = findNodeIndex(next, nodeTypeFromEntityKey(change.entityKey));
+        const owner = next.node_types[index];
+        const propertyIndex = propertyIndexFromChange(change);
+        if (owner?.properties?.length) {
+          if (propertyIndex >= 0 && owner.properties[propertyIndex]) owner.properties.splice(propertyIndex, 1);
+          else owner.properties = owner.properties.filter((property) => property.name !== change.oldEntity?.name);
+        }
+      } else {
+        const index = findEdgeIndex(next, change);
+        const owner = next.edge_types[index];
+        const propertyIndex = propertyIndexFromChange(change);
+        if (owner?.properties?.length) {
+          if (propertyIndex >= 0 && owner.properties[propertyIndex]) owner.properties.splice(propertyIndex, 1);
+          else owner.properties = owner.properties.filter((property) => property.name !== change.oldEntity?.name);
+        }
+      }
+    }
+  }
+
+  return next;
+}
+
+function rebuildSchemaWithChanges(baseSchema, changes) {
+  return changes
+    .slice()
+    .reverse()
+    .reduce((currentSchema, change) => applyChangeToSchema(currentSchema, change), deepClone(baseSchema));
+}
+
 function AccessGate({ onReady }) {
   const [code, setCode] = useState("");
   const [status, setStatus] = useState("");
@@ -666,7 +800,7 @@ function Inspector({
   );
 }
 
-function ChangeLog({ changes, activeChangeId, onSelectChange, onRevokeChange }) {
+function ChangeLog({ changes, activeChangeId, onSelectChange, onRevertChange }) {
   return (
     <aside className="change-log">
       <div className="change-log-header">
@@ -705,18 +839,19 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevokeChange }) 
                 <span
                   role="button"
                   tabIndex={0}
+                  title="Revert this change"
                   onClick={(event) => {
                     event.stopPropagation();
-                    onRevokeChange(change.id);
+                    onRevertChange(change.id);
                   }}
                   onKeyDown={(event) => {
                     if (event.key === "Enter") {
                       event.stopPropagation();
-                      onRevokeChange(change.id);
+                      onRevertChange(change.id);
                     }
                   }}
                 >
-                  <X size={13} /> Hide
+                  <RotateCcw size={13} /> Revert
                 </span>
               </div>
             </button>
@@ -771,8 +906,8 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
         {
           selector: "node",
           style: {
-            width: "mapData(properties.length, 0, 40, 40, 78)",
-            height: "mapData(properties.length, 0, 40, 40, 78)",
+            width: "data(nodeSize)",
+            height: "data(nodeSize)",
             "background-color": "data(color)",
             "border-width": 2,
             "border-color": "#ffffff",
@@ -781,10 +916,12 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
             "font-size": 11,
             "font-weight": 800,
             "text-wrap": "wrap",
-            "text-max-width": 118,
+            "text-max-width": "data(textMaxWidth)",
             "text-valign": "center",
             "text-halign": "center",
-            "overlay-padding": 8,
+            "line-height": 1.08,
+            "overlay-opacity": 0,
+            "overlay-padding": 0,
           },
         },
         {
@@ -810,12 +947,14 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
             "text-background-opacity": 0.86,
             "text-background-padding": 2,
             "text-rotation": "autorotate",
+            "overlay-opacity": 0,
+            "overlay-padding": 0,
           },
         },
         {
           selector: ".change-added",
           style: {
-            "border-width": 5,
+            "border-width": 3,
             "border-color": "#139a63",
             "line-color": "#139a63",
             "target-arrow-color": "#139a63",
@@ -826,7 +965,7 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
         {
           selector: ".change-edited",
           style: {
-            "border-width": 5,
+            "border-width": 3,
             "border-color": "#d89b00",
             "line-color": "#d89b00",
             "target-arrow-color": "#d89b00",
@@ -836,7 +975,7 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
         {
           selector: ".change-removed",
           style: {
-            "border-width": 5,
+            "border-width": 3,
             "border-color": "#d64545",
             "line-color": "#d64545",
             "target-arrow-color": "#d64545",
@@ -856,8 +995,8 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
         {
           selector: ".active-change",
           style: {
-            "border-width": 8,
-            width: 4.4,
+            "border-width": 3,
+            width: 3.2,
             "z-index": 50,
           },
         },
@@ -880,14 +1019,31 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
           },
         },
         {
-          selector: ".selected",
+          selector: "node.selected",
           style: {
-            "border-width": 7,
+            "border-width": 2,
             "border-color": "#0b1324",
+            "underlay-color": "#0b1324",
+            "underlay-opacity": 0.16,
+            "underlay-padding": 8,
+            opacity: 1,
+            "z-index": 60,
+          },
+        },
+        {
+          selector: "edge.selected",
+          style: {
+            width: 3,
             "line-color": "#0b1324",
             "target-arrow-color": "#0b1324",
             opacity: 1,
             "z-index": 60,
+          },
+        },
+        {
+          selector: "node:active, edge:active",
+          style: {
+            "overlay-opacity": 0,
           },
         },
         {
@@ -1422,9 +1578,16 @@ function ReviewWorkspace({ onLogout }) {
     setRightRailOpen(true);
   }
 
-  function hideChange(changeId) {
-    setChanges((current) => current.filter((change) => change.id !== changeId));
+  function revertChange(changeId) {
+    if (!baseSchema) return;
+    const currentChanges = changesRef.current;
+    const remainingChanges = currentChanges.filter((change) => change.id !== changeId);
+    const nextSchema = rebuildSchemaWithChanges(baseSchema, remainingChanges);
+    schemaRef.current = nextSchema;
+    setSchema(nextSchema);
+    setChanges(remainingChanges);
     if (activeChangeId === changeId) setActiveChangeId(null);
+    setSelected(null);
   }
 
   function resetLocalEdits() {
@@ -1528,7 +1691,7 @@ function ReviewWorkspace({ onLogout }) {
           onDeleteProperty={deleteProperty}
           onDeleteSelected={deleteSelected}
         />
-        <ChangeLog changes={changes} activeChangeId={activeChangeId} onSelectChange={selectChange} onRevokeChange={hideChange} />
+        <ChangeLog changes={changes} activeChangeId={activeChangeId} onSelectChange={selectChange} onRevertChange={revertChange} />
       </div>
 
       {modal && <EntityModal mode={modal} schema={schema} onClose={() => setModal(null)} onCreate={modal === "node" ? createNode : createEdge} />}
