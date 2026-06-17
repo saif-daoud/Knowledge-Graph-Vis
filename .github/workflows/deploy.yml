@@ -34,20 +34,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          if npx --yes wrangler@4.101.0 pages project list --json | node -e "
-            let input = '';
-            process.stdin.on('data', chunk => input += chunk);
-            process.stdin.on('end', () => {
-              const parsed = JSON.parse(input);
-              const projects = Array.isArray(parsed) ? parsed : (parsed.result || parsed.projects || []);
-              const exists = projects.some(project => project.name === process.env.PAGES_PROJECT_NAME);
-              process.exit(exists ? 0 : 1);
-            });
-          "; then
-            echo "Cloudflare Pages project '${PAGES_PROJECT_NAME}' already exists."
-          else
-            npx --yes wrangler@4.101.0 pages project create "${PAGES_PROJECT_NAME}" --production-branch "${PAGES_PRODUCTION_BRANCH}"
-          fi
+          npx --yes wrangler@4.101.0 pages project create "${PAGES_PROJECT_NAME}" --production-branch "${PAGES_PRODUCTION_BRANCH}" \
+            || echo "Cloudflare Pages project '${PAGES_PROJECT_NAME}' already exists or could not be created; continuing to deploy."
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
