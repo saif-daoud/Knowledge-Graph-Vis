@@ -29,7 +29,7 @@ import {
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   buildGraphElements,
   edgeEntityKey,
@@ -933,7 +933,6 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
     const observer = new ResizeObserver(() => {
       if (typeof cy.destroyed === "function" && cy.destroyed()) return;
       cy.resize();
-      cy.fit(cy.elements().not(".hidden-by-filter"), 58);
     });
     observer.observe(container);
     return () => observer.disconnect();
@@ -1419,7 +1418,6 @@ function ReviewWorkspace({ onLogout }) {
     if (change.entityKind === "edge" || change.ownerKind === "edge") setSelected({ kind: "edge", entityKey: change.entityKey, schemaIndex: change.edgeIndex });
     else setSelected({ kind: "node", entityKey: change.entityKey });
     setRightRailOpen(true);
-    setRelayoutSignal((value) => value + 1);
   }
 
   function hideChange(changeId) {
@@ -1455,6 +1453,10 @@ function ReviewWorkspace({ onLogout }) {
       { duration: 90, easing: "ease-out" },
     );
   };
+  const handleGraphSelection = useCallback((nextSelected) => {
+    setSelected(nextSelected);
+    if (nextSelected) setRightRailOpen(true);
+  }, []);
 
   return (
     <div className={`app-shell ${leftNavOpen ? "nav-open" : "nav-collapsed"} ${rightRailOpen ? "rail-open" : "rail-closed"}`}>
@@ -1496,10 +1498,7 @@ function ReviewWorkspace({ onLogout }) {
               query={query}
               category={category}
               selected={selected}
-              setSelected={(nextSelected) => {
-                setSelected(nextSelected);
-                if (nextSelected) setRightRailOpen(true);
-              }}
+              setSelected={handleGraphSelection}
               cyRef={cyRef}
               relayoutSignal={relayoutSignal}
             />

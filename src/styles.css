@@ -167,7 +167,7 @@ button {
 }
 
 .app-shell.rail-open {
-  --rail-width: 560px;
+  --rail-width: min(760px, 46vw);
 }
 
 .sidebar,
@@ -669,7 +669,7 @@ button {
 
 .right-rail {
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) 280px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
   min-width: 0;
   min-height: 0;
   border-left: 1px solid var(--line);
@@ -985,12 +985,14 @@ button {
 .change-log {
   display: grid;
   grid-template-rows: auto 1fr;
+  min-width: 0;
   min-height: 0;
 }
 
 .change-log-header div {
   display: grid;
   gap: 2px;
+  min-width: 0;
 }
 
 .change-log-header span {
@@ -1017,8 +1019,10 @@ button {
   display: grid;
   align-content: start;
   gap: 10px;
+  min-width: 0;
   min-height: 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 12px;
 }
 
@@ -1026,6 +1030,8 @@ button {
   display: grid;
   gap: 8px;
   width: 100%;
+  min-width: 0;
+  overflow: hidden;
   padding: 11px;
   color: var(--ink);
   background: #fff;
@@ -1054,6 +1060,8 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .change-card-top span {
@@ -1083,6 +1091,7 @@ button {
 }
 
 .change-card strong {
+  min-width: 0;
   overflow-wrap: anywhere;
   font-size: 13px;
 }
@@ -1094,14 +1103,17 @@ button {
 .change-diff {
   display: grid;
   gap: 5px;
+  min-width: 0;
   font-size: 12px;
 }
 
 .change-diff del,
 .change-diff ins {
+  min-width: 0;
   padding: 7px;
   border-radius: 8px;
   overflow-wrap: anywhere;
+  word-break: break-word;
   text-decoration-thickness: 2px;
 }
 
@@ -1120,6 +1132,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  min-width: 0;
   color: var(--muted);
   font-size: 11px;
   font-weight: 900;
@@ -1223,7 +1236,7 @@ button {
   }
 
   .app-shell.rail-open {
-    --rail-width: 520px;
+    --rail-width: min(620px, calc(100vw - var(--sidebar-width)));
   }
 
   .toolbar {
