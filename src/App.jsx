@@ -5,8 +5,6 @@ import {
   CircleDot,
   Database,
   Download,
-  Eye,
-  EyeOff,
   FileJson,
   Focus,
   GitBranch,
@@ -256,7 +254,7 @@ function AccessGate({ onReady }) {
   );
 }
 
-function Sidebar({ index, activeId, onSelect, changeCounts }) {
+function Sidebar({ index, activeId, onSelect, changeCounts, collapsed, onToggleCollapsed }) {
   const [expanded, setExpanded] = useState({});
 
   useEffect(() => {
@@ -271,10 +269,13 @@ function Sidebar({ index, activeId, onSelect, changeCounts }) {
         <div className="brand-mark">
           <Network size={22} />
         </div>
-        <div>
+        <div className="brand-copy">
           <h1>KG Editor</h1>
           <p>Schema review workspace</p>
         </div>
+        <button className="sidebar-toggle" type="button" onClick={onToggleCollapsed} title={collapsed ? "Expand navigation" : "Collapse navigation"}>
+          <PanelRight size={17} />
+        </button>
       </div>
 
       <div className="kg-menu">
@@ -321,8 +322,8 @@ function Toolbar({
   category,
   setCategory,
   graph,
-  showEdgeLabels,
-  setShowEdgeLabels,
+  rightRailOpen,
+  onToggleRightRail,
   onFit,
   onZoom,
   onRelayout,
@@ -364,13 +365,13 @@ function Toolbar({
         <button type="button" onClick={onRelayout} title="Run layout">
           <RefreshCw size={17} />
         </button>
-        <button type="button" onClick={() => setShowEdgeLabels((value) => !value)} title="Toggle relation labels">
-          {showEdgeLabels ? <Eye size={17} /> : <EyeOff size={17} />}
+        <button type="button" onClick={onToggleRightRail} className={rightRailOpen ? "active" : ""} title={rightRailOpen ? "Hide details and review trail" : "Show details and review trail"}>
+          <PanelRight size={17} />
         </button>
-        <button type="button" onClick={() => onZoom(1.18)} title="Zoom in">
+        <button type="button" onClick={() => onZoom(1.45)} title="Zoom in">
           <ZoomIn size={17} />
         </button>
-        <button type="button" onClick={() => onZoom(0.84)} title="Zoom out">
+        <button type="button" onClick={() => onZoom(0.69)} title="Zoom out">
           <ZoomOut size={17} />
         </button>
         <button type="button" onClick={onFit} title="Fit graph">
@@ -549,6 +550,7 @@ function Inspector({
   active,
   graph,
   fieldChanges,
+  onClose,
   onEditNodeField,
   onEditEdgeField,
   onEditProperty,
@@ -561,7 +563,9 @@ function Inspector({
   return (
     <aside className="inspector">
       <div className="inspector-title">
-        <PanelRight size={18} />
+        <button className="rail-toggle" type="button" onClick={onClose} title="Hide details and review trail">
+          <PanelRight size={18} />
+        </button>
         <span>Details and edits</span>
       </div>
 
@@ -723,7 +727,7 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevokeChange }) 
   );
 }
 
-function GraphCanvas({ graph, query, category, showEdgeLabels, selected, setSelected, cyRef, relayoutSignal }) {
+function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, relayoutSignal }) {
   const containerRef = useRef(null);
   const layoutRef = useRef(null);
 
@@ -760,9 +764,9 @@ function GraphCanvas({ graph, query, category, showEdgeLabels, selected, setSele
     const cy = cytoscape({
       container: containerRef.current,
       elements: graph.elements,
-      minZoom: 0.05,
-      maxZoom: 3,
-      wheelSensitivity: 0.15,
+      minZoom: 0.03,
+      maxZoom: 5,
+      wheelSensitivity: 0.32,
       style: [
         {
           selector: "node",
@@ -801,7 +805,7 @@ function GraphCanvas({ graph, query, category, showEdgeLabels, selected, setSele
             "target-arrow-shape": "triangle",
             "target-arrow-color": "#8b93a3",
             "line-color": "#b4bac6",
-            label: showEdgeLabels ? "data(label)" : "",
+            label: "",
             "font-size": 8.5,
             color: "#334155",
             "text-background-color": "#ffffff",
@@ -915,7 +919,7 @@ function GraphCanvas({ graph, query, category, showEdgeLabels, selected, setSele
       if (!(typeof cy.destroyed === "function" && cy.destroyed())) cy.destroy();
       if (cyRef.current === cy) cyRef.current = null;
     };
-  }, [graph, showEdgeLabels, setSelected, cyRef]);
+  }, [graph, setSelected, cyRef]);
 
   useEffect(() => {
     runLayout(cyRef.current);
@@ -1034,7 +1038,8 @@ function ReviewWorkspace({ onLogout }) {
   const [activeChangeId, setActiveChangeId] = useState(null);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
-  const [showEdgeLabels, setShowEdgeLabels] = useState(false);
+  const [leftNavOpen, setLeftNavOpen] = useState(true);
+  const [rightRailOpen, setRightRailOpen] = useState(false);
   const [relayoutSignal, setRelayoutSignal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -1138,7 +1143,10 @@ function ReviewWorkspace({ onLogout }) {
     setSchema(nextSchema);
     setChanges((current) => [change, ...current]);
     setActiveChangeId(change.id);
-    if (nextSelected) setSelected(nextSelected);
+    if (nextSelected) {
+      setSelected(nextSelected);
+      setRightRailOpen(true);
+    }
   }
 
   function editNodeField(index, field, value) {
@@ -1410,6 +1418,7 @@ function ReviewWorkspace({ onLogout }) {
     setActiveChangeId(change.id);
     if (change.entityKind === "edge" || change.ownerKind === "edge") setSelected({ kind: "edge", entityKey: change.entityKey, schemaIndex: change.edgeIndex });
     else setSelected({ kind: "node", entityKey: change.entityKey });
+    setRightRailOpen(true);
     setRelayoutSignal((value) => value + 1);
   }
 
@@ -1443,13 +1452,20 @@ function ReviewWorkspace({ onLogout }) {
     const level = Math.max(cy.minZoom(), Math.min(cy.maxZoom(), cy.zoom() * factor));
     cy.animate(
       { zoom: { level, renderedPosition: { x: cy.width() / 2, y: cy.height() / 2 } } },
-      { duration: 180, easing: "ease-out" },
+      { duration: 90, easing: "ease-out" },
     );
   };
 
   return (
-    <div className="app-shell">
-      <Sidebar index={index} activeId={activeId} onSelect={setActiveId} changeCounts={changeCounts} />
+    <div className={`app-shell ${leftNavOpen ? "nav-open" : "nav-collapsed"} ${rightRailOpen ? "rail-open" : "rail-closed"}`}>
+      <Sidebar
+        index={index}
+        activeId={activeId}
+        onSelect={setActiveId}
+        changeCounts={changeCounts}
+        collapsed={!leftNavOpen}
+        onToggleCollapsed={() => setLeftNavOpen((value) => !value)}
+      />
 
       <main className="workspace">
         <SchemaHeader schema={schema} active={active} changes={changes} />
@@ -1459,8 +1475,8 @@ function ReviewWorkspace({ onLogout }) {
           category={category}
           setCategory={setCategory}
           graph={graph}
-          showEdgeLabels={showEdgeLabels}
-          setShowEdgeLabels={setShowEdgeLabels}
+          rightRailOpen={rightRailOpen}
+          onToggleRightRail={() => setRightRailOpen((value) => !value)}
           onFit={fitGraph}
           onZoom={zoomGraph}
           onRelayout={() => setRelayoutSignal((value) => value + 1)}
@@ -1479,9 +1495,11 @@ function ReviewWorkspace({ onLogout }) {
               graph={graph}
               query={query}
               category={category}
-              showEdgeLabels={showEdgeLabels}
               selected={selected}
-              setSelected={setSelected}
+              setSelected={(nextSelected) => {
+                setSelected(nextSelected);
+                if (nextSelected) setRightRailOpen(true);
+              }}
               cyRef={cyRef}
               relayoutSignal={relayoutSignal}
             />
@@ -1494,13 +1512,14 @@ function ReviewWorkspace({ onLogout }) {
         </section>
       </main>
 
-      <div className="right-rail">
+      <div className="right-rail" aria-hidden={!rightRailOpen}>
         <Inspector
           selected={selected}
           schema={schema}
           active={active}
           graph={graph}
           fieldChanges={fieldChanges}
+          onClose={() => setRightRailOpen(false)}
           onEditNodeField={editNodeField}
           onEditEdgeField={editEdgeField}
           onEditProperty={editProperty}
