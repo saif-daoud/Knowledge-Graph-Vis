@@ -7,7 +7,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const appRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(appRoot, "..", "..");
-const schemaRoot = path.join(repoRoot, "M3", "outputs", "two_kg_schema");
+const schemaRoot = process.env.KG_SCHEMA_SOURCE_ROOT
+  ? path.resolve(process.env.KG_SCHEMA_SOURCE_ROOT)
+  : path.join(repoRoot, "M3", "outputs", "two_kg_schema");
 const candidateRoot = path.join(schemaRoot, "book_schema_candidates");
 const outputRoot = path.join(appRoot, "public", "data");
 const schemaOutputRoot = path.join(outputRoot, "schemas");
@@ -161,6 +163,37 @@ async function pathExists(filePath) {
   }
 }
 
+function indexHasViewerData(index) {
+  return (index?.kgs ?? []).some((kg) => Array.isArray(kg.items) && kg.items.length > 0);
+}
+
+async function readExistingViewerIndex() {
+  const existingIndexPath = path.join(outputRoot, "schema-index.json");
+  if (!(await pathExists(existingIndexPath))) {
+    return null;
+  }
+
+  return readJson(existingIndexPath);
+}
+
+async function preserveExistingViewerDataIfSourceMissing() {
+  if (await pathExists(schemaRoot)) {
+    return false;
+  }
+
+  const existingIndex = await readExistingViewerIndex();
+  if (!existingIndex) {
+    return false;
+  }
+
+  if (!indexHasViewerData(existingIndex)) {
+    return false;
+  }
+
+  console.log(`Source schema root not found at ${schemaRoot}; keeping committed viewer data.`);
+  return true;
+}
+
 async function writeViewerSchema(schema, id) {
   const fileName = `${id}.json`;
   await fs.writeFile(
@@ -190,12 +223,17 @@ async function loadCandidates() {
 }
 
 async function main() {
+  if (await preserveExistingViewerDataIfSourceMissing()) {
+    return;
+  }
+
   await fs.rm(schemaOutputRoot, { recursive: true, force: true });
   await fs.mkdir(schemaOutputRoot, { recursive: true });
 
   const allCandidates = await loadCandidates();
+  const existingIndex = await readExistingViewerIndex();
   const index = {
-    generated_at: new Date().toISOString(),
+    generated_at: existingIndex?.generated_at ?? new Date().toISOString(),
     source_root: schemaRoot,
     kgs: [],
   };
