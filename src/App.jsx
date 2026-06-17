@@ -740,6 +740,30 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevokeChange }) 
 
 function GraphCanvas({ graph, query, category, layout, showEdgeLabels, selected, setSelected, cyRef, relayoutSignal }) {
   const containerRef = useRef(null);
+  const layoutRef = useRef(null);
+
+  function stopActiveLayout() {
+    const activeLayout = layoutRef.current;
+    if (activeLayout?.stop) {
+      try {
+        activeLayout.stop();
+      } catch {
+        // Cytoscape layouts may already be stopped during React teardown.
+      }
+    }
+    layoutRef.current = null;
+  }
+
+  function runLayout(cy) {
+    if (!cy || (typeof cy.destroyed === "function" && cy.destroyed())) return;
+    stopActiveLayout();
+    const nextLayout = cy.layout(getLayoutOptions(layout, graph?.stats?.nodes ?? 0));
+    layoutRef.current = nextLayout;
+    nextLayout.one("layoutstop", () => {
+      if (layoutRef.current === nextLayout) layoutRef.current = null;
+    });
+    nextLayout.run();
+  }
 
   useEffect(() => {
     if (!containerRef.current || !graph?.elements?.length) return undefined;
@@ -885,7 +909,7 @@ function GraphCanvas({ graph, query, category, layout, showEdgeLabels, selected,
           },
         },
       ],
-      layout: getLayoutOptions(layout, graph.stats.nodes),
+      layout: { name: "grid", fit: false, animate: false },
     });
 
     cyRef.current = cy;
@@ -895,14 +919,17 @@ function GraphCanvas({ graph, query, category, layout, showEdgeLabels, selected,
     });
 
     return () => {
-      cy.destroy();
+      stopActiveLayout();
+      cy.removeAllListeners();
+      cy.elements().stop(true);
+      cy.stop(true);
+      if (!(typeof cy.destroyed === "function" && cy.destroyed())) cy.destroy();
       if (cyRef.current === cy) cyRef.current = null;
     };
-  }, [graph, layout, showEdgeLabels, setSelected, cyRef]);
+  }, [graph, showEdgeLabels, setSelected, cyRef]);
 
   useEffect(() => {
-    const cy = cyRef.current;
-    if (cy) cy.layout(getLayoutOptions(layout, graph?.stats?.nodes ?? 0)).run();
+    runLayout(cyRef.current);
   }, [relayoutSignal, layout, graph, cyRef]);
 
   useEffect(() => {

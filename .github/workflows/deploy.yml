@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      PAGES_PROJECT_NAME: knowledge-graph-vis
+      PAGES_PRODUCTION_BRANCH: main
     permissions:
       contents: read
     steps:
@@ -20,15 +23,37 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
       - name: Build
         run: npm run build
         env:
           VITE_ACCESS_CODE_HASH: ${{ secrets.VITE_ACCESS_CODE_HASH }}
 
+      - name: Ensure Cloudflare Pages project exists
+        run: |
+          set -euo pipefail
+
+          if npx --yes wrangler@4.101.0 pages project list --json | node -e "
+            let input = '';
+            process.stdin.on('data', chunk => input += chunk);
+            process.stdin.on('end', () => {
+              const parsed = JSON.parse(input);
+              const projects = Array.isArray(parsed) ? parsed : (parsed.result || parsed.projects || []);
+              const exists = projects.some(project => project.name === process.env.PAGES_PROJECT_NAME);
+              process.exit(exists ? 0 : 1);
+            });
+          "; then
+            echo "Cloudflare Pages project '${PAGES_PROJECT_NAME}' already exists."
+          else
+            npx --yes wrangler@4.101.0 pages project create "${PAGES_PROJECT_NAME}" --production-branch "${PAGES_PRODUCTION_BRANCH}"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy dist --project-name knowledge-graph-vis --branch main
+        run: npx --yes wrangler@4.101.0 pages deploy dist --project-name "${PAGES_PROJECT_NAME}" --branch "${PAGES_PRODUCTION_BRANCH}" --commit-dirty=true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

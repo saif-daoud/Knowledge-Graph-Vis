@@ -309,8 +309,7 @@ export function buildGraphElements(schema, review = {}) {
 
 export function getLayoutOptions(layoutName, nodeCount) {
   const common = {
-    animate: true,
-    animationDuration: 450,
+    animate: false,
     fit: true,
     padding: 80,
   };
