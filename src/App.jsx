@@ -784,8 +784,6 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
             "text-max-width": 118,
             "text-valign": "center",
             "text-halign": "center",
-            "text-outline-width": 3,
-            "text-outline-color": "#ffffff",
             "overlay-padding": 8,
           },
         },
@@ -964,9 +962,13 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
     if (selected?.entityKey) {
       const selectedElement = cy.elements().filter((element) => element.data("entityKey") === selected.entityKey).first();
       if (selectedElement?.length) {
+        const focusSet = selectedElement.isNode()
+          ? selectedElement.closedNeighborhood()
+          : selectedElement.union(selectedElement.connectedNodes());
+        const visibleFocusSet = focusSet.not(".hidden-by-filter");
+        cy.elements().not(visibleFocusSet).not(".hidden-by-filter").addClass("dimmed");
+        visibleFocusSet.removeClass("dimmed").addClass("neighbor");
         selectedElement.addClass("selected");
-        if (selectedElement.isNode()) selectedElement.closedNeighborhood().not(".hidden-by-filter").addClass("neighbor");
-        else selectedElement.connectedNodes().not(".hidden-by-filter").addClass("neighbor");
       }
     }
   }, [query, category, selected, graph, cyRef]);
