@@ -903,6 +903,9 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
       container: containerRef.current,
       elements: graph.elements,
       boxSelectionEnabled: false,
+      autoungrabify: true,
+      autounselectify: true,
+      selectionType: "single",
       minZoom: 0.03,
       maxZoom: 5,
       wheelSensitivity: 0.32,
@@ -910,8 +913,10 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
         {
           selector: "core",
           style: {
+            "active-bg-color": "transparent",
             "active-bg-opacity": 0,
             "active-bg-size": 0,
+            "selection-box-color": "transparent",
             "selection-box-opacity": 0,
             "selection-box-border-width": 0,
           },
@@ -1006,9 +1011,18 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
           },
         },
         {
-          selector: ".active-change",
+          selector: "node.active-change",
           style: {
             "border-width": 3,
+            "underlay-color": "#d89b00",
+            "underlay-opacity": 0.12,
+            "underlay-padding": 7,
+            "z-index": 50,
+          },
+        },
+        {
+          selector: "edge.active-change",
+          style: {
             width: 3.2,
             "z-index": 50,
           },
@@ -1039,6 +1053,8 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
             "underlay-color": "#0b1324",
             "underlay-opacity": 0.16,
             "underlay-padding": 8,
+            "overlay-opacity": 0,
+            "overlay-padding": 0,
             opacity: 1,
             "z-index": 60,
           },
@@ -1049,14 +1065,27 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
             width: 3,
             "line-color": "#0b1324",
             "target-arrow-color": "#0b1324",
+            "overlay-opacity": 0,
+            "overlay-padding": 0,
             opacity: 1,
             "z-index": 60,
           },
         },
         {
+          selector: "node:selected, edge:selected",
+          style: {
+            "overlay-color": "transparent",
+            "overlay-opacity": 0,
+            "overlay-padding": 0,
+          },
+        },
+        {
           selector: "node:active, edge:active",
           style: {
+            "overlay-color": "transparent",
             "overlay-opacity": 0,
+            "overlay-padding": 0,
+            "underlay-opacity": 0,
           },
         },
         {
@@ -1285,14 +1314,11 @@ function ReviewWorkspace({ onLogout }) {
     saveReviewState(activeId, schema, changes);
   }, [activeId, schema, changes]);
 
-  const activeChange = useMemo(() => changes.find((change) => change.id === activeChangeId) ?? null, [changes, activeChangeId]);
   const reviewGraphState = useMemo(
     () => ({
       latestByEntity: latestByEntity(changes),
-      activeChange,
-      activeEntityKeys: new Set(activeChange?.affectedKeys ?? [activeChange?.entityKey].filter(Boolean)),
     }),
-    [changes, activeChange],
+    [changes],
   );
   const graph = useMemo(() => buildGraphElements(schema, reviewGraphState), [schema, reviewGraphState]);
   const fieldChanges = useMemo(() => latestByField(changes), [changes]);

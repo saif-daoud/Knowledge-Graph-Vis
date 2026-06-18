@@ -629,11 +629,16 @@ button {
   inset: 0;
   outline: none;
   user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
 .graph-canvas canvas {
   outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
