@@ -737,29 +737,11 @@ button {
   overflow-wrap: anywhere;
 }
 
-.meta-grid {
-  display: grid;
-  grid-template-columns: 78px 1fr;
-  gap: 8px 10px;
-  margin-top: 16px;
-  padding: 12px;
-  background: var(--panel-soft);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.meta-grid span,
 .selection-type {
   color: var(--muted);
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
-}
-
-.meta-grid strong {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  font-size: 12px;
 }
 
 .category-list {
@@ -1011,6 +993,23 @@ button {
 
 .change-log-header strong {
   font-size: 16px;
+}
+
+.change-log-save {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: #263141;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.change-log-save:hover {
+  background: #f2f6fb;
+  border-color: #c8d5e8;
 }
 
 .empty-log {

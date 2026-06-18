@@ -656,14 +656,6 @@ function EmptyInspector({ schema, active, graph }) {
         <MousePointer2 size={22} />
       </div>
       <h3>{compactTitle(active?.item?.title ?? schema?.schema_name)}</h3>
-      <div className="meta-grid">
-        <span>Schema</span>
-        <strong>{schema?.schema_name ?? "-"}</strong>
-        <span>Module</span>
-        <strong>{schema?.module ?? "-"}</strong>
-        <span>Version</span>
-        <strong>{schema?.schema_version || "-"}</strong>
-      </div>
 
       <div className="category-list">
         {(graph?.categories ?? []).map((category) => (
@@ -800,7 +792,7 @@ function Inspector({
   );
 }
 
-function ChangeLog({ changes, activeChangeId, onSelectChange, onRevertChange }) {
+function ChangeLog({ changes, activeChangeId, onSelectChange, onRevertChange, onSave }) {
   return (
     <aside className="change-log">
       <div className="change-log-header">
@@ -808,7 +800,9 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevertChange }) 
           <span>Review trail</span>
           <strong>{changes.length} changes</strong>
         </div>
-        <Save size={18} />
+        <button className="change-log-save" type="button" onClick={onSave} title="Save review package">
+          <Save size={18} />
+        </button>
       </div>
       {changes.length === 0 ? (
         <div className="empty-log">
@@ -1701,7 +1695,7 @@ function ReviewWorkspace({ onLogout }) {
           onDeleteProperty={deleteProperty}
           onDeleteSelected={deleteSelected}
         />
-        <ChangeLog changes={changes} activeChangeId={activeChangeId} onSelectChange={selectChange} onRevertChange={revertChange} />
+        <ChangeLog changes={changes} activeChangeId={activeChangeId} onSelectChange={selectChange} onRevertChange={revertChange} onSave={exportReview} />
       </div>
 
       {modal && <EntityModal mode={modal} schema={schema} onClose={() => setModal(null)} onCreate={modal === "node" ? createNode : createEdge} />}
