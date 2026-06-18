@@ -15,7 +15,7 @@
           "schemaPath": "data/schemas/clinical_treatment_recommendation.json",
           "stats": {
             "nodes": 128,
-            "edges": 156,
+            "edges": 215,
             "source_books": 29
           }
         }
@@ -37,7 +37,7 @@
           "schemaPath": "data/schemas/islamic_cultural_alignment.json",
           "stats": {
             "nodes": 59,
-            "edges": 69,
+            "edges": 116,
             "source_books": 18
           }
         }

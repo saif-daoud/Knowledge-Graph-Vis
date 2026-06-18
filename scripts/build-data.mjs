@@ -17,14 +17,14 @@ const KG_CONFIG = [
     id: "clinical_treatment_recommendation",
     title: "Clinical Treatment Recommendation KG",
     module: "clinical_treatment_recommendation",
-    finalFile: "clinical_treatment_recommendation_kg_schema.json",
+    finalFile: "clinical_treatment_recommendation_depth_schema_v3_semantic_edges.json",
     accent: "#2f80ed",
   },
   {
     id: "islamic_cultural_alignment",
     title: "Islamic-Cultural Alignment KG",
     module: "islamic_cultural_alignment",
-    finalFile: "islamic_cultural_alignment_kg_schema.json",
+    finalFile: "islamic_cultural_alignment_depth_schema_v3_semantic_edges.json",
     accent: "#0f9f7a",
   },
 ];
