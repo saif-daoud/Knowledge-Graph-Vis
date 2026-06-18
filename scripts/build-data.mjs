@@ -86,13 +86,6 @@ function normalizeProperties(properties) {
   );
 }
 
-function normalizeSupport(value) {
-  if (!Array.isArray(value)) {
-    return [];
-  }
-  return [...new Set(value.map(cleanText).filter(Boolean))];
-}
-
 function normalizeSchema(schema, meta) {
   const nodeTypes = Array.isArray(schema.node_types) ? schema.node_types : [];
   const edgeTypes = Array.isArray(schema.edge_types) ? schema.edge_types : [];
@@ -102,8 +95,6 @@ function normalizeSchema(schema, meta) {
       type: cleanText(node.type),
       description: cleanText(node.description),
       properties: normalizeProperties(node.properties),
-      supported_by_books: normalizeSupport(node.supported_by_books),
-      supported_by_chapters: normalizeSupport(node.supported_by_chapters),
     }))
     .filter((node) => node.type);
 
@@ -114,8 +105,6 @@ function normalizeSchema(schema, meta) {
       target_type: cleanText(edge.target_type),
       description: cleanText(edge.description),
       properties: normalizeProperties(edge.properties),
-      supported_by_books: normalizeSupport(edge.supported_by_books),
-      supported_by_chapters: normalizeSupport(edge.supported_by_chapters),
     }))
     .filter((edge) => edge.source_type && edge.relation && edge.target_type);
 
@@ -131,13 +120,11 @@ function normalizeSchema(schema, meta) {
     module: cleanText(schema.module ?? meta.module ?? ""),
     schema_version: cleanText(schema.schema_version ?? ""),
     fusion_method: cleanText(schema.fusion_method ?? ""),
-    source_books: normalizeSupport(schema.source_books),
     node_types: nodes,
     edge_types: edges,
     stats: {
       nodes: nodes.length,
       edges: edges.length,
-      source_books: normalizeSupport(schema.source_books).length,
     },
   };
 }

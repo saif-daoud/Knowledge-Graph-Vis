@@ -33,7 +33,6 @@ import {
   edgeEntityKey,
   getLayoutOptions,
   nodeEntityKey,
-  supportList,
 } from "./lib/graph.js";
 
 const DEFAULT_ACCESS_CODE_HASH = "98a171c273aa30eacc9ffa54534ebeb7e33861d97665bdf3978308c5ee12f428";
@@ -124,13 +123,6 @@ function makeChange(partial) {
     affectedKeys: partial.affectedKeys ?? [partial.entityKey].filter(Boolean),
     ...partial,
   };
-}
-
-function listLines(value) {
-  return String(value ?? "")
-    .split(/\r?\n/)
-    .map((item) => item.trim())
-    .filter(Boolean);
 }
 
 function downloadFile(filename, payload) {
@@ -325,6 +317,21 @@ function rebuildSchemaWithChanges(baseSchema, changes) {
     .reduce((currentSchema, change) => applyChangeToSchema(currentSchema, change), deepClone(baseSchema));
 }
 
+function stripSupportSources(schema) {
+  if (!schema) return schema;
+  const next = deepClone(schema);
+  delete next.source_books;
+  if (next.stats) delete next.stats.source_books;
+  next.node_types = (next.node_types ?? []).map(({ supported_by_books, supported_by_chapters, ...node }) => node);
+  next.edge_types = (next.edge_types ?? []).map(({ supported_by_books, supported_by_chapters, ...edge }) => edge);
+  return next;
+}
+
+function isSupportSourceChange(change) {
+  const text = `${change?.fieldPath ?? ""} ${change?.fieldLabel ?? ""}`.toLowerCase();
+  return text.includes("supported_by_books") || text.includes("supported_by_chapters") || text.includes("support sources");
+}
+
 function AccessGate({ onReady }) {
   const [code, setCode] = useState("");
   const [status, setStatus] = useState("");
@@ -431,8 +438,8 @@ function Sidebar({ index, activeId, onSelect, changeCounts, collapsed, onToggleC
 function Toolbar({
   query,
   setQuery,
-  category,
-  setCategory,
+  categoryFilters,
+  setCategoryFilters,
   graph,
   rightRailOpen,
   onToggleRightRail,
@@ -445,6 +452,16 @@ function Toolbar({
   onReset,
   onLogout,
 }) {
+  const activeFilters = Array.isArray(categoryFilters) ? categoryFilters : [];
+  const toggleCategory = (id) => {
+    setCategoryFilters((current) => {
+      const currentFilters = Array.isArray(current) ? current : [];
+      return currentFilters.includes(id)
+        ? currentFilters.filter((item) => item !== id)
+        : [...currentFilters, id];
+    });
+  };
+
   return (
     <div className="toolbar">
       <div className="search-box">
@@ -453,11 +470,11 @@ function Toolbar({
       </div>
 
       <div className="segmented category-filter">
-        <button className={category === "all" ? "active" : ""} type="button" onClick={() => setCategory("all")}>
+        <button className={activeFilters.length === 0 ? "active" : ""} type="button" onClick={() => setCategoryFilters([])}>
           All
         </button>
         {(graph?.categories ?? []).map((item) => (
-          <button className={category === item.id ? "active" : ""} key={item.id} type="button" onClick={() => setCategory(item.id)} style={{ "--chip": item.color }}>
+          <button className={activeFilters.includes(item.id) ? "active" : ""} key={item.id} type="button" onClick={() => toggleCategory(item.id)} style={{ "--chip": item.color }}>
             <span className="dot" />
             {item.label}
             <small>{item.count}</small>
@@ -614,19 +631,6 @@ function PropertiesEditor({ owner, ownerKind, onEdit, onAdd, onDelete, fieldChan
   );
 }
 
-function SupportEditor({ owner, onCommit, fieldChanges }) {
-  const value = supportList(owner.entity).join("\n");
-  return (
-    <EditableField
-      label="Support sources"
-      value={value}
-      multiline
-      diff={fieldChanges.get(fieldPathFor(owner.entityKey, "supported_by_books"))}
-      onCommit={onCommit}
-    />
-  );
-}
-
 function EmptyInspector({ schema, active, graph }) {
   return (
     <div className="inspector-empty">
@@ -695,11 +699,6 @@ function Inspector({
                 diff={fieldChanges.get(fieldPathFor(resolved.entityKey, "description"))}
                 onCommit={(value) => onEditNodeField(resolved.index, "description", value)}
               />
-              <SupportEditor
-                owner={resolved}
-                fieldChanges={fieldChanges}
-                onCommit={(value) => onEditNodeField(resolved.index, "supported_by_books", listLines(value))}
-              />
               <PropertiesEditor
                 owner={resolved}
                 ownerKind="node"
@@ -744,11 +743,6 @@ function Inspector({
                 multiline
                 diff={fieldChanges.get(fieldPathFor(resolved.entityKey, "description"))}
                 onCommit={(value) => onEditEdgeField(resolved.index, "description", value)}
-              />
-              <SupportEditor
-                owner={resolved}
-                fieldChanges={fieldChanges}
-                onCommit={(value) => onEditEdgeField(resolved.index, "supported_by_books", listLines(value))}
               />
               <PropertiesEditor
                 owner={resolved}
@@ -843,7 +837,7 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevertChange, on
   );
 }
 
-function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, relayoutSignal }) {
+function GraphCanvas({ graph, query, categoryFilters, selected, setSelected, cyRef, relayoutSignal }) {
   const containerRef = useRef(null);
   const layoutRef = useRef(null);
 
@@ -1127,11 +1121,12 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
     if (!cy) return;
 
     const normalizedQuery = query.trim().toLowerCase();
+    const activeCategorySet = new Set(Array.isArray(categoryFilters) ? categoryFilters : []);
     cy.elements().removeClass("hidden-by-filter dimmed matched selected neighbor");
 
-    if (category !== "all") {
+    if (activeCategorySet.size > 0) {
       cy.nodes().forEach((node) => {
-        if (node.data("category") !== category) node.addClass("hidden-by-filter");
+        if (!activeCategorySet.has(node.data("category"))) node.addClass("hidden-by-filter");
       });
       cy.edges().forEach((edge) => {
         if (edge.source().hasClass("hidden-by-filter") || edge.target().hasClass("hidden-by-filter")) edge.addClass("hidden-by-filter");
@@ -1157,7 +1152,7 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
         selectedElement.addClass("selected");
       }
     }
-  }, [query, category, selected, graph, cyRef]);
+  }, [query, categoryFilters, selected, graph, cyRef]);
 
   return <div className="graph-canvas" ref={containerRef} />;
 }
@@ -1225,7 +1220,7 @@ function ReviewWorkspace({ onLogout }) {
   const [selected, setSelected] = useState(null);
   const [activeChangeId, setActiveChangeId] = useState(null);
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("all");
+  const [categoryFilters, setCategoryFilters] = useState([]);
   const [leftNavOpen, setLeftNavOpen] = useState(true);
   const [rightRailOpen, setRightRailOpen] = useState(false);
   const [relayoutSignal, setRelayoutSignal] = useState(0);
@@ -1274,7 +1269,7 @@ function ReviewWorkspace({ onLogout }) {
     setSelected(null);
     setActiveChangeId(null);
     setQuery("");
-    setCategory("all");
+    setCategoryFilters([]);
     setError("");
     setLoadedSchemaId(null);
     setBaseSchema(null);
@@ -1288,10 +1283,12 @@ function ReviewWorkspace({ onLogout }) {
       })
       .then((data) => {
         if (cancelled) return;
+        const base = stripSupportSources(data);
         const local = loadReviewState(active.item.id);
-        setBaseSchema(data);
-        setSchema(local?.schema ?? data);
-        setChanges(Array.isArray(local?.changes) ? local.changes : []);
+        const localChanges = (Array.isArray(local?.changes) ? local.changes : []).filter((change) => !isSupportSourceChange(change));
+        setBaseSchema(base);
+        setSchema(local?.schema ? stripSupportSources(local.schema) : base);
+        setChanges(localChanges);
         setLoadedSchemaId(active.item.id);
       })
       .catch((caught) => setError(caught.message))
@@ -1554,7 +1551,7 @@ function ReviewWorkspace({ onLogout }) {
       return;
     }
     const next = deepClone(current);
-    const node = { type, description: form.description.trim(), properties: [], supported_by_books: [] };
+    const node = { type, description: form.description.trim(), properties: [] };
     next.node_types = [...(next.node_types ?? []), node];
     const entityKey = nodeEntityKey(type);
     const change = makeChange({
@@ -1583,7 +1580,6 @@ function ReviewWorkspace({ onLogout }) {
       target_type: form.target_type.trim(),
       description: form.description.trim(),
       properties: [],
-      supported_by_books: [],
     };
     next.edge_types = [...(next.edge_types ?? []), edge];
     const index = next.edge_types.length - 1;
@@ -1673,8 +1669,8 @@ function ReviewWorkspace({ onLogout }) {
         <Toolbar
           query={query}
           setQuery={setQuery}
-          category={category}
-          setCategory={setCategory}
+          categoryFilters={categoryFilters}
+          setCategoryFilters={setCategoryFilters}
           graph={graph}
           rightRailOpen={rightRailOpen}
           onToggleRightRail={() => setRightRailOpen((value) => !value)}
@@ -1695,7 +1691,7 @@ function ReviewWorkspace({ onLogout }) {
             <GraphCanvas
               graph={graph}
               query={query}
-              category={category}
+              categoryFilters={categoryFilters}
               selected={selected}
               setSelected={handleGraphSelection}
               cyRef={cyRef}

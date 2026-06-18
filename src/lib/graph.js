@@ -70,13 +70,6 @@ export function getCategory(node) {
   return CATEGORY_RULES.find((category) => category.match.test(haystack)) ?? FALLBACK_CATEGORY;
 }
 
-export function supportList(item) {
-  return [
-    ...(Array.isArray(item?.supported_by_books) ? item.supported_by_books : []),
-    ...(Array.isArray(item?.supported_by_chapters) ? item.supported_by_chapters : []),
-  ];
-}
-
 export function itemSearchText(item) {
   const propertyText = Array.isArray(item?.properties)
     ? item.properties.map((property) => `${property.name} ${property.description}`).join(" ")
@@ -88,7 +81,6 @@ export function itemSearchText(item) {
     item?.target_type,
     item?.description,
     propertyText,
-    supportList(item).join(" "),
   ]
     .filter(Boolean)
     .join(" ")
@@ -129,8 +121,6 @@ function ensureNode(nodeMap, elements, type, review, options = {}) {
     type,
     description: options.description ?? "Referenced by a relation but not declared as a node type in this schema draft.",
     properties: [],
-    supported_by_books: [],
-    supported_by_chapters: [],
   };
   const category = getCategory(placeholder);
   const id = nodeId(type);
@@ -150,8 +140,6 @@ function ensureNode(nodeMap, elements, type, review, options = {}) {
       textMaxWidth: visual.textMaxWidth,
       description: placeholder.description,
       properties: placeholder.properties ?? [],
-      supported_by_books: placeholder.supported_by_books ?? [],
-      supported_by_chapters: placeholder.supported_by_chapters ?? [],
       placeholder: options.placeholder ?? true,
       ghost: options.ghost ?? false,
       searchText: itemSearchText(placeholder),
@@ -193,8 +181,6 @@ function addGhostForActiveDeletion(schema, nodeMap, elements, review) {
           kind: "edge",
           description: edge.description,
           properties: edge.properties ?? [],
-          supported_by_books: edge.supported_by_books ?? [],
-          supported_by_chapters: edge.supported_by_chapters ?? [],
           ghost: true,
           searchText: itemSearchText(edge),
         },
@@ -220,8 +206,6 @@ function addGhostForActiveDeletion(schema, nodeMap, elements, review) {
         kind: "edge",
         description: change.oldEntity.description,
         properties: change.oldEntity.properties ?? [],
-        supported_by_books: change.oldEntity.supported_by_books ?? [],
-        supported_by_chapters: change.oldEntity.supported_by_chapters ?? [],
         ghost: true,
         searchText: itemSearchText(change.oldEntity),
       },
@@ -260,8 +244,6 @@ export function buildGraphElements(schema, review = {}) {
         textMaxWidth: visual.textMaxWidth,
         description: node.description,
         properties: node.properties ?? [],
-        supported_by_books: node.supported_by_books ?? [],
-        supported_by_chapters: node.supported_by_chapters ?? [],
         searchText: itemSearchText(node),
       },
       classes: [`category-${category.id}`, ...changeClasses(entityKey, review)].filter(Boolean).join(" "),
@@ -291,8 +273,6 @@ export function buildGraphElements(schema, review = {}) {
         schemaIndex: index,
         description: edge.description,
         properties: edge.properties ?? [],
-        supported_by_books: edge.supported_by_books ?? [],
-        supported_by_chapters: edge.supported_by_chapters ?? [],
         searchText: itemSearchText(edge),
       },
       classes: changeClasses(entityKey, review).join(" "),
