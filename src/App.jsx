@@ -1,7 +1,5 @@
 import cytoscape from "cytoscape";
 import {
-  BookOpen,
-  ChevronDown,
   CircleDot,
   Database,
   Download,
@@ -389,13 +387,9 @@ function AccessGate({ onReady }) {
 }
 
 function Sidebar({ index, activeId, onSelect, changeCounts, collapsed, onToggleCollapsed }) {
-  const [expanded, setExpanded] = useState({});
-
-  useEffect(() => {
-    if (index?.kgs) {
-      setExpanded(Object.fromEntries(index.kgs.map((kg) => [kg.id, true])));
-    }
-  }, [index]);
+  const kgItems = (index?.kgs ?? [])
+    .map((kg) => ({ kg, item: kg.items?.[0] }))
+    .filter(({ item }) => item);
 
   return (
     <aside className="sidebar">
@@ -412,37 +406,21 @@ function Sidebar({ index, activeId, onSelect, changeCounts, collapsed, onToggleC
         </button>
       </div>
 
-      <div className="kg-menu">
-        {(index?.kgs ?? []).map((kg) => {
-          const isExpanded = expanded[kg.id];
+      <div className="kg-menu kg-menu-flat">
+        {kgItems.map(({ kg, item }) => {
+          const active = item.id === activeId;
+          const count = changeCounts[item.id] ?? 0;
           return (
-            <section className={`kg-section ${isExpanded ? "expanded" : "collapsed"}`} key={kg.id}>
-              <button className="kg-heading" type="button" onClick={() => setExpanded((current) => ({ ...current, [kg.id]: !current[kg.id] }))}>
-                <span className="kg-accent" style={{ background: kg.accent }} />
-                <span>{kg.title}</span>
-                <small>{kg.stats?.books ?? 0} books</small>
-                <ChevronDown className="kg-chevron" size={16} />
-              </button>
-
-              <div className="kg-items-frame" aria-hidden={!isExpanded}>
-                <div className="kg-items">
-                  {(kg.items ?? []).map((item) => {
-                    const active = item.id === activeId;
-                    const count = changeCounts[item.id] ?? 0;
-                    return (
-                      <button className={`schema-item ${active ? "active" : ""}`} key={item.id} type="button" onClick={() => onSelect(item.id)}>
-                        <span className="schema-icon">{item.kind === "fused" ? <Database size={15} /> : <BookOpen size={15} />}</span>
-                        <span className="schema-copy">
-                          <span>{compactTitle(item.title)}</span>
-                          <small>{item.stats?.nodes ?? 0} nodes - {item.stats?.edges ?? 0} relations</small>
-                        </span>
-                        {count > 0 && <span className="schema-change-count">{count}</span>}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
+            <button className={`schema-item kg-choice ${active ? "active" : ""}`} key={item.id} type="button" onClick={() => onSelect(item.id)} style={{ "--kg-accent": kg.accent }}>
+              <span className="schema-icon">
+                <Database size={15} />
+              </span>
+              <span className="schema-copy">
+                <span>{compactTitle(item.title)}</span>
+                <small>{item.stats?.nodes ?? 0} nodes - {item.stats?.edges ?? 0} relations</small>
+              </span>
+              {count > 0 && <span className="schema-change-count">{count}</span>}
+            </button>
           );
         })}
       </div>
@@ -539,7 +517,7 @@ function SchemaHeader({ schema, active, changes }) {
   return (
     <header className="schema-header">
       <div>
-        <p className="eyebrow">{schema?.kg_title ?? "Schema"} - {active?.item?.kind === "fused" ? "Fused" : "Textbook"}</p>
+        <p className="eyebrow">{schema?.module ? schema.module.replace(/_/g, " ") : "Knowledge graph schema"}</p>
         <h2>{compactTitle(active?.item?.title ?? schema?.schema_name ?? "Schema")}</h2>
       </div>
       <div className="schema-stats">
@@ -1231,6 +1209,7 @@ function ReviewWorkspace({ onLogout }) {
   const [activeId, setActiveId] = useState(null);
   const [baseSchema, setBaseSchema] = useState(null);
   const [schema, setSchema] = useState(null);
+  const [loadedSchemaId, setLoadedSchemaId] = useState(null);
   const [changes, setChanges] = useState([]);
   const [selected, setSelected] = useState(null);
   const [activeChangeId, setActiveChangeId] = useState(null);
@@ -1286,6 +1265,10 @@ function ReviewWorkspace({ onLogout }) {
     setQuery("");
     setCategory("all");
     setError("");
+    setLoadedSchemaId(null);
+    setBaseSchema(null);
+    setSchema(null);
+    setChanges([]);
 
     fetch(publicPath(active.item.schemaPath))
       .then((response) => {
@@ -1298,6 +1281,7 @@ function ReviewWorkspace({ onLogout }) {
         setBaseSchema(data);
         setSchema(local?.schema ?? data);
         setChanges(Array.isArray(local?.changes) ? local.changes : []);
+        setLoadedSchemaId(active.item.id);
       })
       .catch((caught) => setError(caught.message))
       .finally(() => {
@@ -1310,8 +1294,9 @@ function ReviewWorkspace({ onLogout }) {
   }, [active]);
 
   useEffect(() => {
+    if (loadedSchemaId !== activeId) return;
     saveReviewState(activeId, schema, changes);
-  }, [activeId, schema, changes]);
+  }, [activeId, loadedSchemaId, schema, changes]);
 
   const reviewGraphState = useMemo(
     () => ({

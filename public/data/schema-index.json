@@ -1,460 +1,49 @@
 {
   "generated_at": "2026-06-17T10:56:02.691Z",
-  "source_root": "E:\\QCRI-env\\sakinaai\\M3\\outputs\\two_kg_schema",
+  "source_root": "E:\\QCRI-env\\sakinaai",
   "kgs": [
     {
-      "id": "clinical",
-      "title": "Clinical KG",
-      "group": "clinical",
-      "module": "clinical_core",
+      "id": "clinical_treatment_recommendation",
+      "title": "Clinical Treatment Recommendation KG",
+      "module": "clinical_treatment_recommendation",
       "accent": "#2f80ed",
       "items": [
         {
-          "id": "clinical__fused",
-          "title": "Fused KG schema",
-          "kind": "fused",
-          "schemaPath": "data/schemas/clinical__fused.json",
+          "id": "clinical_treatment_recommendation",
+          "title": "Clinical Treatment Recommendation KG",
+          "kind": "kg",
+          "schemaPath": "data/schemas/clinical_treatment_recommendation.json",
           "stats": {
-            "nodes": 138,
-            "edges": 300,
-            "source_books": 24
-          }
-        },
-        {
-          "id": "clinical__book__fcf85d94ebd5",
-          "title": "Applications of the Unified Protocol for Transdiagnostic",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__fcf85d94ebd5.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 11,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__2188e82e87e5",
-          "title": "Cognitive Behavior Therapy, Second Edition",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__2188e82e87e5.json",
-          "stats": {
-            "nodes": 14,
-            "edges": 21,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__2c074aaebb9b",
-          "title": "Cognitive Behavioural Therapy For Dummies 3rd Edition",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__2c074aaebb9b.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 19,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__d68325baaa7f",
-          "title": "Cognitive Processing Therapy for PTSD_ A Comprehensive",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__d68325baaa7f.json",
-          "stats": {
-            "nodes": 13,
-            "edges": 13,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__7c94a8b9a2f2",
-          "title": "Cognitive Therapy of Anxiety Disorders _ Science",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__7c94a8b9a2f2.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 11,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__ef119c125c92",
-          "title": "Cognitive Therapy of Depression",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__ef119c125c92.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 16,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__5d91dd3638c9",
-          "title": "Cognitive-Behavioral Therapy for OCD and Its Subtypes",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__5d91dd3638c9.json",
-          "stats": {
-            "nodes": 8,
-            "edges": 11,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__f9e3449a232d",
-          "title": "Handbook of Cognitive-Behavioral Therapies, Fourth Edition",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__f9e3449a232d.json",
-          "stats": {
-            "nodes": 8,
-            "edges": 9,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__61c4ccc195a4",
-          "title": "Insomnia CBT",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__61c4ccc195a4.json",
-          "stats": {
-            "nodes": 14,
-            "edges": 15,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__4f6ef8e10c08",
-          "title": "Learning Cognitive-Behavior Therapy_ An Illustrated Guide",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__4f6ef8e10c08.json",
-          "stats": {
-            "nodes": 15,
-            "edges": 19,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__c354efa2bfc1",
-          "title": "Mastery of Obsessive-Compulsive Disorder_ A",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__c354efa2bfc1.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 11,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__003f6fc29102",
-          "title": "Mastery of Your Anxiety and Panic_ Workbook",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__003f6fc29102.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 13,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__4df1314d23b1",
-          "title": "Mind Over Mood, Second Edition",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__4df1314d23b1.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 17,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__af2ca29fae51",
-          "title": "Overcoming Insomnia_ A Cognitive-Behavioral Therapy",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__af2ca29fae51.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 14,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__c8d0b95bace4",
-          "title": "Oxford Guide To Behavioural Experiments In Cognitive Therapy",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__c8d0b95bace4.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 12,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__0b135e3b8a12",
-          "title": "Problem-Solving Therapy A Treatment Manual",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__0b135e3b8a12.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 10,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__ec4bd4d1291d",
-          "title": "Retrain Your Brain_ Cognitive Behavioral Therapy in 7 Weeks",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__ec4bd4d1291d.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 8,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__96c5ce0590ea",
-          "title": "Schema Therapy _ A Practitioner_s Guide",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__96c5ce0590ea.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 15,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__1343b4f70b11",
-          "title": "Schema Therapy Farrell",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__1343b4f70b11.json",
-          "stats": {
-            "nodes": 12,
-            "edges": 13,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__d9fdc596f1f7",
-          "title": "The Clinician’s Guide to CBT Using Mind Over Mood, Second",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__d9fdc596f1f7.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 10,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__e09000d6521b",
-          "title": "The Comprehensive Clinician_s Guide to_ Cognitive Behavioral",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__e09000d6521b.json",
-          "stats": {
-            "nodes": 15,
-            "edges": 16,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__5084c11159bc",
-          "title": "The schema therapy clinician_s guide _ a complete resource",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__5084c11159bc.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 16,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__3484b792bc6b",
-          "title": "Treating PTSD With CognitiveBehavioral Therapies",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__3484b792bc6b.json",
-          "stats": {
-            "nodes": 11,
-            "edges": 12,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "clinical__book__8c7777abfb50",
-          "title": "Treatment Plans and Interventions for Depression and Anxiety",
-          "kind": "book",
-          "schemaPath": "data/schemas/clinical__book__8c7777abfb50.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 10,
-            "source_books": 0
+            "nodes": 128,
+            "edges": 156,
+            "source_books": 29
           }
         }
       ],
       "stats": {
-        "views": 25,
-        "books": 24
+        "schemas": 1
       }
     },
     {
-      "id": "islamic",
-      "title": "Islamic-Cultural KG",
-      "group": "islamic_cultural",
+      "id": "islamic_cultural_alignment",
+      "title": "Islamic-Cultural Alignment KG",
       "module": "islamic_cultural_alignment",
       "accent": "#0f9f7a",
       "items": [
         {
-          "id": "islamic__fused",
-          "title": "Fused KG schema",
-          "kind": "fused",
-          "schemaPath": "data/schemas/islamic__fused.json",
+          "id": "islamic_cultural_alignment",
+          "title": "Islamic-Cultural Alignment KG",
+          "kind": "kg",
+          "schemaPath": "data/schemas/islamic_cultural_alignment.json",
           "stats": {
-            "nodes": 85,
-            "edges": 118,
-            "source_books": 13
-          }
-        },
-        {
-          "id": "islamic__book__31a48e53e93e",
-          "title": "‎⁨برنامج الصفا 2026⁩",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__31a48e53e93e.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 9,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__0637c5dc12ed",
-          "title": "Application of Traditional Islamically Integrated Psychotherapy (TIIP)",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__0637c5dc12ed.json",
-          "stats": {
-            "nodes": 6,
-            "edges": 5,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__8994469c2996",
-          "title": "Applying Islamic Principles to Clinical Mental Health Care",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__8994469c2996.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 10,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__60a46fe87cec",
-          "title": "Counseling Muslims handbook of mental health issues",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__60a46fe87cec.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 9,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__81cddbee7871",
-          "title": "Developing a Model of Islamic Psychology and Psychotherapy",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__81cddbee7871.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 9,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__b5f8d4c2539f",
-          "title": "Evil Eye, Jinn Possession, and Mental Health Issues - An Islamic Perspective",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__b5f8d4c2539f.json",
-          "stats": {
-            "nodes": 8,
-            "edges": 9,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__5e684e178828",
-          "title": "Integrating Acceptance and Commitment Therapy with Islāmic",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__5e684e178828.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 10,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__10b282c0421b",
-          "title": "Islamic Counselling _ An Introduction to Theory and Practice",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__10b282c0421b.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 12,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__0f4d5cec9fe8",
-          "title": "Islāmic Counselling and Psychotherapy",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__0f4d5cec9fe8.json",
-          "stats": {
-            "nodes": 10,
-            "edges": 10,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__dfc76a846d74",
-          "title": "Islamic Psychology _ Human Behaviour and Experience",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__dfc76a846d74.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 9,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__4082403b3de8",
-          "title": "Islamically Integrated Psychotherapy",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__4082403b3de8.json",
-          "stats": {
-            "nodes": 8,
-            "edges": 9,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__94f7ddf452dd",
-          "title": "Islamically Modified Cognitive Behavioural Therapy",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__94f7ddf452dd.json",
-          "stats": {
-            "nodes": 9,
-            "edges": 13,
-            "source_books": 0
-          }
-        },
-        {
-          "id": "islamic__book__19df9b852477",
-          "title": "Mental illness stigma as a moderator in the relationship between religiosity and help-seeking attitudes among Muslims from 16 Arab countries",
-          "kind": "book",
-          "schemaPath": "data/schemas/islamic__book__19df9b852477.json",
-          "stats": {
-            "nodes": 5,
-            "edges": 4,
-            "source_books": 0
+            "nodes": 59,
+            "edges": 69,
+            "source_books": 18
           }
         }
       ],
       "stats": {
-        "views": 14,
-        "books": 13
+        "schemas": 1
       }
     }
   ]

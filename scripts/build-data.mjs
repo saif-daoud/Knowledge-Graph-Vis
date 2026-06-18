@@ -1,4 +1,3 @@
-import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -9,33 +8,26 @@ const appRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(appRoot, "..", "..");
 const schemaRoot = process.env.KG_SCHEMA_SOURCE_ROOT
   ? path.resolve(process.env.KG_SCHEMA_SOURCE_ROOT)
-  : path.join(repoRoot, "M3", "outputs", "two_kg_schema");
-const candidateRoot = path.join(schemaRoot, "book_schema_candidates");
+  : repoRoot;
 const outputRoot = path.join(appRoot, "public", "data");
 const schemaOutputRoot = path.join(outputRoot, "schemas");
 
 const KG_CONFIG = [
   {
-    id: "clinical",
-    title: "Clinical KG",
-    group: "clinical",
-    module: "clinical_core",
-    finalFile: "clinical_kg_schema.json",
+    id: "clinical_treatment_recommendation",
+    title: "Clinical Treatment Recommendation KG",
+    module: "clinical_treatment_recommendation",
+    finalFile: "clinical_treatment_recommendation_kg_schema.json",
     accent: "#2f80ed",
   },
   {
-    id: "islamic",
-    title: "Islamic-Cultural KG",
-    group: "islamic_cultural",
+    id: "islamic_cultural_alignment",
+    title: "Islamic-Cultural Alignment KG",
     module: "islamic_cultural_alignment",
-    finalFile: "islamic_cultural_kg_schema.json",
+    finalFile: "islamic_cultural_alignment_kg_schema.json",
     accent: "#0f9f7a",
   },
 ];
-
-function shortHash(value) {
-  return crypto.createHash("sha1").update(String(value)).digest("hex").slice(0, 12);
-}
 
 function cleanText(value) {
   if (value === null || value === undefined) {
@@ -176,8 +168,20 @@ async function readExistingViewerIndex() {
   return readJson(existingIndexPath);
 }
 
+async function missingSourceFiles() {
+  const missing = [];
+  for (const kg of KG_CONFIG) {
+    const filePath = path.join(schemaRoot, kg.finalFile);
+    if (!(await pathExists(filePath))) {
+      missing.push(filePath);
+    }
+  }
+  return missing;
+}
+
 async function preserveExistingViewerDataIfSourceMissing() {
-  if (await pathExists(schemaRoot)) {
+  const missing = await missingSourceFiles();
+  if (missing.length === 0) {
     return false;
   }
 
@@ -190,7 +194,7 @@ async function preserveExistingViewerDataIfSourceMissing() {
     return false;
   }
 
-  console.log(`Source schema root not found at ${schemaRoot}; keeping committed viewer data.`);
+  console.log(`Source schema files not found; keeping committed viewer data. Missing: ${missing.join(", ")}`);
   return true;
 }
 
@@ -204,24 +208,6 @@ async function writeViewerSchema(schema, id) {
   return `data/schemas/${fileName}`;
 }
 
-async function loadCandidates() {
-  if (!(await pathExists(candidateRoot))) {
-    return [];
-  }
-
-  const files = (await fs.readdir(candidateRoot))
-    .filter((fileName) => fileName.toLowerCase().endsWith(".json"))
-    .sort((a, b) => a.localeCompare(b));
-
-  const candidates = [];
-  for (const fileName of files) {
-    const filePath = path.join(candidateRoot, fileName);
-    const raw = await readJson(filePath);
-    candidates.push({ raw, fileName });
-  }
-  return candidates;
-}
-
 async function main() {
   if (await preserveExistingViewerDataIfSourceMissing()) {
     return;
@@ -230,7 +216,6 @@ async function main() {
   await fs.rm(schemaOutputRoot, { recursive: true, force: true });
   await fs.mkdir(schemaOutputRoot, { recursive: true });
 
-  const allCandidates = await loadCandidates();
   const existingIndex = await readExistingViewerIndex();
   const index = {
     generated_at: existingIndex?.generated_at ?? new Date().toISOString(),
@@ -242,64 +227,33 @@ async function main() {
     const items = [];
     const finalPath = path.join(schemaRoot, kg.finalFile);
 
-    if (await pathExists(finalPath)) {
-      const raw = await readJson(finalPath);
-      const id = `${kg.id}__fused`;
-      const schema = normalizeSchema(raw, {
-        id,
-        kg_id: kg.id,
-        kg_title: kg.title,
-        title: "Fused KG schema",
-        kind: "fused",
-        module: kg.module,
-      });
-      const schemaPath = await writeViewerSchema(schema, id);
-      items.push({
-        id,
-        title: "Fused KG schema",
-        kind: "fused",
-        schemaPath,
-        stats: schema.stats,
-      });
-    }
-
-    const matchingCandidates = allCandidates.filter(
-      ({ raw }) => raw.book_group === kg.group || raw.module === kg.module,
-    );
-
-    for (const { raw, fileName } of matchingCandidates) {
-      const book = cleanText(raw.book ?? fileName.replace(/\.json$/i, ""));
-      const id = `${kg.id}__book__${shortHash(book || fileName)}`;
-      const schema = normalizeSchema(raw, {
-        id,
-        kg_id: kg.id,
-        kg_title: kg.title,
-        title: book,
-        kind: "book",
-        book,
-        book_group: kg.group,
-        module: kg.module,
-      });
-      const schemaPath = await writeViewerSchema(schema, id);
-      items.push({
-        id,
-        title: book,
-        kind: "book",
-        schemaPath,
-        stats: schema.stats,
-      });
-    }
+    const raw = await readJson(finalPath);
+    const id = kg.id;
+    const schema = normalizeSchema(raw, {
+      id,
+      kg_id: kg.id,
+      kg_title: kg.title,
+      title: kg.title,
+      kind: "kg",
+      module: kg.module,
+    });
+    const schemaPath = await writeViewerSchema(schema, id);
+    items.push({
+      id,
+      title: kg.title,
+      kind: "kg",
+      schemaPath,
+      stats: schema.stats,
+    });
 
     index.kgs.push({
       id: kg.id,
       title: kg.title,
-      group: kg.group,
       module: kg.module,
       accent: kg.accent,
       items,
       stats: {
-        views: items.length,
-        books: items.filter((item) => item.kind === "book").length,
+        schemas: items.length,
       },
     });
   }
@@ -311,7 +265,7 @@ async function main() {
   );
 
   const summary = index.kgs
-    .map((kg) => `${kg.title}: ${kg.items.length} views`)
+    .map((kg) => `${kg.title}: ${kg.items[0]?.stats?.nodes ?? 0} nodes, ${kg.items[0]?.stats?.edges ?? 0} relations`)
     .join(" | ");
   console.log(`Prepared KG schema viewer data. ${summary}`);
 }

@@ -296,6 +296,12 @@ button {
   transition: opacity 180ms ease, transform 220ms ease;
 }
 
+.kg-menu-flat {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
 .kg-section + .kg-section {
   margin-top: 12px;
 }
@@ -401,6 +407,35 @@ button {
 .schema-item.active {
   background: #eef5ff;
   border-color: #bfd7ff;
+}
+
+.schema-item.kg-choice {
+  grid-template-columns: 34px 1fr;
+  min-height: 68px;
+  padding: 10px 10px 10px 12px;
+  background: #f8fafc;
+  border-color: var(--line);
+}
+
+.schema-item.kg-choice::before {
+  position: absolute;
+  left: 0;
+  top: 11px;
+  bottom: 11px;
+  width: 5px;
+  content: "";
+  background: var(--kg-accent);
+  border-radius: 0 999px 999px 0;
+}
+
+.schema-item.kg-choice:hover {
+  background: #f2f7ff;
+  border-color: #c8d5e8;
+}
+
+.schema-item.kg-choice.active {
+  background: #eef5ff;
+  border-color: #9ec5ff;
 }
 
 .schema-icon {
