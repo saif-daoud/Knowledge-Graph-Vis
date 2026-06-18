@@ -8,8 +8,8 @@
   "book_group": "",
   "schema_name": "Clinical Mental-Health Treatment-Recommendation KG — Depth-First Tree Graph",
   "module": "clinical_treatment_recommendation",
-  "schema_version": "m3-two-kg-schema-v0.3-semantic-edges",
-  "fusion_method": "deterministic Version 0.3 semantic-edge revision: All former IS_A relations were replaced by explicit, domain-meaningful KG predicates. Depth is represented through compositional and operational relations (for example HAS_COMPONENT, USES_TECHNIQUE, MEASURES, TARGETS, MAINTAINS, MODIFIES, and REQUIRES_MONITORING), while cross-branch relations encode clinically relevant dependencies, treatment logic, contextual constraints, and cultural-spiritual adaptations. Predicate-vocabulary compaction: repeated branch-specific predicates were consolidated into reusable semantic relations such as HAS_COMPONENT, HAS_MANIFESTATION, HAS_MODALITY, HAS_THERAPY_APPROACH, USES_TECHNIQUE, MODIFIES, TARGETS, MAINTAINS, INFORMS, and REQUIRES_MONITORING. This preserves graph meaning while reducing predicate redundancy. Predicate-vocabulary compaction: repeated branch-specific predicates were consolidated into reusable semantic relations such as HAS_COMPONENT, HAS_MANIFESTATION, HAS_MODALITY, HAS_THERAPY_APPROACH, USES_TECHNIQUE, MODIFIES, TARGETS, MAINTAINS, INFORMS, and REQUIRES_MONITORING. This preserves graph meaning while reducing predicate redundancy.",
+  "schema_version": "m3-two-kg-schema-v0.4-semantic-relations",
+  "fusion_method": "deterministic Version 0.4 semantic-relation revision: every hierarchy pathway uses a domain-specific predicate, such as HAS_AFFECTIVE_PRESENTATION, INCLUDES_COGNITIVE_PATTERN, USES_CBT_MODEL, USES_COGNITIVE_RESTRUCTURING, TEACHES_DBT_SKILL_MODULE, and INCLUDES_MONITORING_PLAN. Cross-branch relations encode clinical mechanisms, assessment, intervention selection, safety, monitoring, and recommendation logic. No generic taxonomy predicate is used.",
   "node_types": [
     {
       "type": "ClinicalCase",
@@ -1663,7 +1663,7 @@
       "source_type": "ClinicalCase",
       "relation": "HAS_SNAPSHOT",
       "target_type": "CaseSnapshot",
-      "description": "Links ClinicalCase to CaseSnapshot through the clinically meaningful relation HAS_SNAPSHOT; this retains the intended depth without using an IS_A taxonomy edge.",
+      "description": "Links ClinicalCase to CaseSnapshot through the clinically meaningful relation HAS_SNAPSHOT; this retains the intended depth without using an hierarchy relation taxonomy edge.",
       "properties": [
         {
           "name": "effective_time",
@@ -1725,9 +1725,9 @@
     },
     {
       "source_type": "Condition",
-      "relation": "HAS_CATEGORY",
+      "relation": "BELONGS_TO_FAMILY",
       "target_type": "DisorderFamily",
-      "description": "Defines the semantic HAS_CATEGORY relationship between Condition and DisorderFamily to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Condition belongs to the disorder family DisorderFamily.",
       "properties": [
         {
           "name": "applicability",
@@ -1805,9 +1805,9 @@
     },
     {
       "source_type": "Symptom",
-      "relation": "HAS_MANIFESTATION",
+      "relation": "HAS_AFFECTIVE_PRESENTATION",
       "target_type": "AffectiveSymptom",
-      "description": "Defines the semantic HAS_MANIFESTATION relationship between Symptom and AffectiveSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Symptom can present with an affective symptom form AffectiveSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -1821,9 +1821,9 @@
     },
     {
       "source_type": "Symptom",
-      "relation": "HAS_MANIFESTATION",
+      "relation": "HAS_COGNITIVE_PRESENTATION",
       "target_type": "CognitiveSymptom",
-      "description": "Defines the semantic HAS_MANIFESTATION relationship between Symptom and CognitiveSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Symptom can present with a cognitive symptom form CognitiveSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -1837,9 +1837,9 @@
     },
     {
       "source_type": "CognitiveSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_COGNITIVE_PATTERN",
       "target_type": "NegativeAppraisal",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveSymptom and NegativeAppraisal to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveSymptom includes the cognitive pattern NegativeAppraisal.",
       "properties": [
         {
           "name": "applicability",
@@ -1853,9 +1853,9 @@
     },
     {
       "source_type": "CognitiveSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_COGNITIVE_PATTERN",
       "target_type": "RepetitiveThinking",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveSymptom and RepetitiveThinking to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveSymptom includes the cognitive pattern RepetitiveThinking.",
       "properties": [
         {
           "name": "applicability",
@@ -1869,9 +1869,9 @@
     },
     {
       "source_type": "CognitiveSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_COGNITIVE_PATTERN",
       "target_type": "AttentionMemoryDifficulty",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveSymptom and AttentionMemoryDifficulty to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveSymptom includes the cognitive pattern AttentionMemoryDifficulty.",
       "properties": [
         {
           "name": "applicability",
@@ -1885,9 +1885,9 @@
     },
     {
       "source_type": "Symptom",
-      "relation": "HAS_MANIFESTATION",
+      "relation": "HAS_BEHAVIORAL_PRESENTATION",
       "target_type": "BehavioralSymptom",
-      "description": "Defines the semantic HAS_MANIFESTATION relationship between Symptom and BehavioralSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Symptom can present with a behavioral symptom form BehavioralSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -1901,9 +1901,9 @@
     },
     {
       "source_type": "BehavioralSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_BEHAVIOR_PATTERN",
       "target_type": "AvoidanceBehavior",
-      "description": "Defines the semantic HAS_COMPONENT relationship between BehavioralSymptom and AvoidanceBehavior to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "BehavioralSymptom includes the behavior pattern AvoidanceBehavior.",
       "properties": [
         {
           "name": "applicability",
@@ -1917,9 +1917,9 @@
     },
     {
       "source_type": "BehavioralSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_BEHAVIOR_PATTERN",
       "target_type": "CompulsiveBehavior",
-      "description": "Defines the semantic HAS_COMPONENT relationship between BehavioralSymptom and CompulsiveBehavior to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "BehavioralSymptom includes the behavior pattern CompulsiveBehavior.",
       "properties": [
         {
           "name": "applicability",
@@ -1933,9 +1933,9 @@
     },
     {
       "source_type": "BehavioralSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_BEHAVIOR_PATTERN",
       "target_type": "ActivityChange",
-      "description": "Defines the semantic HAS_COMPONENT relationship between BehavioralSymptom and ActivityChange to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "BehavioralSymptom includes the behavior pattern ActivityChange.",
       "properties": [
         {
           "name": "applicability",
@@ -1949,9 +1949,9 @@
     },
     {
       "source_type": "Symptom",
-      "relation": "HAS_MANIFESTATION",
+      "relation": "HAS_PSYCHOTIC_PRESENTATION",
       "target_type": "PerceptualPsychoticSymptom",
-      "description": "Defines the semantic HAS_MANIFESTATION relationship between Symptom and PerceptualPsychoticSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Symptom can present with a perceptual or psychotic symptom form PerceptualPsychoticSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -1965,9 +1965,9 @@
     },
     {
       "source_type": "PerceptualPsychoticSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PSYCHOTIC_FEATURE",
       "target_type": "PerceptualExperience",
-      "description": "Defines the semantic HAS_COMPONENT relationship between PerceptualPsychoticSymptom and PerceptualExperience to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PerceptualPsychoticSymptom includes the psychotic feature PerceptualExperience.",
       "properties": [
         {
           "name": "applicability",
@@ -1981,9 +1981,9 @@
     },
     {
       "source_type": "PerceptualPsychoticSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PSYCHOTIC_FEATURE",
       "target_type": "DelusionalBelief",
-      "description": "Defines the semantic HAS_COMPONENT relationship between PerceptualPsychoticSymptom and DelusionalBelief to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PerceptualPsychoticSymptom includes the psychotic feature DelusionalBelief.",
       "properties": [
         {
           "name": "applicability",
@@ -1997,9 +1997,9 @@
     },
     {
       "source_type": "PerceptualPsychoticSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PSYCHOTIC_FEATURE",
       "target_type": "ThoughtDisorganization",
-      "description": "Defines the semantic HAS_COMPONENT relationship between PerceptualPsychoticSymptom and ThoughtDisorganization to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PerceptualPsychoticSymptom includes the psychotic feature ThoughtDisorganization.",
       "properties": [
         {
           "name": "applicability",
@@ -2013,9 +2013,9 @@
     },
     {
       "source_type": "Symptom",
-      "relation": "HAS_MANIFESTATION",
+      "relation": "HAS_SOMATIC_PRESENTATION",
       "target_type": "SomaticPhysiologicalSymptom",
-      "description": "Defines the semantic HAS_MANIFESTATION relationship between Symptom and SomaticPhysiologicalSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Symptom can present with a somatic or physiological symptom form SomaticPhysiologicalSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -2029,9 +2029,9 @@
     },
     {
       "source_type": "SomaticPhysiologicalSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PHYSIOLOGICAL_FEATURE",
       "target_type": "SleepSymptom",
-      "description": "Defines the semantic HAS_COMPONENT relationship between SomaticPhysiologicalSymptom and SleepSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "SomaticPhysiologicalSymptom includes the physiological feature SleepSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -2045,9 +2045,9 @@
     },
     {
       "source_type": "SomaticPhysiologicalSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PHYSIOLOGICAL_FEATURE",
       "target_type": "AppetiteWeightSymptom",
-      "description": "Defines the semantic HAS_COMPONENT relationship between SomaticPhysiologicalSymptom and AppetiteWeightSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "SomaticPhysiologicalSymptom includes the physiological feature AppetiteWeightSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -2061,9 +2061,9 @@
     },
     {
       "source_type": "SomaticPhysiologicalSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PHYSIOLOGICAL_FEATURE",
       "target_type": "EnergyPsychomotorSymptom",
-      "description": "Defines the semantic HAS_COMPONENT relationship between SomaticPhysiologicalSymptom and EnergyPsychomotorSymptom to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "SomaticPhysiologicalSymptom includes the physiological feature EnergyPsychomotorSymptom.",
       "properties": [
         {
           "name": "applicability",
@@ -2077,9 +2077,9 @@
     },
     {
       "source_type": "SomaticPhysiologicalSymptom",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PHYSIOLOGICAL_FEATURE",
       "target_type": "SomaticDistress",
-      "description": "Defines the semantic HAS_COMPONENT relationship between SomaticPhysiologicalSymptom and SomaticDistress to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "SomaticPhysiologicalSymptom includes the physiological feature SomaticDistress.",
       "properties": [
         {
           "name": "applicability",
@@ -2095,7 +2095,7 @@
       "source_type": "Symptom",
       "relation": "CAN_RESULT_IN",
       "target_type": "FunctioningDifficulty",
-      "description": "Links Symptom to FunctioningDifficulty through the clinically meaningful relation CAN_RESULT_IN; this retains the intended depth without using an IS_A taxonomy edge.",
+      "description": "Links Symptom to FunctioningDifficulty through the clinically meaningful relation CAN_RESULT_IN; this retains the intended depth without using an hierarchy relation taxonomy edge.",
       "properties": [
         {
           "name": "applicability",
@@ -2125,9 +2125,9 @@
     },
     {
       "source_type": "AssessmentInstrument",
-      "relation": "HAS_VARIANT",
+      "relation": "HAS_INSTRUMENT_TYPE",
       "target_type": "ScreeningInstrument",
-      "description": "Defines the semantic HAS_VARIANT relationship between AssessmentInstrument and ScreeningInstrument to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "AssessmentInstrument has the assessment-instrument type ScreeningInstrument.",
       "properties": [
         {
           "name": "applicability",
@@ -2141,9 +2141,9 @@
     },
     {
       "source_type": "AssessmentInstrument",
-      "relation": "HAS_VARIANT",
+      "relation": "HAS_INSTRUMENT_TYPE",
       "target_type": "DiagnosticInterview",
-      "description": "Defines the semantic HAS_VARIANT relationship between AssessmentInstrument and DiagnosticInterview to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "AssessmentInstrument has the assessment-instrument type DiagnosticInterview.",
       "properties": [
         {
           "name": "applicability",
@@ -2157,9 +2157,9 @@
     },
     {
       "source_type": "AssessmentInstrument",
-      "relation": "HAS_VARIANT",
+      "relation": "HAS_INSTRUMENT_TYPE",
       "target_type": "OutcomeMeasure",
-      "description": "Defines the semantic HAS_VARIANT relationship between AssessmentInstrument and OutcomeMeasure to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "AssessmentInstrument has the assessment-instrument type OutcomeMeasure.",
       "properties": [
         {
           "name": "applicability",
@@ -2205,9 +2205,9 @@
     },
     {
       "source_type": "Safety",
-      "relation": "HAS_COMPONENT",
+      "relation": "HAS_SAFETY_CONCERN",
       "target_type": "SafetyConcern",
-      "description": "Defines the semantic HAS_COMPONENT relationship between Safety and SafetyConcern to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Safety includes the safety concern SafetyConcern.",
       "properties": [
         {
           "name": "applicability",
@@ -2221,9 +2221,9 @@
     },
     {
       "source_type": "Safety",
-      "relation": "HAS_COMPONENT",
+      "relation": "HAS_PROTECTIVE_FACTOR",
       "target_type": "ProtectiveFactor",
-      "description": "Defines the semantic HAS_COMPONENT relationship between Safety and ProtectiveFactor to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Safety includes the protective factor ProtectiveFactor.",
       "properties": [
         {
           "name": "applicability",
@@ -2237,9 +2237,9 @@
     },
     {
       "source_type": "Safety",
-      "relation": "HAS_COMPONENT",
+      "relation": "HAS_SAFETY_ACTION",
       "target_type": "SafetyAction",
-      "description": "Defines the semantic HAS_COMPONENT relationship between Safety and SafetyAction to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Safety includes the safety action SafetyAction.",
       "properties": [
         {
           "name": "applicability",
@@ -2253,9 +2253,9 @@
     },
     {
       "source_type": "Safety",
-      "relation": "HAS_COMPONENT",
+      "relation": "HAS_ESCALATION_RULE",
       "target_type": "EscalationRule",
-      "description": "Defines the semantic HAS_COMPONENT relationship between Safety and EscalationRule to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Safety includes the escalation rule EscalationRule.",
       "properties": [
         {
           "name": "applicability",
@@ -2269,9 +2269,9 @@
     },
     {
       "source_type": "TreatmentHistory",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_TREATMENT_EPISODE",
       "target_type": "TreatmentEpisode",
-      "description": "Defines the semantic HAS_COMPONENT relationship between TreatmentHistory and TreatmentEpisode to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "TreatmentHistory includes the treatment episode TreatmentEpisode.",
       "properties": [
         {
           "name": "applicability",
@@ -2285,9 +2285,9 @@
     },
     {
       "source_type": "TreatmentEpisode",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_MEDICATION_TRIAL",
       "target_type": "MedicationTrial",
-      "description": "Defines the semantic HAS_COMPONENT relationship between TreatmentEpisode and MedicationTrial to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "TreatmentEpisode includes the medication trial MedicationTrial.",
       "properties": [
         {
           "name": "applicability",
@@ -2301,9 +2301,9 @@
     },
     {
       "source_type": "TreatmentEpisode",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PSYCHOTHERAPY_COURSE",
       "target_type": "PsychotherapyCourse",
-      "description": "Defines the semantic HAS_COMPONENT relationship between TreatmentEpisode and PsychotherapyCourse to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "TreatmentEpisode includes the psychotherapy course PsychotherapyCourse.",
       "properties": [
         {
           "name": "applicability",
@@ -2317,9 +2317,9 @@
     },
     {
       "source_type": "TreatmentEpisode",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_SUPPORT_SERVICE_EPISODE",
       "target_type": "SupportServiceEpisode",
-      "description": "Defines the semantic HAS_COMPONENT relationship between TreatmentEpisode and SupportServiceEpisode to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "TreatmentEpisode includes the support-service episode SupportServiceEpisode.",
       "properties": [
         {
           "name": "applicability",
@@ -2333,9 +2333,9 @@
     },
     {
       "source_type": "TreatmentHistory",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_RESPONSE_HISTORY",
       "target_type": "TreatmentResponse",
-      "description": "Defines the semantic HAS_COMPONENT relationship between TreatmentHistory and TreatmentResponse to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "TreatmentHistory includes the treatment-response history TreatmentResponse.",
       "properties": [
         {
           "name": "applicability",
@@ -2349,9 +2349,9 @@
     },
     {
       "source_type": "TreatmentHistory",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_ADVERSE_EFFECT_HISTORY",
       "target_type": "AdverseEffect",
-      "description": "Defines the semantic HAS_COMPONENT relationship between TreatmentHistory and AdverseEffect to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "TreatmentHistory includes the adverse-effect history AdverseEffect.",
       "properties": [
         {
           "name": "applicability",
@@ -2365,9 +2365,9 @@
     },
     {
       "source_type": "TreatmentHistory",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_ADHERENCE_BARRIER",
       "target_type": "AdherenceBarrier",
-      "description": "Defines the semantic HAS_COMPONENT relationship between TreatmentHistory and AdherenceBarrier to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "TreatmentHistory includes the adherence barrier AdherenceBarrier.",
       "properties": [
         {
           "name": "applicability",
@@ -2413,9 +2413,9 @@
     },
     {
       "source_type": "CarePlan",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_REFERRAL_COORDINATION",
       "target_type": "ReferralCoordination",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CarePlan and ReferralCoordination to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CarePlan includes referral coordination ReferralCoordination.",
       "properties": [
         {
           "name": "applicability",
@@ -2429,9 +2429,9 @@
     },
     {
       "source_type": "Intervention",
-      "relation": "HAS_MODALITY",
+      "relation": "HAS_BIOLOGICAL_MODALITY",
       "target_type": "BiologicalIntervention",
-      "description": "Defines the semantic HAS_MODALITY relationship between Intervention and BiologicalIntervention to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Intervention has the biological intervention modality BiologicalIntervention.",
       "properties": [
         {
           "name": "applicability",
@@ -2445,9 +2445,9 @@
     },
     {
       "source_type": "BiologicalIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PHARMACOTHERAPY",
       "target_type": "Pharmacotherapy",
-      "description": "Defines the semantic HAS_COMPONENT relationship between BiologicalIntervention and Pharmacotherapy to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "BiologicalIntervention includes pharmacotherapy Pharmacotherapy.",
       "properties": [
         {
           "name": "applicability",
@@ -2479,7 +2479,7 @@
       "source_type": "Pharmacotherapy",
       "relation": "USES_MEDICATION",
       "target_type": "Medication",
-      "description": "Links Pharmacotherapy to Medication through the clinically meaningful relation USES_MEDICATION; this retains the intended depth without using an IS_A taxonomy edge.",
+      "description": "Links Pharmacotherapy to Medication through the clinically meaningful relation USES_MEDICATION; this retains the intended depth without using an hierarchy relation taxonomy edge.",
       "properties": [
         {
           "name": "applicability",
@@ -2493,9 +2493,9 @@
     },
     {
       "source_type": "BiologicalIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_NEUROMODULATION",
       "target_type": "Neuromodulation",
-      "description": "Defines the semantic HAS_COMPONENT relationship between BiologicalIntervention and Neuromodulation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "BiologicalIntervention includes neuromodulation Neuromodulation.",
       "properties": [
         {
           "name": "applicability",
@@ -2509,9 +2509,9 @@
     },
     {
       "source_type": "BiologicalIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_MEDICAL_FACTOR_MANAGEMENT",
       "target_type": "MedicalContributingFactorManagement",
-      "description": "Defines the semantic HAS_COMPONENT relationship between BiologicalIntervention and MedicalContributingFactorManagement to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "BiologicalIntervention includes management of medical contributing factors MedicalContributingFactorManagement.",
       "properties": [
         {
           "name": "applicability",
@@ -2525,9 +2525,9 @@
     },
     {
       "source_type": "Intervention",
-      "relation": "HAS_MODALITY",
+      "relation": "HAS_PSYCHOLOGICAL_MODALITY",
       "target_type": "PsychologicalIntervention",
-      "description": "Defines the semantic HAS_MODALITY relationship between Intervention and PsychologicalIntervention to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Intervention has the psychological intervention modality PsychologicalIntervention.",
       "properties": [
         {
           "name": "applicability",
@@ -2541,9 +2541,9 @@
     },
     {
       "source_type": "PsychologicalIntervention",
-      "relation": "HAS_THERAPY_APPROACH",
+      "relation": "USES_CBT_MODEL",
       "target_type": "CognitiveBehavioralTherapy",
-      "description": "Defines the semantic HAS_THERAPY_APPROACH relationship between PsychologicalIntervention and CognitiveBehavioralTherapy to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PsychologicalIntervention uses the cognitive behavioral therapy model CognitiveBehavioralTherapy.",
       "properties": [
         {
           "name": "applicability",
@@ -2557,9 +2557,9 @@
     },
     {
       "source_type": "CognitiveBehavioralTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "USES_CBT_FORMULATION",
       "target_type": "CBTFormulation",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveBehavioralTherapy and CBTFormulation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveBehavioralTherapy uses CBT formulation CBTFormulation.",
       "properties": [
         {
           "name": "applicability",
@@ -2573,9 +2573,9 @@
     },
     {
       "source_type": "CognitiveBehavioralTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "USES_COGNITIVE_RESTRUCTURING",
       "target_type": "CognitiveDistortionWork",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveBehavioralTherapy and CognitiveDistortionWork to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveBehavioralTherapy uses cognitive-distortion work CognitiveDistortionWork.",
       "properties": [
         {
           "name": "applicability",
@@ -2669,9 +2669,9 @@
     },
     {
       "source_type": "CognitiveBehavioralTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "USES_BEHAVIORAL_ACTIVATION",
       "target_type": "BehavioralActivation",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveBehavioralTherapy and BehavioralActivation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveBehavioralTherapy uses behavioral activation BehavioralActivation.",
       "properties": [
         {
           "name": "applicability",
@@ -2733,9 +2733,9 @@
     },
     {
       "source_type": "CognitiveBehavioralTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "USES_EXPOSURE_BASED_CBT",
       "target_type": "ExposureBasedCBT",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveBehavioralTherapy and ExposureBasedCBT to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveBehavioralTherapy uses exposure-based CBT ExposureBasedCBT.",
       "properties": [
         {
           "name": "applicability",
@@ -2813,9 +2813,9 @@
     },
     {
       "source_type": "CognitiveBehavioralTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "USES_RELAPSE_PREVENTION",
       "target_type": "RelapsePrevention",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CognitiveBehavioralTherapy and RelapsePrevention to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CognitiveBehavioralTherapy uses relapse prevention RelapsePrevention.",
       "properties": [
         {
           "name": "applicability",
@@ -2829,9 +2829,9 @@
     },
     {
       "source_type": "PsychologicalIntervention",
-      "relation": "HAS_THERAPY_APPROACH",
+      "relation": "USES_DBT_MODEL",
       "target_type": "DialecticalBehaviorTherapy",
-      "description": "Defines the semantic HAS_THERAPY_APPROACH relationship between PsychologicalIntervention and DialecticalBehaviorTherapy to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PsychologicalIntervention uses the dialectical behavior therapy model DialecticalBehaviorTherapy.",
       "properties": [
         {
           "name": "applicability",
@@ -2845,9 +2845,9 @@
     },
     {
       "source_type": "DialecticalBehaviorTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "TEACHES_DBT_SKILL_MODULE",
       "target_type": "DBTMindfulness",
-      "description": "Defines the semantic HAS_COMPONENT relationship between DialecticalBehaviorTherapy and DBTMindfulness to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "DialecticalBehaviorTherapy teaches the DBT skill module DBTMindfulness.",
       "properties": [
         {
           "name": "applicability",
@@ -2861,9 +2861,9 @@
     },
     {
       "source_type": "DialecticalBehaviorTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "TEACHES_DBT_SKILL_MODULE",
       "target_type": "DBTDistressTolerance",
-      "description": "Defines the semantic HAS_COMPONENT relationship between DialecticalBehaviorTherapy and DBTDistressTolerance to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "DialecticalBehaviorTherapy teaches the DBT skill module DBTDistressTolerance.",
       "properties": [
         {
           "name": "applicability",
@@ -2877,9 +2877,9 @@
     },
     {
       "source_type": "DialecticalBehaviorTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "TEACHES_DBT_SKILL_MODULE",
       "target_type": "DBTEmotionRegulation",
-      "description": "Defines the semantic HAS_COMPONENT relationship between DialecticalBehaviorTherapy and DBTEmotionRegulation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "DialecticalBehaviorTherapy teaches the DBT skill module DBTEmotionRegulation.",
       "properties": [
         {
           "name": "applicability",
@@ -2893,9 +2893,9 @@
     },
     {
       "source_type": "DialecticalBehaviorTherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "TEACHES_DBT_SKILL_MODULE",
       "target_type": "DBTInterpersonalEffectiveness",
-      "description": "Defines the semantic HAS_COMPONENT relationship between DialecticalBehaviorTherapy and DBTInterpersonalEffectiveness to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "DialecticalBehaviorTherapy teaches the DBT skill module DBTInterpersonalEffectiveness.",
       "properties": [
         {
           "name": "applicability",
@@ -2909,9 +2909,9 @@
     },
     {
       "source_type": "PsychologicalIntervention",
-      "relation": "HAS_THERAPY_APPROACH",
+      "relation": "USES_IPT_MODEL",
       "target_type": "InterpersonalPsychotherapy",
-      "description": "Defines the semantic HAS_THERAPY_APPROACH relationship between PsychologicalIntervention and InterpersonalPsychotherapy to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PsychologicalIntervention uses the interpersonal psychotherapy model InterpersonalPsychotherapy.",
       "properties": [
         {
           "name": "applicability",
@@ -2925,9 +2925,9 @@
     },
     {
       "source_type": "InterpersonalPsychotherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "ADDRESSES_IPT_FOCUS",
       "target_type": "RoleTransitionWork",
-      "description": "Defines the semantic HAS_COMPONENT relationship between InterpersonalPsychotherapy and RoleTransitionWork to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "InterpersonalPsychotherapy addresses the interpersonal therapy focus RoleTransitionWork.",
       "properties": [
         {
           "name": "applicability",
@@ -2941,9 +2941,9 @@
     },
     {
       "source_type": "InterpersonalPsychotherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "ADDRESSES_IPT_FOCUS",
       "target_type": "GriefWork",
-      "description": "Defines the semantic HAS_COMPONENT relationship between InterpersonalPsychotherapy and GriefWork to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "InterpersonalPsychotherapy addresses the interpersonal therapy focus GriefWork.",
       "properties": [
         {
           "name": "applicability",
@@ -2957,9 +2957,9 @@
     },
     {
       "source_type": "InterpersonalPsychotherapy",
-      "relation": "HAS_COMPONENT",
+      "relation": "ADDRESSES_IPT_FOCUS",
       "target_type": "InterpersonalDisputeWork",
-      "description": "Defines the semantic HAS_COMPONENT relationship between InterpersonalPsychotherapy and InterpersonalDisputeWork to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "InterpersonalPsychotherapy addresses the interpersonal therapy focus InterpersonalDisputeWork.",
       "properties": [
         {
           "name": "applicability",
@@ -2973,9 +2973,9 @@
     },
     {
       "source_type": "PsychologicalIntervention",
-      "relation": "HAS_THERAPY_APPROACH",
+      "relation": "USES_FAMILY_FOCUSED_MODEL",
       "target_type": "FamilyFocusedIntervention",
-      "description": "Defines the semantic HAS_THERAPY_APPROACH relationship between PsychologicalIntervention and FamilyFocusedIntervention to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PsychologicalIntervention uses the family-focused intervention model FamilyFocusedIntervention.",
       "properties": [
         {
           "name": "applicability",
@@ -2989,9 +2989,9 @@
     },
     {
       "source_type": "FamilyFocusedIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "USES_FAMILY_COMPONENT",
       "target_type": "FamilyPsychoeducation",
-      "description": "Defines the semantic HAS_COMPONENT relationship between FamilyFocusedIntervention and FamilyPsychoeducation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "FamilyFocusedIntervention uses the family intervention component FamilyPsychoeducation.",
       "properties": [
         {
           "name": "applicability",
@@ -3005,9 +3005,9 @@
     },
     {
       "source_type": "FamilyFocusedIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "USES_FAMILY_COMPONENT",
       "target_type": "FamilyCommunicationWork",
-      "description": "Defines the semantic HAS_COMPONENT relationship between FamilyFocusedIntervention and FamilyCommunicationWork to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "FamilyFocusedIntervention uses the family intervention component FamilyCommunicationWork.",
       "properties": [
         {
           "name": "applicability",
@@ -3021,9 +3021,9 @@
     },
     {
       "source_type": "Intervention",
-      "relation": "HAS_MODALITY",
+      "relation": "HAS_SOCIAL_MODALITY",
       "target_type": "SocialIntervention",
-      "description": "Defines the semantic HAS_MODALITY relationship between Intervention and SocialIntervention to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "Intervention has the social intervention modality SocialIntervention.",
       "properties": [
         {
           "name": "applicability",
@@ -3037,9 +3037,9 @@
     },
     {
       "source_type": "SocialIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_OCCUPATIONAL_SUPPORT",
       "target_type": "OccupationalSupport",
-      "description": "Defines the semantic HAS_COMPONENT relationship between SocialIntervention and OccupationalSupport to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "SocialIntervention includes occupational support OccupationalSupport.",
       "properties": [
         {
           "name": "applicability",
@@ -3053,9 +3053,9 @@
     },
     {
       "source_type": "SocialIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_COMMUNITY_SUPPORT",
       "target_type": "CommunitySupport",
-      "description": "Defines the semantic HAS_COMPONENT relationship between SocialIntervention and CommunitySupport to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "SocialIntervention includes community support CommunitySupport.",
       "properties": [
         {
           "name": "applicability",
@@ -3069,9 +3069,9 @@
     },
     {
       "source_type": "SocialIntervention",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_PRACTICAL_SUPPORT",
       "target_type": "PracticalSupport",
-      "description": "Defines the semantic HAS_COMPONENT relationship between SocialIntervention and PracticalSupport to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "SocialIntervention includes practical support PracticalSupport.",
       "properties": [
         {
           "name": "applicability",
@@ -3213,9 +3213,9 @@
     },
     {
       "source_type": "MonitoringOutcome",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_MONITORING_PLAN",
       "target_type": "MonitoringPlan",
-      "description": "Defines the semantic HAS_COMPONENT relationship between MonitoringOutcome and MonitoringPlan to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "MonitoringOutcome includes the monitoring plan MonitoringPlan.",
       "properties": [
         {
           "name": "applicability",
@@ -3229,9 +3229,9 @@
     },
     {
       "source_type": "MonitoringPlan",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_SYMPTOM_MONITORING",
       "target_type": "SymptomMonitoring",
-      "description": "Defines the semantic HAS_COMPONENT relationship between MonitoringPlan and SymptomMonitoring to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "MonitoringPlan includes symptom monitoring SymptomMonitoring.",
       "properties": [
         {
           "name": "applicability",
@@ -3245,9 +3245,9 @@
     },
     {
       "source_type": "MonitoringPlan",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_FUNCTION_MONITORING",
       "target_type": "FunctionMonitoring",
-      "description": "Defines the semantic HAS_COMPONENT relationship between MonitoringPlan and FunctionMonitoring to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "MonitoringPlan includes functioning monitoring FunctionMonitoring.",
       "properties": [
         {
           "name": "applicability",
@@ -3261,9 +3261,9 @@
     },
     {
       "source_type": "MonitoringPlan",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_SAFETY_MONITORING",
       "target_type": "TreatmentSafetyMonitoring",
-      "description": "Defines the semantic HAS_COMPONENT relationship between MonitoringPlan and TreatmentSafetyMonitoring to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "MonitoringPlan includes treatment-safety monitoring TreatmentSafetyMonitoring.",
       "properties": [
         {
           "name": "applicability",
@@ -3277,9 +3277,9 @@
     },
     {
       "source_type": "MonitoringOutcome",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_OUTCOME",
       "target_type": "Outcome",
-      "description": "Defines the semantic HAS_COMPONENT relationship between MonitoringOutcome and Outcome to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "MonitoringOutcome includes the outcome Outcome.",
       "properties": [
         {
           "name": "applicability",
@@ -3293,9 +3293,9 @@
     },
     {
       "source_type": "MonitoringOutcome",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_RELAPSE_WARNING_SIGN",
       "target_type": "RelapseWarningSign",
-      "description": "Defines the semantic HAS_COMPONENT relationship between MonitoringOutcome and RelapseWarningSign to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "MonitoringOutcome includes the relapse warning sign RelapseWarningSign.",
       "properties": [
         {
           "name": "applicability",
@@ -3309,9 +3309,9 @@
     },
     {
       "source_type": "CareDeliveryContext",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_CLINICIAN_ROLE",
       "target_type": "ClinicianRole",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CareDeliveryContext and ClinicianRole to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CareDeliveryContext includes the clinician role ClinicianRole.",
       "properties": [
         {
           "name": "applicability",
@@ -3325,9 +3325,9 @@
     },
     {
       "source_type": "CareDeliveryContext",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_SERVICE",
       "target_type": "Service",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CareDeliveryContext and Service to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CareDeliveryContext includes the service Service.",
       "properties": [
         {
           "name": "applicability",
@@ -3341,9 +3341,9 @@
     },
     {
       "source_type": "CareDeliveryContext",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_CARE_SETTING",
       "target_type": "CareSetting",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CareDeliveryContext and CareSetting to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CareDeliveryContext includes the care setting CareSetting.",
       "properties": [
         {
           "name": "applicability",
@@ -3357,9 +3357,9 @@
     },
     {
       "source_type": "CareDeliveryContext",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_ACCESS_RESOURCE",
       "target_type": "AccessResource",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CareDeliveryContext and AccessResource to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CareDeliveryContext includes the access resource AccessResource.",
       "properties": [
         {
           "name": "applicability",
@@ -3373,9 +3373,9 @@
     },
     {
       "source_type": "CulturalFaithBridge",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_CONTEXTUAL_NEED",
       "target_type": "ContextualNeed",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CulturalFaithBridge and ContextualNeed to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CulturalFaithBridge includes the contextual need ContextualNeed.",
       "properties": [
         {
           "name": "applicability",
@@ -3389,9 +3389,9 @@
     },
     {
       "source_type": "CulturalFaithBridge",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_ADAPTATION_SELECTION",
       "target_type": "AdaptationSelection",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CulturalFaithBridge and AdaptationSelection to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CulturalFaithBridge includes the adaptation selection AdaptationSelection.",
       "properties": [
         {
           "name": "applicability",
@@ -3405,9 +3405,9 @@
     },
     {
       "source_type": "CulturalFaithBridge",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_COLLABORATION_REQUEST",
       "target_type": "CollaborationRequest",
-      "description": "Defines the semantic HAS_COMPONENT relationship between CulturalFaithBridge and CollaborationRequest to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CulturalFaithBridge includes the collaboration request CollaborationRequest.",
       "properties": [
         {
           "name": "applicability",
@@ -3421,9 +3421,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_EVIDENCE_SOURCE",
       "target_type": "EvidenceSource",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and EvidenceSource to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes the evidence source EvidenceSource.",
       "properties": [
         {
           "name": "applicability",
@@ -3437,9 +3437,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_TERMINOLOGY_MAPPING",
       "target_type": "TerminologyMapping",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and TerminologyMapping to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes the terminology mapping TerminologyMapping.",
       "properties": [
         {
           "name": "applicability",
@@ -3453,9 +3453,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_EXTRACTION_PROVENANCE",
       "target_type": "ExtractionProvenance",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and ExtractionProvenance to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes extraction provenance ExtractionProvenance.",
       "properties": [
         {
           "name": "applicability",
@@ -3469,9 +3469,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_CLINICAL_REVIEW",
       "target_type": "ClinicalReview",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and ClinicalReview to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes clinical review ClinicalReview.",
       "properties": [
         {
           "name": "applicability",

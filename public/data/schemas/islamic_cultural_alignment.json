@@ -8,8 +8,8 @@
   "book_group": "",
   "schema_name": "Islamic-Cultural Mental-Health Alignment KG — Depth-First Tree Graph",
   "module": "islamic_cultural_alignment",
-  "schema_version": "m3-two-kg-schema-v0.3-semantic-edges",
-  "fusion_method": "deterministic Version 0.3 semantic-edge revision: All former IS_A relations were replaced by explicit, domain-meaningful KG predicates. Depth is represented through compositional and operational relations (for example HAS_COMPONENT, USES_TECHNIQUE, MEASURES, TARGETS, MAINTAINS, MODIFIES, and REQUIRES_MONITORING), while cross-branch relations encode clinically relevant dependencies, treatment logic, contextual constraints, and cultural-spiritual adaptations. Predicate-vocabulary compaction: repeated branch-specific predicates were consolidated into reusable semantic relations such as HAS_COMPONENT, HAS_MANIFESTATION, HAS_MODALITY, HAS_THERAPY_APPROACH, USES_TECHNIQUE, MODIFIES, TARGETS, MAINTAINS, INFORMS, and REQUIRES_MONITORING. This preserves graph meaning while reducing predicate redundancy. Predicate-vocabulary compaction: repeated branch-specific predicates were consolidated into reusable semantic relations such as HAS_COMPONENT, HAS_MANIFESTATION, HAS_MODALITY, HAS_THERAPY_APPROACH, USES_TECHNIQUE, MODIFIES, TARGETS, MAINTAINS, INFORMS, and REQUIRES_MONITORING. This preserves graph meaning while reducing predicate redundancy.",
+  "schema_version": "m3-two-kg-schema-v0.4-semantic-relations",
+  "fusion_method": "deterministic Version 0.4 semantic-relation revision: hierarchy pathways use domain-specific predicates, including INCLUDES_CBT_MEANING_ADAPTATION, INCLUDES_ERP_PRACTICE_ALIGNMENT, REQUIRES_INFORMED_CONSENT, ENFORCES_CLINICAL_SAFETY_BOUNDARY, and USES_COLLABORATION_PROTOCOL. Cross-KG relations preserve contextual adaptation, patient preference, consent, clinical safety, and collaboration logic. No generic taxonomy predicate is used.",
   "node_types": [
     {
       "type": "CulturalSpiritualContext",
@@ -925,7 +925,7 @@
       "source_type": "CulturalSpiritualContext",
       "relation": "HAS_CONTEXTUAL_STRENGTH",
       "target_type": "ContextualStrength",
-      "description": "Links CulturalSpiritualContext to ContextualStrength through the clinically meaningful relation HAS_CONTEXTUAL_STRENGTH; this retains the intended depth without using an IS_A taxonomy edge.",
+      "description": "Links CulturalSpiritualContext to ContextualStrength through the clinically meaningful relation HAS_CONTEXTUAL_STRENGTH; this retains the intended depth without using an hierarchy relation taxonomy edge.",
       "properties": [
         {
           "name": "applicability",
@@ -1259,9 +1259,9 @@
     },
     {
       "source_type": "HelpSeekingNavigation",
-      "relation": "HAS_PATHWAY",
+      "relation": "INCLUDES_CLINICAL_PATHWAY",
       "target_type": "ClinicalCarePathway",
-      "description": "Defines the semantic HAS_PATHWAY relationship between HelpSeekingNavigation and ClinicalCarePathway to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "HelpSeekingNavigation includes the clinical care pathway ClinicalCarePathway.",
       "properties": [
         {
           "name": "applicability",
@@ -1275,9 +1275,9 @@
     },
     {
       "source_type": "HelpSeekingNavigation",
-      "relation": "HAS_PATHWAY",
+      "relation": "INCLUDES_FAITH_COMMUNITY_PATHWAY",
       "target_type": "FaithCommunityPathway",
-      "description": "Defines the semantic HAS_PATHWAY relationship between HelpSeekingNavigation and FaithCommunityPathway to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "HelpSeekingNavigation includes the faith-community pathway FaithCommunityPathway.",
       "properties": [
         {
           "name": "applicability",
@@ -1291,9 +1291,9 @@
     },
     {
       "source_type": "HelpSeekingNavigation",
-      "relation": "HAS_PATHWAY",
+      "relation": "INCLUDES_INFORMAL_SUPPORT_PATHWAY",
       "target_type": "InformalSupportPathway",
-      "description": "Defines the semantic HAS_PATHWAY relationship between HelpSeekingNavigation and InformalSupportPathway to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "HelpSeekingNavigation includes the informal-support pathway InformalSupportPathway.",
       "properties": [
         {
           "name": "applicability",
@@ -1307,9 +1307,9 @@
     },
     {
       "source_type": "FaithSensitiveCareAdaptation",
-      "relation": "HAS_ADAPTATION_COMPONENT",
+      "relation": "INCLUDES_COMMUNICATION_ADAPTATION",
       "target_type": "CommunicationAdaptation",
-      "description": "Defines the semantic HAS_ADAPTATION_COMPONENT relationship between FaithSensitiveCareAdaptation and CommunicationAdaptation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "FaithSensitiveCareAdaptation includes the communication adaptation CommunicationAdaptation.",
       "properties": [
         {
           "name": "applicability",
@@ -1323,9 +1323,9 @@
     },
     {
       "source_type": "FaithSensitiveCareAdaptation",
-      "relation": "HAS_ADAPTATION_COMPONENT",
+      "relation": "INCLUDES_PSYCHOTHERAPY_ADAPTATION",
       "target_type": "PsychotherapyAdaptation",
-      "description": "Defines the semantic HAS_ADAPTATION_COMPONENT relationship between FaithSensitiveCareAdaptation and PsychotherapyAdaptation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "FaithSensitiveCareAdaptation includes the psychotherapy adaptation PsychotherapyAdaptation.",
       "properties": [
         {
           "name": "applicability",
@@ -1339,9 +1339,9 @@
     },
     {
       "source_type": "PsychotherapyAdaptation",
-      "relation": "HAS_ADAPTATION_COMPONENT",
+      "relation": "INCLUDES_CBT_MEANING_ADAPTATION",
       "target_type": "CBTMeaningAdaptation",
-      "description": "Defines the semantic HAS_ADAPTATION_COMPONENT relationship between PsychotherapyAdaptation and CBTMeaningAdaptation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PsychotherapyAdaptation includes the CBT meaning adaptation CBTMeaningAdaptation.",
       "properties": [
         {
           "name": "applicability",
@@ -1355,9 +1355,9 @@
     },
     {
       "source_type": "PsychotherapyAdaptation",
-      "relation": "HAS_ADAPTATION_COMPONENT",
+      "relation": "INCLUDES_ERP_PRACTICE_ALIGNMENT",
       "target_type": "ERPPracticeAlignment",
-      "description": "Defines the semantic HAS_ADAPTATION_COMPONENT relationship between PsychotherapyAdaptation and ERPPracticeAlignment to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PsychotherapyAdaptation includes ERP practice alignment ERPPracticeAlignment.",
       "properties": [
         {
           "name": "applicability",
@@ -1371,9 +1371,9 @@
     },
     {
       "source_type": "PsychotherapyAdaptation",
-      "relation": "HAS_ADAPTATION_COMPONENT",
+      "relation": "INCLUDES_FAMILY_ENGAGEMENT_ADAPTATION",
       "target_type": "FamilyEngagementAdaptation",
-      "description": "Defines the semantic HAS_ADAPTATION_COMPONENT relationship between PsychotherapyAdaptation and FamilyEngagementAdaptation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "PsychotherapyAdaptation includes family-engagement adaptation FamilyEngagementAdaptation.",
       "properties": [
         {
           "name": "applicability",
@@ -1387,9 +1387,9 @@
     },
     {
       "source_type": "FaithSensitiveCareAdaptation",
-      "relation": "HAS_ADAPTATION_COMPONENT",
+      "relation": "INCLUDES_ROUTINE_ACCOMMODATION",
       "target_type": "RoutineAccommodation",
-      "description": "Defines the semantic HAS_ADAPTATION_COMPONENT relationship between FaithSensitiveCareAdaptation and RoutineAccommodation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "FaithSensitiveCareAdaptation includes the routine accommodation RoutineAccommodation.",
       "properties": [
         {
           "name": "applicability",
@@ -1403,9 +1403,9 @@
     },
     {
       "source_type": "FaithSensitiveCareAdaptation",
-      "relation": "HAS_ADAPTATION_COMPONENT",
+      "relation": "INCLUDES_SUPPORTIVE_SPIRITUAL_CARE",
       "target_type": "SupportiveSpiritualCare",
-      "description": "Defines the semantic HAS_ADAPTATION_COMPONENT relationship between FaithSensitiveCareAdaptation and SupportiveSpiritualCare to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "FaithSensitiveCareAdaptation includes supportive spiritual care SupportiveSpiritualCare.",
       "properties": [
         {
           "name": "applicability",
@@ -1419,9 +1419,9 @@
     },
     {
       "source_type": "CollaborationRole",
-      "relation": "HAS_ROLE",
+      "relation": "INCLUDES_CLINICAL_PROFESSIONAL_ROLE",
       "target_type": "ClinicalProfessionalRole",
-      "description": "Defines the semantic HAS_ROLE relationship between CollaborationRole and ClinicalProfessionalRole to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CollaborationRole includes the clinical professional role ClinicalProfessionalRole.",
       "properties": [
         {
           "name": "applicability",
@@ -1435,9 +1435,9 @@
     },
     {
       "source_type": "CollaborationRole",
-      "relation": "HAS_ROLE",
+      "relation": "INCLUDES_FAITH_LEADER_ROLE",
       "target_type": "FaithLeaderRole",
-      "description": "Defines the semantic HAS_ROLE relationship between CollaborationRole and FaithLeaderRole to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CollaborationRole includes the faith-leader role FaithLeaderRole.",
       "properties": [
         {
           "name": "applicability",
@@ -1451,9 +1451,9 @@
     },
     {
       "source_type": "CollaborationRole",
-      "relation": "HAS_ROLE",
+      "relation": "INCLUDES_CULTURAL_MEDIATOR_ROLE",
       "target_type": "CulturalMediatorRole",
-      "description": "Defines the semantic HAS_ROLE relationship between CollaborationRole and CulturalMediatorRole to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CollaborationRole includes the cultural-mediator role CulturalMediatorRole.",
       "properties": [
         {
           "name": "applicability",
@@ -1467,9 +1467,9 @@
     },
     {
       "source_type": "CollaborationRole",
-      "relation": "HAS_PROTOCOL",
+      "relation": "USES_COLLABORATION_PROTOCOL",
       "target_type": "CollaborationProtocol",
-      "description": "Defines the semantic HAS_PROTOCOL relationship between CollaborationRole and CollaborationProtocol to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "CollaborationRole uses the collaboration protocol CollaborationProtocol.",
       "properties": [
         {
           "name": "applicability",
@@ -1483,9 +1483,9 @@
     },
     {
       "source_type": "EthicsConsentSafety",
-      "relation": "HAS_GUARDRAIL",
+      "relation": "REQUIRES_INFORMED_CONSENT",
       "target_type": "InformedConsent",
-      "description": "Defines the semantic HAS_GUARDRAIL relationship between EthicsConsentSafety and InformedConsent to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EthicsConsentSafety requires informed consent InformedConsent.",
       "properties": [
         {
           "name": "applicability",
@@ -1499,9 +1499,9 @@
     },
     {
       "source_type": "EthicsConsentSafety",
-      "relation": "HAS_GUARDRAIL",
+      "relation": "ENFORCES_CONFIDENTIALITY_BOUNDARY",
       "target_type": "ConfidentialityBoundary",
-      "description": "Defines the semantic HAS_GUARDRAIL relationship between EthicsConsentSafety and ConfidentialityBoundary to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EthicsConsentSafety enforces the confidentiality boundary ConfidentialityBoundary.",
       "properties": [
         {
           "name": "applicability",
@@ -1515,9 +1515,9 @@
     },
     {
       "source_type": "EthicsConsentSafety",
-      "relation": "HAS_GUARDRAIL",
+      "relation": "ENFORCES_NON_COERCION_GUARDRAIL",
       "target_type": "NonCoercionGuardrail",
-      "description": "Defines the semantic HAS_GUARDRAIL relationship between EthicsConsentSafety and NonCoercionGuardrail to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EthicsConsentSafety enforces the non-coercion guardrail NonCoercionGuardrail.",
       "properties": [
         {
           "name": "applicability",
@@ -1531,9 +1531,9 @@
     },
     {
       "source_type": "EthicsConsentSafety",
-      "relation": "HAS_GUARDRAIL",
+      "relation": "ENFORCES_CLINICAL_SAFETY_BOUNDARY",
       "target_type": "ClinicalSafetyBoundary",
-      "description": "Defines the semantic HAS_GUARDRAIL relationship between EthicsConsentSafety and ClinicalSafetyBoundary to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EthicsConsentSafety enforces the clinical safety boundary ClinicalSafetyBoundary.",
       "properties": [
         {
           "name": "applicability",
@@ -1547,9 +1547,9 @@
     },
     {
       "source_type": "EthicsConsentSafety",
-      "relation": "HAS_GUARDRAIL",
+      "relation": "ENFORCES_RELIGIOUS_HUMILITY_GUARDRAIL",
       "target_type": "ReligiousHumilityGuardrail",
-      "description": "Defines the semantic HAS_GUARDRAIL relationship between EthicsConsentSafety and ReligiousHumilityGuardrail to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EthicsConsentSafety enforces the religious-humility guardrail ReligiousHumilityGuardrail.",
       "properties": [
         {
           "name": "applicability",
@@ -1563,9 +1563,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_SOURCE_ARTIFACT",
       "target_type": "SourceArtifact",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and SourceArtifact to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes the source artifact SourceArtifact.",
       "properties": [
         {
           "name": "applicability",
@@ -1579,9 +1579,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_EXPERT_REVIEW",
       "target_type": "ExpertReview",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and ExpertReview to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes expert review ExpertReview.",
       "properties": [
         {
           "name": "applicability",
@@ -1595,9 +1595,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_EXTRACTION_PROVENANCE",
       "target_type": "ExtractionProvenance",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and ExtractionProvenance to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes extraction provenance ExtractionProvenance.",
       "properties": [
         {
           "name": "applicability",
@@ -1611,9 +1611,9 @@
     },
     {
       "source_type": "EvidenceProvenance",
-      "relation": "HAS_COMPONENT",
+      "relation": "INCLUDES_APPLICABILITY_SCOPE",
       "target_type": "ApplicabilityScope",
-      "description": "Defines the semantic HAS_COMPONENT relationship between EvidenceProvenance and ApplicabilityScope to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "description": "EvidenceProvenance includes the applicability scope ApplicabilityScope.",
       "properties": [
         {
           "name": "applicability",
