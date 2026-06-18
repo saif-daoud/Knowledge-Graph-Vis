@@ -812,11 +812,18 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevertChange, on
       ) : (
         <div className="change-stack">
           {changes.map((change) => (
-            <button
+            <article
               className={`change-card ${change.action} ${change.id === activeChangeId ? "active" : ""}`}
               key={change.id}
-              type="button"
+              role="button"
+              tabIndex={0}
               onClick={() => onSelectChange(change)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  onSelectChange(change);
+                }
+              }}
             >
               <div className="change-card-top">
                 <span>{change.action}</span>
@@ -829,26 +836,28 @@ function ChangeLog({ changes, activeChangeId, onSelectChange, onRevertChange, on
                 {change.action !== "delete" && <ins>{truncate(change.newValue ?? change.newEntity, 72)}</ins>}
               </div>
               <div className="change-actions">
-                <span><Focus size={13} /> Focus</span>
-                <span
-                  role="button"
-                  tabIndex={0}
+                <button
+                  type="button"
+                  title="Focus this change"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    onSelectChange(change);
+                  }}
+                >
+                  <Focus size={13} /> Focus
+                </button>
+                <button
+                  type="button"
                   title="Revert this change"
                   onClick={(event) => {
                     event.stopPropagation();
                     onRevertChange(change.id);
                   }}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter") {
-                      event.stopPropagation();
-                      onRevertChange(change.id);
-                    }
-                  }}
                 >
                   <RotateCcw size={13} /> Revert
-                </span>
+                </button>
               </div>
-            </button>
+            </article>
           ))}
         </div>
       )}
