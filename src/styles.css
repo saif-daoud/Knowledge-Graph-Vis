@@ -628,10 +628,13 @@ button {
   position: absolute;
   inset: 0;
   outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .graph-canvas canvas {
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .graph-readout {

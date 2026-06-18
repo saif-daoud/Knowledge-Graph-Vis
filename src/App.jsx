@@ -899,10 +899,20 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
     const cy = cytoscape({
       container: containerRef.current,
       elements: graph.elements,
+      boxSelectionEnabled: false,
       minZoom: 0.03,
       maxZoom: 5,
       wheelSensitivity: 0.32,
       style: [
+        {
+          selector: "core",
+          style: {
+            "active-bg-opacity": 0,
+            "active-bg-size": 0,
+            "selection-box-opacity": 0,
+            "selection-box-border-width": 0,
+          },
+        },
         {
           selector: "node",
           style: {
