@@ -936,7 +936,7 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
             "target-arrow-shape": "triangle",
             "target-arrow-color": "#8b93a3",
             "line-color": "#b4bac6",
-            label: "",
+            label: "data(label)",
             "font-size": 8.5,
             color: "#334155",
             "text-background-color": "#ffffff",
