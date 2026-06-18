@@ -1050,9 +1050,8 @@ function GraphCanvas({ graph, query, category, selected, setSelected, cyRef, rel
           style: {
             "border-width": 2,
             "border-color": "#0b1324",
-            "underlay-color": "#0b1324",
-            "underlay-opacity": 0.16,
-            "underlay-padding": 8,
+            "underlay-opacity": 0,
+            "underlay-padding": 0,
             "overlay-opacity": 0,
             "overlay-padding": 0,
             opacity: 1,
