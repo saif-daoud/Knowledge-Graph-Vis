@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-06-17T10:56:02.691Z",
-  "source_root": "E:\\QCRI-env\\sakinaai",
+  "source_root": "data",
   "kgs": [
     {
       "id": "clinical_treatment_recommendation",

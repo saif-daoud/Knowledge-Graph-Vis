@@ -1,0 +1,2390 @@
+{
+  "schema_name": "Islamic-Cultural Mental-Health Alignment KG — Depth-First Tree Graph",
+  "module": "islamic_cultural_alignment",
+  "schema_version": "m3-two-kg-schema-v0.4-semantic-relations",
+  "node_types": [
+    {
+      "type": "CulturalSpiritualContext",
+      "description": "Person-specific cultural, language, family, faith-salience, and care-preference context. It is descriptive, voluntary, and never inferred solely from demographic proxies.\n\nExtraction guidance: Extract only explicit preferences, narratives, practices, values, and contextual facts. Do not infer religiosity or culture from origin, name, language, or diagnosis.",
+      "properties": [
+        {
+          "name": "context_id",
+          "description": "Recorded context id for this cultural spiritual context."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this cultural spiritual context."
+        },
+        {
+          "name": "source",
+          "description": "Recorded source for this cultural spiritual context."
+        },
+        {
+          "name": "confidence",
+          "description": "Recorded confidence for this cultural spiritual context."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this cultural spiritual context."
+        }
+      ]
+    },
+    {
+      "type": "IdentityBelonging",
+      "description": "Identity Belonging concept in the CulturalSpiritualContext branch.",
+      "properties": []
+    },
+    {
+      "type": "LanguageCommunicationPreference",
+      "description": "Language Communication Preference concept in the CulturalSpiritualContext branch.",
+      "properties": []
+    },
+    {
+      "type": "FaithSaliencePreference",
+      "description": "Whether and how faith, spiritual practice, or faith-sensitive care should be included, excluded, or deferred.",
+      "properties": [
+        {
+          "name": "preference_status",
+          "description": "Recorded preference status for this faith salience preference."
+        },
+        {
+          "name": "scope",
+          "description": "Recorded scope for this faith salience preference."
+        },
+        {
+          "name": "expressed_by",
+          "description": "Recorded expressed by for this faith salience preference."
+        }
+      ]
+    },
+    {
+      "type": "ContextualStrength",
+      "description": "Contextual Strength concept in the CulturalSpiritualContext branch.",
+      "properties": []
+    },
+    {
+      "type": "CulturalFormulation",
+      "description": "Structured account of how a person and relevant supporters understand distress, wellness, causes, coping, and care.",
+      "properties": [
+        {
+          "name": "formulation_id",
+          "description": "Recorded formulation id for this cultural formulation."
+        },
+        {
+          "name": "author_role",
+          "description": "Recorded author role for this cultural formulation."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this cultural formulation."
+        },
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this cultural formulation."
+        }
+      ]
+    },
+    {
+      "type": "ExplanatoryModel",
+      "description": "Explanatory Model concept in the CulturalFormulation branch.",
+      "properties": []
+    },
+    {
+      "type": "IdiomOfDistress",
+      "description": "Culturally meaningful expression or label through which distress may be described.",
+      "properties": [
+        {
+          "name": "term",
+          "description": "Recorded term for this idiom of distress."
+        },
+        {
+          "name": "language",
+          "description": "Recorded language for this idiom of distress."
+        },
+        {
+          "name": "meaning_in_context",
+          "description": "Recorded meaning in context for this idiom of distress."
+        }
+      ]
+    },
+    {
+      "type": "MeaningValueFrame",
+      "description": "Meaning Value Frame concept in the CulturalFormulation branch.",
+      "properties": []
+    },
+    {
+      "type": "ContextualStressor",
+      "description": "Contextual Stressor concept in the CulturalFormulation branch.",
+      "properties": []
+    },
+    {
+      "type": "IslamicConcept",
+      "description": "Reusable Islamic concept or jurisprudential principle that may be referenced only with appropriate expertise, applicability scope, and patient relevance.",
+      "properties": [
+        {
+          "name": "concept_id",
+          "description": "Recorded concept id for this islamic concept."
+        },
+        {
+          "name": "arabic_label",
+          "description": "Recorded arabic label for this islamic concept."
+        },
+        {
+          "name": "transliteration",
+          "description": "Recorded transliteration for this islamic concept."
+        },
+        {
+          "name": "definition",
+          "description": "Recorded definition for this islamic concept."
+        },
+        {
+          "name": "source_reference",
+          "description": "Recorded source reference for this islamic concept."
+        },
+        {
+          "name": "interpretive_scope",
+          "description": "Recorded interpretive scope for this islamic concept."
+        }
+      ]
+    },
+    {
+      "type": "TheologicalOrientation",
+      "description": "Theological Orientation concept in the IslamicConcept branch.",
+      "properties": []
+    },
+    {
+      "type": "EthicalVirtue",
+      "description": "Ethical Virtue concept in the IslamicConcept branch.",
+      "properties": []
+    },
+    {
+      "type": "JurisprudentialAccommodation",
+      "description": "Faith-related practical accommodation that may affect health behaviour and requires qualified, context-specific advice.",
+      "properties": [
+        {
+          "name": "practice_context",
+          "description": "Recorded practice context for this jurisprudential accommodation."
+        },
+        {
+          "name": "jurisprudential_scope",
+          "description": "Recorded jurisprudential scope for this jurisprudential accommodation."
+        }
+      ]
+    },
+    {
+      "type": "ReligiousConcernClassification",
+      "description": "Religious Concern Classification concept in the IslamicConcept branch.",
+      "properties": []
+    },
+    {
+      "type": "FaithPractice",
+      "description": "Voluntary personal or community practice that may be a source of meaning, routine, support, concern, or accommodation need. It is not modeled as a disease treatment by default.",
+      "properties": [
+        {
+          "name": "practice_id",
+          "description": "Recorded practice id for this faith practice."
+        },
+        {
+          "name": "voluntary_status",
+          "description": "Recorded voluntary status for this faith practice."
+        },
+        {
+          "name": "frequency",
+          "description": "Recorded frequency for this faith practice."
+        },
+        {
+          "name": "meaning_to_person",
+          "description": "Recorded meaning to person for this faith practice."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this faith practice."
+        }
+      ]
+    },
+    {
+      "type": "PersonalPractice",
+      "description": "Personal Practice concept in the FaithPractice branch.",
+      "properties": []
+    },
+    {
+      "type": "CommunityPractice",
+      "description": "Community Practice concept in the FaithPractice branch.",
+      "properties": []
+    },
+    {
+      "type": "RitualTimingContext",
+      "description": "Ritual Timing Context concept in the FaithPractice branch.",
+      "properties": []
+    },
+    {
+      "type": "PracticeRelatedConcern",
+      "description": "Practice Related Concern concept in the FaithPractice branch.",
+      "properties": []
+    },
+    {
+      "type": "SpiritualExperience",
+      "description": "Person-described spiritual coping, distress, concern, or experience. It is recorded without automatically classifying it as pathology.",
+      "properties": [
+        {
+          "name": "experience_id",
+          "description": "Recorded experience id for this spiritual experience."
+        },
+        {
+          "name": "narrative",
+          "description": "Recorded narrative for this spiritual experience."
+        },
+        {
+          "name": "meaning",
+          "description": "Recorded meaning for this spiritual experience."
+        },
+        {
+          "name": "distress_level",
+          "description": "Recorded distress level for this spiritual experience."
+        },
+        {
+          "name": "functional_impact",
+          "description": "Recorded functional impact for this spiritual experience."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this spiritual experience."
+        }
+      ]
+    },
+    {
+      "type": "SpiritualCoping",
+      "description": "Spiritual Coping concept in the SpiritualExperience branch.",
+      "properties": []
+    },
+    {
+      "type": "SpiritualDistress",
+      "description": "Spiritual Distress concept in the SpiritualExperience branch.",
+      "properties": []
+    },
+    {
+      "type": "SpiritualQuestion",
+      "description": "Spiritual Question concept in the SpiritualExperience branch.",
+      "properties": []
+    },
+    {
+      "type": "ExperienceRequiringReview",
+      "description": "Experience that may need careful joint clinical and faith-sensitive review because of distress, functional impact, safety, or diagnostic uncertainty.",
+      "properties": [
+        {
+          "name": "review_reason",
+          "description": "Recorded review reason for this experience requiring review."
+        }
+      ]
+    },
+    {
+      "type": "FamilyCommunity",
+      "description": "Roles, supports, norms, and dynamics that may influence care engagement and recovery.",
+      "properties": [
+        {
+          "name": "context_id",
+          "description": "Recorded context id for this family community."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this family community."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this family community."
+        }
+      ]
+    },
+    {
+      "type": "FamilyRole",
+      "description": "Family Role concept in the FamilyCommunity branch.",
+      "properties": []
+    },
+    {
+      "type": "FamilyDynamic",
+      "description": "Family Dynamic concept in the FamilyCommunity branch.",
+      "properties": []
+    },
+    {
+      "type": "CommunityResource",
+      "description": "Community Resource concept in the FamilyCommunity branch.",
+      "properties": []
+    },
+    {
+      "type": "SocialNormContext",
+      "description": "Social Norm Context concept in the FamilyCommunity branch.",
+      "properties": []
+    },
+    {
+      "type": "HelpSeekingNavigation",
+      "description": "Pathways through which a person or family seeks guidance, support, or care.",
+      "properties": [
+        {
+          "name": "pathway_id",
+          "description": "Recorded pathway id for this help seeking navigation."
+        },
+        {
+          "name": "status",
+          "description": "Recorded status for this help seeking navigation."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this help seeking navigation."
+        }
+      ]
+    },
+    {
+      "type": "ClinicalCarePathway",
+      "description": "Clinical Care Pathway concept in the HelpSeekingNavigation branch.",
+      "properties": []
+    },
+    {
+      "type": "FaithCommunityPathway",
+      "description": "Faith Community Pathway concept in the HelpSeekingNavigation branch.",
+      "properties": []
+    },
+    {
+      "type": "InformalSupportPathway",
+      "description": "Informal Support Pathway concept in the HelpSeekingNavigation branch.",
+      "properties": []
+    },
+    {
+      "type": "NavigationBarrier",
+      "description": "Navigation Barrier concept in the HelpSeekingNavigation branch.",
+      "properties": []
+    },
+    {
+      "type": "FaithSensitiveCareAdaptation",
+      "description": "Non-coercive adjustment to communication, engagement, care delivery, or support that improves acceptability without replacing indicated clinical care.\n\nExtraction guidance: Extract an adaptation only when explicitly recommended, requested, or agreed. Link its clinical action in the clinical KG and maintain its cultural/faith details here.\n\nConstraints: An adaptation never independently establishes diagnosis or medication choice. Activation requires patient relevance, consent, clinical review, and evidence or qualified-expert provenance. Adaptation must not override urgent safety escalation or replace indicated clinical care.",
+      "properties": [
+        {
+          "name": "adaptation_id",
+          "description": "Recorded adaptation id for this faith sensitive care adaptation."
+        },
+        {
+          "name": "purpose",
+          "description": "Recorded purpose for this faith sensitive care adaptation."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this faith sensitive care adaptation."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this faith sensitive care adaptation."
+        },
+        {
+          "name": "evidence_status",
+          "description": "Recorded evidence status for this faith sensitive care adaptation."
+        }
+      ]
+    },
+    {
+      "type": "CommunicationAdaptation",
+      "description": "Communication Adaptation concept in the FaithSensitiveCareAdaptation branch.",
+      "properties": []
+    },
+    {
+      "type": "PsychotherapyAdaptation",
+      "description": "Faith-sensitive adaptation to the delivery of a named clinical intervention, not a replacement for that intervention.",
+      "properties": [
+        {
+          "name": "clinical_model_reference",
+          "description": "Recorded clinical model reference for this psychotherapy adaptation."
+        },
+        {
+          "name": "adaptation_type",
+          "description": "Recorded adaptation type for this psychotherapy adaptation."
+        }
+      ]
+    },
+    {
+      "type": "CBTMeaningAdaptation",
+      "description": "CBT Meaning Adaptation concept in the FaithSensitiveCareAdaptation/PsychotherapyAdaptation branch.",
+      "properties": []
+    },
+    {
+      "type": "ERPPracticeAlignment",
+      "description": "Collaboration ensuring that faith guidance does not inadvertently reinforce ritualized or compulsive behaviour.",
+      "properties": [
+        {
+          "name": "target_practice_context",
+          "description": "Recorded target practice context for this erp practice alignment."
+        }
+      ]
+    },
+    {
+      "type": "FamilyEngagementAdaptation",
+      "description": "Family Engagement Adaptation concept in the FaithSensitiveCareAdaptation/PsychotherapyAdaptation branch.",
+      "properties": []
+    },
+    {
+      "type": "RoutineAccommodation",
+      "description": "Routine Accommodation concept in the FaithSensitiveCareAdaptation branch.",
+      "properties": []
+    },
+    {
+      "type": "SupportiveSpiritualCare",
+      "description": "Supportive Spiritual Care concept in the FaithSensitiveCareAdaptation branch.",
+      "properties": []
+    },
+    {
+      "type": "CollaborationRole",
+      "description": "People and coordination agreements used for appropriate, consent-based cultural or faith-sensitive care.",
+      "properties": [
+        {
+          "name": "role_id",
+          "description": "Recorded role id for this collaboration role."
+        },
+        {
+          "name": "scope",
+          "description": "Recorded scope for this collaboration role."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this collaboration role."
+        },
+        {
+          "name": "availability",
+          "description": "Recorded availability for this collaboration role."
+        }
+      ]
+    },
+    {
+      "type": "ClinicalProfessionalRole",
+      "description": "Clinical Professional Role concept in the CollaborationRole branch.",
+      "properties": []
+    },
+    {
+      "type": "FaithLeaderRole",
+      "description": "Faith Leader Role concept in the CollaborationRole branch.",
+      "properties": []
+    },
+    {
+      "type": "CulturalMediatorRole",
+      "description": "Cultural Mediator Role concept in the CollaborationRole branch.",
+      "properties": []
+    },
+    {
+      "type": "CollaborationProtocol",
+      "description": "Collaboration Protocol concept in the CollaborationRole branch.",
+      "properties": []
+    },
+    {
+      "type": "EthicsConsentSafety",
+      "description": "Safeguards ensuring voluntary, confidential, clinically appropriate, and safety-responsive cultural or faith-sensitive care.",
+      "properties": [
+        {
+          "name": "record_id",
+          "description": "Recorded record id for this ethics consent safety."
+        },
+        {
+          "name": "status",
+          "description": "Recorded status for this ethics consent safety."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this ethics consent safety."
+        }
+      ]
+    },
+    {
+      "type": "InformedConsent",
+      "description": "Informed Consent concept in the EthicsConsentSafety branch.",
+      "properties": []
+    },
+    {
+      "type": "ConfidentialityBoundary",
+      "description": "Confidentiality Boundary concept in the EthicsConsentSafety branch.",
+      "properties": []
+    },
+    {
+      "type": "NonCoercionGuardrail",
+      "description": "Non Coercion Guardrail concept in the EthicsConsentSafety branch.",
+      "properties": []
+    },
+    {
+      "type": "ClinicalSafetyBoundary",
+      "description": "Clinical Safety Boundary concept in the EthicsConsentSafety branch.",
+      "properties": []
+    },
+    {
+      "type": "ReligiousHumilityGuardrail",
+      "description": "Religious Humility Guardrail concept in the EthicsConsentSafety branch.",
+      "properties": []
+    },
+    {
+      "type": "EvidenceProvenance",
+      "description": "Source, authority, contextual applicability, extraction provenance, and review information.",
+      "properties": [
+        {
+          "name": "record_id",
+          "description": "Recorded record id for this evidence provenance."
+        },
+        {
+          "name": "status",
+          "description": "Recorded status for this evidence provenance."
+        },
+        {
+          "name": "review_date",
+          "description": "Recorded review date for this evidence provenance."
+        }
+      ]
+    },
+    {
+      "type": "SourceArtifact",
+      "description": "Source Artifact concept in the EvidenceProvenance branch.",
+      "properties": []
+    },
+    {
+      "type": "ExpertReview",
+      "description": "Expert Review concept in the EvidenceProvenance branch.",
+      "properties": []
+    },
+    {
+      "type": "ExtractionProvenance",
+      "description": "Extraction Provenance concept in the EvidenceProvenance branch.",
+      "properties": []
+    },
+    {
+      "type": "ApplicabilityScope",
+      "description": "Applicability Scope concept in the EvidenceProvenance branch.",
+      "properties": []
+    }
+  ],
+  "edge_types": [
+    {
+      "source_type": "ClinicalCase",
+      "relation": "HAS_CULTURAL_SPIRITUAL_CONTEXT",
+      "target_type": "CulturalSpiritualContext",
+      "description": "Has cultural spiritual context relationship between clinical case and cultural spiritual context. Cross-KG relationship: the referenced endpoint is defined in the clinical KG.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_CULTURAL_FORMULATION",
+      "target_type": "CulturalFormulation",
+      "description": "Has cultural formulation relationship between cultural spiritual context and cultural formulation.",
+      "properties": [
+        {
+          "name": "status",
+          "description": "Recorded status for this relationship."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "EXPRESSES_EXPLANATORY_MODEL",
+      "target_type": "ExplanatoryModel",
+      "description": "Expresses explanatory model relationship between cultural formulation and explanatory model.",
+      "properties": [
+        {
+          "name": "held_by",
+          "description": "Recorded held by for this relationship."
+        },
+        {
+          "name": "confidence",
+          "description": "Recorded confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "USES_IDIOM_OF_DISTRESS",
+      "target_type": "IdiomOfDistress",
+      "description": "Uses idiom of distress relationship between cultural formulation and idiom of distress.",
+      "properties": [
+        {
+          "name": "meaning_in_case",
+          "description": "Recorded meaning in case for this relationship."
+        },
+        {
+          "name": "language",
+          "description": "Recorded language for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "REFERENCES_ISLAMIC_CONCEPT",
+      "target_type": "IslamicConcept",
+      "description": "References islamic concept relationship between cultural formulation and islamic concept.",
+      "properties": [
+        {
+          "name": "relevance",
+          "description": "Recorded relevance for this relationship."
+        },
+        {
+          "name": "source",
+          "description": "Recorded source for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_FAITH_PRACTICE",
+      "target_type": "FaithPractice",
+      "description": "Has faith practice relationship between cultural spiritual context and faith practice.",
+      "properties": [
+        {
+          "name": "voluntary_status",
+          "description": "Recorded voluntary status for this relationship."
+        },
+        {
+          "name": "meaning_to_person",
+          "description": "Recorded meaning to person for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_SPIRITUAL_EXPERIENCE",
+      "target_type": "SpiritualExperience",
+      "description": "Has spiritual experience relationship between cultural spiritual context and spiritual experience.",
+      "properties": [
+        {
+          "name": "distress_level",
+          "description": "Recorded distress level for this relationship."
+        },
+        {
+          "name": "functional_impact",
+          "description": "Recorded functional impact for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_FAMILY_COMMUNITY_CONTEXT",
+      "target_type": "FamilyCommunity",
+      "description": "Has family community context relationship between cultural spiritual context and family community.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "USES_HELP_SEEKING_PATHWAY",
+      "target_type": "HelpSeekingNavigation",
+      "description": "Uses help seeking pathway relationship between cultural spiritual context and help seeking navigation.",
+      "properties": [
+        {
+          "name": "status",
+          "description": "Recorded status for this relationship."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "HelpSeekingNavigation",
+      "relation": "HAS_BARRIER",
+      "target_type": "NavigationBarrier",
+      "description": "Defines the semantic HAS_BARRIER relationship between HelpSeekingNavigation and NavigationBarrier to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "impact_level",
+          "description": "Recorded impact level for this relationship."
+        },
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "ADAPTS_CLINICAL_ACTION",
+      "target_type": "PlanAction",
+      "description": "Adapts clinical action relationship between faith sensitive care adaptation and plan action. Cross-KG relationship: the referenced endpoint is defined in the clinical KG.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this relationship."
+        },
+        {
+          "name": "adaptation_rationale",
+          "description": "Recorded adaptation rationale for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "ADAPTS_INTERVENTION",
+      "target_type": "Intervention",
+      "description": "Adapts intervention relationship between faith sensitive care adaptation and intervention. Cross-KG relationship: the referenced endpoint is defined in the clinical KG.",
+      "properties": [
+        {
+          "name": "adaptation_scope",
+          "description": "Recorded adaptation scope for this relationship."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "REQUIRES_COLLABORATION",
+      "target_type": "CollaborationRole",
+      "description": "Requires collaboration relationship between faith sensitive care adaptation and collaboration role.",
+      "properties": [
+        {
+          "name": "requiredness",
+          "description": "Recorded requiredness for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "GOVERNED_BY",
+      "target_type": "EthicsConsentSafety",
+      "description": "Governed by relationship between faith sensitive care adaptation and ethics consent safety.",
+      "properties": [
+        {
+          "name": "guardrail_status",
+          "description": "Recorded guardrail status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_CONSENT",
+      "target_type": "InformedConsent",
+      "description": "Has consent relationship between cultural spiritual context and informed consent.",
+      "properties": [
+        {
+          "name": "scope",
+          "description": "Recorded scope for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationRole",
+      "relation": "HAS_CONFIDENTIALITY_BOUNDARY",
+      "target_type": "ConfidentialityBoundary",
+      "description": "Has confidentiality boundary relationship between collaboration role and confidentiality boundary.",
+      "properties": [
+        {
+          "name": "status",
+          "description": "Recorded status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ClinicalSafetyBoundary",
+      "relation": "ESCALATES_TO_CLINICAL_SAFETY_ACTION",
+      "target_type": "SafetyAction",
+      "description": "Escalates to clinical safety action relationship between clinical safety boundary and safety action. Cross-KG relationship: the referenced endpoint is defined in the clinical KG.",
+      "properties": [
+        {
+          "name": "urgency",
+          "description": "Recorded urgency for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "SUPPORTED_BY",
+      "target_type": "SourceArtifact",
+      "description": "Supported by relationship between faith sensitive care adaptation and source artifact.",
+      "properties": [
+        {
+          "name": "evidence_role",
+          "description": "Recorded evidence role for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IslamicConcept",
+      "relation": "HAS_APPLICABILITY_SCOPE",
+      "target_type": "ApplicabilityScope",
+      "description": "Has applicability scope relationship between islamic concept and applicability scope.",
+      "properties": [
+        {
+          "name": "scope_status",
+          "description": "Recorded scope status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "REVIEWED_BY",
+      "target_type": "ExpertReview",
+      "description": "Reviewed by relationship between faith sensitive care adaptation and expert review.",
+      "properties": [
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_PROVENANCE",
+      "target_type": "ExtractionProvenance",
+      "description": "Has provenance relationship between cultural spiritual context and extraction provenance.",
+      "properties": [
+        {
+          "name": "assertion_reference",
+          "description": "Recorded assertion reference for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_IDENTITY",
+      "target_type": "IdentityBelonging",
+      "description": "Defines the semantic HAS_IDENTITY relationship between CulturalSpiritualContext and IdentityBelonging to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_COMMUNICATION_PREFERENCE",
+      "target_type": "LanguageCommunicationPreference",
+      "description": "Defines the semantic HAS_COMMUNICATION_PREFERENCE relationship between CulturalSpiritualContext and LanguageCommunicationPreference to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_FAITH_PREFERENCE",
+      "target_type": "FaithSaliencePreference",
+      "description": "Defines the semantic HAS_FAITH_PREFERENCE relationship between CulturalSpiritualContext and FaithSaliencePreference to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "HAS_CONTEXTUAL_STRENGTH",
+      "target_type": "ContextualStrength",
+      "description": "Links CulturalSpiritualContext to ContextualStrength through the clinically meaningful relation HAS_CONTEXTUAL_STRENGTH; this retains the intended depth without using an hierarchy relation taxonomy edge.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "HAS_COMPONENT",
+      "target_type": "ExplanatoryModel",
+      "description": "Defines the semantic HAS_COMPONENT relationship between CulturalFormulation and ExplanatoryModel to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "HAS_COMPONENT",
+      "target_type": "IdiomOfDistress",
+      "description": "Defines the semantic HAS_COMPONENT relationship between CulturalFormulation and IdiomOfDistress to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "HAS_COMPONENT",
+      "target_type": "MeaningValueFrame",
+      "description": "Defines the semantic HAS_COMPONENT relationship between CulturalFormulation and MeaningValueFrame to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "HAS_COMPONENT",
+      "target_type": "ContextualStressor",
+      "description": "Defines the semantic HAS_COMPONENT relationship between CulturalFormulation and ContextualStressor to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IslamicConcept",
+      "relation": "HAS_COMPONENT",
+      "target_type": "TheologicalOrientation",
+      "description": "Defines the semantic HAS_COMPONENT relationship between IslamicConcept and TheologicalOrientation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IslamicConcept",
+      "relation": "HAS_COMPONENT",
+      "target_type": "EthicalVirtue",
+      "description": "Defines the semantic HAS_COMPONENT relationship between IslamicConcept and EthicalVirtue to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IslamicConcept",
+      "relation": "HAS_COMPONENT",
+      "target_type": "JurisprudentialAccommodation",
+      "description": "Defines the semantic HAS_COMPONENT relationship between IslamicConcept and JurisprudentialAccommodation to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IslamicConcept",
+      "relation": "HAS_COMPONENT",
+      "target_type": "ReligiousConcernClassification",
+      "description": "Defines the semantic HAS_COMPONENT relationship between IslamicConcept and ReligiousConcernClassification to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithPractice",
+      "relation": "HAS_COMPONENT",
+      "target_type": "PersonalPractice",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FaithPractice and PersonalPractice to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithPractice",
+      "relation": "HAS_COMPONENT",
+      "target_type": "CommunityPractice",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FaithPractice and CommunityPractice to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithPractice",
+      "relation": "HAS_COMPONENT",
+      "target_type": "RitualTimingContext",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FaithPractice and RitualTimingContext to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithPractice",
+      "relation": "HAS_COMPONENT",
+      "target_type": "PracticeRelatedConcern",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FaithPractice and PracticeRelatedConcern to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SpiritualExperience",
+      "relation": "HAS_COMPONENT",
+      "target_type": "SpiritualCoping",
+      "description": "Defines the semantic HAS_COMPONENT relationship between SpiritualExperience and SpiritualCoping to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SpiritualExperience",
+      "relation": "HAS_COMPONENT",
+      "target_type": "SpiritualDistress",
+      "description": "Defines the semantic HAS_COMPONENT relationship between SpiritualExperience and SpiritualDistress to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SpiritualExperience",
+      "relation": "HAS_COMPONENT",
+      "target_type": "SpiritualQuestion",
+      "description": "Defines the semantic HAS_COMPONENT relationship between SpiritualExperience and SpiritualQuestion to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SpiritualExperience",
+      "relation": "HAS_COMPONENT",
+      "target_type": "ExperienceRequiringReview",
+      "description": "Defines the semantic HAS_COMPONENT relationship between SpiritualExperience and ExperienceRequiringReview to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FamilyCommunity",
+      "relation": "HAS_COMPONENT",
+      "target_type": "FamilyRole",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FamilyCommunity and FamilyRole to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FamilyCommunity",
+      "relation": "HAS_COMPONENT",
+      "target_type": "FamilyDynamic",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FamilyCommunity and FamilyDynamic to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FamilyCommunity",
+      "relation": "HAS_COMPONENT",
+      "target_type": "CommunityResource",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FamilyCommunity and CommunityResource to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FamilyCommunity",
+      "relation": "HAS_COMPONENT",
+      "target_type": "SocialNormContext",
+      "description": "Defines the semantic HAS_COMPONENT relationship between FamilyCommunity and SocialNormContext to preserve the intended depth using a reusable knowledge-graph predicate.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "HelpSeekingNavigation",
+      "relation": "INCLUDES_CLINICAL_PATHWAY",
+      "target_type": "ClinicalCarePathway",
+      "description": "HelpSeekingNavigation includes the clinical care pathway ClinicalCarePathway.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "HelpSeekingNavigation",
+      "relation": "INCLUDES_FAITH_COMMUNITY_PATHWAY",
+      "target_type": "FaithCommunityPathway",
+      "description": "HelpSeekingNavigation includes the faith-community pathway FaithCommunityPathway.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "HelpSeekingNavigation",
+      "relation": "INCLUDES_INFORMAL_SUPPORT_PATHWAY",
+      "target_type": "InformalSupportPathway",
+      "description": "HelpSeekingNavigation includes the informal-support pathway InformalSupportPathway.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "INCLUDES_COMMUNICATION_ADAPTATION",
+      "target_type": "CommunicationAdaptation",
+      "description": "FaithSensitiveCareAdaptation includes the communication adaptation CommunicationAdaptation.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "INCLUDES_PSYCHOTHERAPY_ADAPTATION",
+      "target_type": "PsychotherapyAdaptation",
+      "description": "FaithSensitiveCareAdaptation includes the psychotherapy adaptation PsychotherapyAdaptation.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "PsychotherapyAdaptation",
+      "relation": "INCLUDES_CBT_MEANING_ADAPTATION",
+      "target_type": "CBTMeaningAdaptation",
+      "description": "PsychotherapyAdaptation includes the CBT meaning adaptation CBTMeaningAdaptation.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "PsychotherapyAdaptation",
+      "relation": "INCLUDES_ERP_PRACTICE_ALIGNMENT",
+      "target_type": "ERPPracticeAlignment",
+      "description": "PsychotherapyAdaptation includes ERP practice alignment ERPPracticeAlignment.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "PsychotherapyAdaptation",
+      "relation": "INCLUDES_FAMILY_ENGAGEMENT_ADAPTATION",
+      "target_type": "FamilyEngagementAdaptation",
+      "description": "PsychotherapyAdaptation includes family-engagement adaptation FamilyEngagementAdaptation.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "INCLUDES_ROUTINE_ACCOMMODATION",
+      "target_type": "RoutineAccommodation",
+      "description": "FaithSensitiveCareAdaptation includes the routine accommodation RoutineAccommodation.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "INCLUDES_SUPPORTIVE_SPIRITUAL_CARE",
+      "target_type": "SupportiveSpiritualCare",
+      "description": "FaithSensitiveCareAdaptation includes supportive spiritual care SupportiveSpiritualCare.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationRole",
+      "relation": "INCLUDES_CLINICAL_PROFESSIONAL_ROLE",
+      "target_type": "ClinicalProfessionalRole",
+      "description": "CollaborationRole includes the clinical professional role ClinicalProfessionalRole.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationRole",
+      "relation": "INCLUDES_FAITH_LEADER_ROLE",
+      "target_type": "FaithLeaderRole",
+      "description": "CollaborationRole includes the faith-leader role FaithLeaderRole.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationRole",
+      "relation": "INCLUDES_CULTURAL_MEDIATOR_ROLE",
+      "target_type": "CulturalMediatorRole",
+      "description": "CollaborationRole includes the cultural-mediator role CulturalMediatorRole.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationRole",
+      "relation": "USES_COLLABORATION_PROTOCOL",
+      "target_type": "CollaborationProtocol",
+      "description": "CollaborationRole uses the collaboration protocol CollaborationProtocol.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EthicsConsentSafety",
+      "relation": "REQUIRES_INFORMED_CONSENT",
+      "target_type": "InformedConsent",
+      "description": "EthicsConsentSafety requires informed consent InformedConsent.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EthicsConsentSafety",
+      "relation": "ENFORCES_CONFIDENTIALITY_BOUNDARY",
+      "target_type": "ConfidentialityBoundary",
+      "description": "EthicsConsentSafety enforces the confidentiality boundary ConfidentialityBoundary.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EthicsConsentSafety",
+      "relation": "ENFORCES_NON_COERCION_GUARDRAIL",
+      "target_type": "NonCoercionGuardrail",
+      "description": "EthicsConsentSafety enforces the non-coercion guardrail NonCoercionGuardrail.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EthicsConsentSafety",
+      "relation": "ENFORCES_CLINICAL_SAFETY_BOUNDARY",
+      "target_type": "ClinicalSafetyBoundary",
+      "description": "EthicsConsentSafety enforces the clinical safety boundary ClinicalSafetyBoundary.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EthicsConsentSafety",
+      "relation": "ENFORCES_RELIGIOUS_HUMILITY_GUARDRAIL",
+      "target_type": "ReligiousHumilityGuardrail",
+      "description": "EthicsConsentSafety enforces the religious-humility guardrail ReligiousHumilityGuardrail.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EvidenceProvenance",
+      "relation": "INCLUDES_SOURCE_ARTIFACT",
+      "target_type": "SourceArtifact",
+      "description": "EvidenceProvenance includes the source artifact SourceArtifact.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EvidenceProvenance",
+      "relation": "INCLUDES_EXPERT_REVIEW",
+      "target_type": "ExpertReview",
+      "description": "EvidenceProvenance includes expert review ExpertReview.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EvidenceProvenance",
+      "relation": "INCLUDES_EXTRACTION_PROVENANCE",
+      "target_type": "ExtractionProvenance",
+      "description": "EvidenceProvenance includes extraction provenance ExtractionProvenance.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "EvidenceProvenance",
+      "relation": "INCLUDES_APPLICABILITY_SCOPE",
+      "target_type": "ApplicabilityScope",
+      "description": "EvidenceProvenance includes the applicability scope ApplicabilityScope.",
+      "properties": [
+        {
+          "name": "applicability",
+          "description": "Recorded applicability for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IdentityBelonging",
+      "relation": "INFORMS",
+      "target_type": "CulturalFormulation",
+      "description": "Allows a person’s explicitly stated identity and belonging narrative to inform cultural formulation without inferring beliefs from demographics.",
+      "properties": [
+        {
+          "name": "relevance",
+          "description": "Recorded relevance for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "LanguageCommunicationPreference",
+      "relation": "GUIDES",
+      "target_type": "CommunicationAdaptation",
+      "description": "Uses stated language and communication preferences to guide communication adaptation.",
+      "properties": [
+        {
+          "name": "preference_strength",
+          "description": "Recorded preference strength for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSaliencePreference",
+      "relation": "CONDITIONS",
+      "target_type": "FaithSensitiveCareAdaptation",
+      "description": "Makes faith-sensitive adaptations conditional on explicit preference and consent.",
+      "properties": [
+        {
+          "name": "preference_strength",
+          "description": "Recorded preference strength for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ContextualStrength",
+      "relation": "SUPPORTS",
+      "target_type": "SpiritualCoping",
+      "description": "Links a recorded contextual strength to spiritual coping where the person identifies that connection.",
+      "properties": [
+        {
+          "name": "person_defined_meaning",
+          "description": "Recorded person defined meaning for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ExplanatoryModel",
+      "relation": "INFLUENCES",
+      "target_type": "HelpSeekingNavigation",
+      "description": "Captures how a person’s explanatory model can influence pathways into or away from clinical care.",
+      "properties": [
+        {
+          "name": "influence_direction",
+          "description": "Recorded influence direction for this relationship."
+        },
+        {
+          "name": "context",
+          "description": "Recorded context for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IdiomOfDistress",
+      "relation": "GUIDES",
+      "target_type": "CommunicationAdaptation",
+      "description": "Uses an idiom of distress to guide respectful explanation and communication rather than to replace clinical assessment.",
+      "properties": [
+        {
+          "name": "meaning_in_case",
+          "description": "Recorded meaning in case for this relationship."
+        },
+        {
+          "name": "language",
+          "description": "Recorded language for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "MeaningValueFrame",
+      "relation": "INFORMS",
+      "target_type": "CBTMeaningAdaptation",
+      "description": "Allows a stated meaning or value frame to inform an adaptation of CBT language and examples.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "relevance",
+          "description": "Recorded relevance for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ContextualStressor",
+      "relation": "CONTRIBUTES_TO",
+      "target_type": "SpiritualDistress",
+      "description": "Represents a contextual stressor that can contribute to spiritual distress when explicitly evidenced.",
+      "properties": [
+        {
+          "name": "impact_level",
+          "description": "Recorded impact level for this relationship."
+        },
+        {
+          "name": "context",
+          "description": "Recorded context for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "IslamicConcept",
+      "relation": "INFORMS",
+      "target_type": "FaithPractice",
+      "description": "Links an Islamic concept to a related faith practice without assuming that every person endorses or performs it.",
+      "properties": [
+        {
+          "name": "interpretive_context",
+          "description": "Recorded interpretive context for this relationship."
+        },
+        {
+          "name": "person_endorsed",
+          "description": "Recorded person endorsed for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "JurisprudentialAccommodation",
+      "relation": "GUIDES",
+      "target_type": "RoutineAccommodation",
+      "description": "Uses a relevant, context-sensitive accommodation to guide routine planning where appropriate.",
+      "properties": [
+        {
+          "name": "jurisdiction_context",
+          "description": "Recorded jurisdiction context for this relationship."
+        },
+        {
+          "name": "expert_review_status",
+          "description": "Recorded expert review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ReligiousConcernClassification",
+      "relation": "CLASSIFIES",
+      "target_type": "PracticeRelatedConcern",
+      "description": "Supports careful distinction between a practice-related concern and a clinically relevant pattern that needs review.",
+      "properties": [
+        {
+          "name": "classification_confidence",
+          "description": "Recorded classification confidence for this relationship."
+        },
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithPractice",
+      "relation": "SUPPORTS",
+      "target_type": "SpiritualCoping",
+      "description": "Links a voluntarily reported practice to spiritual coping when the person identifies it as supportive.",
+      "properties": [
+        {
+          "name": "person_defined_meaning",
+          "description": "Recorded person defined meaning for this relationship."
+        },
+        {
+          "name": "frequency",
+          "description": "Recorded frequency for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "PracticeRelatedConcern",
+      "relation": "REQUIRES_REVIEW_BY",
+      "target_type": "ExperienceRequiringReview",
+      "description": "Routes a practice-related concern for appropriate review without automatically pathologizing religious practice.",
+      "properties": [
+        {
+          "name": "review_reason",
+          "description": "Recorded review reason for this relationship."
+        },
+        {
+          "name": "urgency",
+          "description": "Recorded urgency for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SpiritualDistress",
+      "relation": "PROMPTS",
+      "target_type": "ExperienceRequiringReview",
+      "description": "Allows spiritual distress with significant distress, risk, or impairment to prompt review.",
+      "properties": [
+        {
+          "name": "distress_level",
+          "description": "Recorded distress level for this relationship."
+        },
+        {
+          "name": "functional_impact",
+          "description": "Recorded functional impact for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ExperienceRequiringReview",
+      "relation": "ACTIVATES",
+      "target_type": "ClinicalSafetyBoundary",
+      "description": "Ensures experiences requiring review are handled within clinical safety boundaries.",
+      "properties": [
+        {
+          "name": "urgency",
+          "description": "Recorded urgency for this relationship."
+        },
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FamilyRole",
+      "relation": "INFORMS",
+      "target_type": "FamilyEngagementAdaptation",
+      "description": "Uses a family role to inform family engagement only with the person’s agreement and appropriate confidentiality boundaries.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "role_relevance",
+          "description": "Recorded role relevance for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FamilyDynamic",
+      "relation": "INFORMS",
+      "target_type": "FamilyEngagementAdaptation",
+      "description": "Uses an observed family dynamic to tailor family engagement.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "clinical_relevance",
+          "description": "Recorded clinical relevance for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CommunityResource",
+      "relation": "ENABLES",
+      "target_type": "FaithCommunityPathway",
+      "description": "Links an available community resource to a possible faith-community support pathway.",
+      "properties": [
+        {
+          "name": "accessibility",
+          "description": "Recorded accessibility for this relationship."
+        },
+        {
+          "name": "person_preference",
+          "description": "Recorded person preference for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SocialNormContext",
+      "relation": "INFORMS",
+      "target_type": "CommunicationAdaptation",
+      "description": "Allows an explicitly documented social-norm context to inform communication approach.",
+      "properties": [
+        {
+          "name": "context_relevance",
+          "description": "Recorded context relevance for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SocialNormContext",
+      "relation": "INFORMS",
+      "target_type": "FamilyEngagementAdaptation",
+      "description": "Allows a social-norm context to inform optional family engagement adaptation.",
+      "properties": [
+        {
+          "name": "context_relevance",
+          "description": "Recorded context relevance for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ClinicalCarePathway",
+      "relation": "CONNECTS_TO",
+      "target_type": "ClinicalProfessionalRole",
+      "description": "Connects clinical care navigation to an appropriate clinical professional role.",
+      "properties": [
+        {
+          "name": "referral_purpose",
+          "description": "Recorded referral purpose for this relationship."
+        },
+        {
+          "name": "access_status",
+          "description": "Recorded access status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithCommunityPathway",
+      "relation": "CONNECTS_TO",
+      "target_type": "FaithLeaderRole",
+      "description": "Connects a faith-community pathway to a role that may support navigation or spiritual care, subject to consent and safety boundaries.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "role_scope",
+          "description": "Recorded role scope for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "InformalSupportPathway",
+      "relation": "CONNECTS_TO",
+      "target_type": "FamilyRole",
+      "description": "Links informal support navigation to a family role when the person chooses that pathway.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "support_role",
+          "description": "Recorded support role for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "NavigationBarrier",
+      "relation": "LIMITS",
+      "target_type": "ClinicalCarePathway",
+      "description": "Represents a barrier that can limit access to a clinical care pathway.",
+      "properties": [
+        {
+          "name": "impact_level",
+          "description": "Recorded impact level for this relationship."
+        },
+        {
+          "name": "mitigation_option",
+          "description": "Recorded mitigation option for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FaithSensitiveCareAdaptation",
+      "relation": "RESPONDS_TO",
+      "target_type": "ContextualNeed",
+      "description": "Cross-KG relation: a faith-sensitive adaptation responds to an explicitly assessed contextual need from the clinical KG.",
+      "properties": [
+        {
+          "name": "rationale",
+          "description": "Recorded rationale for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CommunicationAdaptation",
+      "relation": "MODIFIES_DELIVERY_OF",
+      "target_type": "PlanAction",
+      "description": "Cross-KG relation: adapts the communication used to deliver a clinical plan action; it does not change clinical indication.",
+      "properties": [
+        {
+          "name": "adaptation_scope",
+          "description": "Recorded adaptation scope for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "PsychotherapyAdaptation",
+      "relation": "MODIFIES_DELIVERY_OF",
+      "target_type": "PsychologicalIntervention",
+      "description": "Cross-KG relation: modifies psychotherapy delivery while preserving the clinical intervention and its safety requirements.",
+      "properties": [
+        {
+          "name": "adaptation_scope",
+          "description": "Recorded adaptation scope for this relationship."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CBTMeaningAdaptation",
+      "relation": "MODIFIES_DELIVERY_OF",
+      "target_type": "CognitiveBehavioralTherapy",
+      "description": "Cross-KG relation: adapts CBT wording, metaphors, or examples using a person-endorsed meaning frame.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ERPPracticeAlignment",
+      "relation": "MODIFIES_DELIVERY_OF",
+      "target_type": "ExposureBasedCBT",
+      "description": "Cross-KG relation: aligns delivery of exposure-based CBT with relevant practice considerations without weakening exposure or response-prevention principles.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ERPPracticeAlignment",
+      "relation": "MODIFIES_DELIVERY_OF",
+      "target_type": "ResponsePrevention",
+      "description": "Cross-KG relation: aligns response-prevention instructions with relevant practice considerations, preserving the clinical objective.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "FamilyEngagementAdaptation",
+      "relation": "MODIFIES_DELIVERY_OF",
+      "target_type": "FamilyFocusedIntervention",
+      "description": "Cross-KG relation: adapts delivery of family-focused intervention when family involvement is wanted and clinically appropriate.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "confidentiality_status",
+          "description": "Recorded confidentiality status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "RoutineAccommodation",
+      "relation": "MODIFIES_DELIVERY_OF",
+      "target_type": "CarePlan",
+      "description": "Cross-KG relation: accommodates routines in care-plan scheduling without overriding medication, safety, or escalation requirements.",
+      "properties": [
+        {
+          "name": "accommodation_scope",
+          "description": "Recorded accommodation scope for this relationship."
+        },
+        {
+          "name": "clinical_review_status",
+          "description": "Recorded clinical review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SupportiveSpiritualCare",
+      "relation": "AUGMENTS",
+      "target_type": "CarePlan",
+      "description": "Cross-KG relation: offers supportive spiritual care as an optional addition to—not a replacement for—the clinical care plan.",
+      "properties": [
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        },
+        {
+          "name": "role_scope",
+          "description": "Recorded role scope for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationProtocol",
+      "relation": "COORDINATES",
+      "target_type": "ClinicalProfessionalRole",
+      "description": "Defines how collaboration interfaces with a clinical professional role.",
+      "properties": [
+        {
+          "name": "role_scope",
+          "description": "Recorded role scope for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationProtocol",
+      "relation": "COORDINATES",
+      "target_type": "FaithLeaderRole",
+      "description": "Defines how collaboration interfaces with a faith-leader role.",
+      "properties": [
+        {
+          "name": "role_scope",
+          "description": "Recorded role scope for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CollaborationProtocol",
+      "relation": "COORDINATES",
+      "target_type": "CulturalMediatorRole",
+      "description": "Defines how collaboration interfaces with a cultural-mediator role.",
+      "properties": [
+        {
+          "name": "role_scope",
+          "description": "Recorded role scope for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "InformedConsent",
+      "relation": "AUTHORIZES",
+      "target_type": "FaithSensitiveCareAdaptation",
+      "description": "Makes explicit consent an authorization condition for a faith-sensitive adaptation.",
+      "properties": [
+        {
+          "name": "scope",
+          "description": "Recorded scope for this relationship."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "InformedConsent",
+      "relation": "AUTHORIZES",
+      "target_type": "CollaborationProtocol",
+      "description": "Makes explicit consent an authorization condition for collaboration outside the clinical team.",
+      "properties": [
+        {
+          "name": "scope",
+          "description": "Recorded scope for this relationship."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ConfidentialityBoundary",
+      "relation": "CONSTRAINS",
+      "target_type": "CollaborationProtocol",
+      "description": "Restricts collaboration to the agreed confidentiality boundary.",
+      "properties": [
+        {
+          "name": "boundary_scope",
+          "description": "Recorded boundary scope for this relationship."
+        },
+        {
+          "name": "effective_time",
+          "description": "Recorded effective time for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "NonCoercionGuardrail",
+      "relation": "CONSTRAINS",
+      "target_type": "FaithSensitiveCareAdaptation",
+      "description": "Ensures that no adaptation is imposed, presumed, or used to pressure a person into faith practice or disclosure.",
+      "properties": [
+        {
+          "name": "guardrail_status",
+          "description": "Recorded guardrail status for this relationship."
+        },
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ClinicalSafetyBoundary",
+      "relation": "OVERRIDES",
+      "target_type": "FaithSensitiveCareAdaptation",
+      "description": "Ensures clinical safety, urgent escalation, and evidence-based contraindications take precedence over an adaptation.",
+      "properties": [
+        {
+          "name": "override_reason",
+          "description": "Recorded override reason for this relationship."
+        },
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ReligiousHumilityGuardrail",
+      "relation": "CONSTRAINS",
+      "target_type": "FaithLeaderRole",
+      "description": "Defines limits on a faith-leader role in clinical decision-making and diagnostic claims.",
+      "properties": [
+        {
+          "name": "guardrail_status",
+          "description": "Recorded guardrail status for this relationship."
+        },
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SourceArtifact",
+      "relation": "SUPPORTS",
+      "target_type": "IslamicConcept",
+      "description": "Links an Islamic concept to a documented source artifact.",
+      "properties": [
+        {
+          "name": "source_type",
+          "description": "Recorded source type for this relationship."
+        },
+        {
+          "name": "interpretive_context",
+          "description": "Recorded interpretive context for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "SourceArtifact",
+      "relation": "SUPPORTS",
+      "target_type": "FaithSensitiveCareAdaptation",
+      "description": "Links a faith-sensitive adaptation to supporting documentation or evidence.",
+      "properties": [
+        {
+          "name": "evidence_type",
+          "description": "Recorded evidence type for this relationship."
+        },
+        {
+          "name": "applicability_note",
+          "description": "Recorded applicability note for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ExpertReview",
+      "relation": "VALIDATES",
+      "target_type": "FaithSensitiveCareAdaptation",
+      "description": "Captures expert validation of an adaptation before operational use.",
+      "properties": [
+        {
+          "name": "review_status",
+          "description": "Recorded review status for this relationship."
+        },
+        {
+          "name": "review_time",
+          "description": "Recorded review time for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "ApplicabilityScope",
+      "relation": "LIMITS_APPLICABILITY_OF",
+      "target_type": "FaithSensitiveCareAdaptation",
+      "description": "Defines when a faith-sensitive adaptation is applicable and when it is not.",
+      "properties": [
+        {
+          "name": "scope_condition",
+          "description": "Recorded scope condition for this relationship."
+        },
+        {
+          "name": "exclusion_condition",
+          "description": "Recorded exclusion condition for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalFormulation",
+      "relation": "INFORMS",
+      "target_type": "ClinicalFormulation",
+      "description": "Cross-KG relation: informs clinical formulation with documented cultural meaning, context, and explanatory models.",
+      "properties": [
+        {
+          "name": "relevance",
+          "description": "Recorded relevance for this relationship."
+        },
+        {
+          "name": "consent_status",
+          "description": "Recorded consent status for this relationship."
+        }
+      ]
+    },
+    {
+      "source_type": "CulturalSpiritualContext",
+      "relation": "INFORMS",
+      "target_type": "ClinicalContext",
+      "description": "Cross-KG relation: contributes only explicitly documented contextual information to the clinical context.",
+      "properties": [
+        {
+          "name": "relevance",
+          "description": "Recorded relevance for this relationship."
+        },
+        {
+          "name": "source_confidence",
+          "description": "Recorded source confidence for this relationship."
+        }
+      ]
+    }
+  ],
+  "fusion_method": "deterministic\n\nVersion 0.4 semantic-relation revision: hierarchy pathways use domain-specific predicates, including INCLUDES_CBT_MEANING_ADAPTATION, INCLUDES_ERP_PRACTICE_ALIGNMENT, REQUIRES_INFORMED_CONSENT, ENFORCES_CLINICAL_SAFETY_BOUNDARY, and USES_COLLABORATION_PROTOCOL. Cross-KG relations preserve contextual adaptation, patient preference, consent, clinical safety, and collaboration logic. No generic taxonomy predicate is used."
+}

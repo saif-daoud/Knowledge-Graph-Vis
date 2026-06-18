@@ -80,6 +80,7 @@ function saveReviewState(activeId, schema, changes) {
     storageKey(activeId),
     JSON.stringify({
       schema,
+      schema_signature: schemaSignature(schema),
       changes,
       saved_at: new Date().toISOString(),
     }),
@@ -330,6 +331,21 @@ function stripSupportSources(schema) {
 function isSupportSourceChange(change) {
   const text = `${change?.fieldPath ?? ""} ${change?.fieldLabel ?? ""}`.toLowerCase();
   return text.includes("supported_by_books") || text.includes("supported_by_chapters") || text.includes("support sources");
+}
+
+function schemaSignature(schema) {
+  if (!schema) return "";
+  return [
+    schema.schema_version ?? "",
+    schema.module ?? "",
+    schema.node_types?.length ?? 0,
+    schema.edge_types?.length ?? 0,
+  ].join("|");
+}
+
+function isReviewStateCompatible(local, baseSchema) {
+  if (!local?.schema || !baseSchema) return false;
+  return (local.schema_signature || schemaSignature(local.schema)) === schemaSignature(baseSchema);
 }
 
 function AccessGate({ onReady }) {
@@ -1285,9 +1301,13 @@ function ReviewWorkspace({ onLogout }) {
         if (cancelled) return;
         const base = stripSupportSources(data);
         const local = loadReviewState(active.item.id);
-        const localChanges = (Array.isArray(local?.changes) ? local.changes : []).filter((change) => !isSupportSourceChange(change));
+        const compatibleLocal = isReviewStateCompatible(local, base) ? local : null;
+        if (local && !compatibleLocal) {
+          localStorage.removeItem(storageKey(active.item.id));
+        }
+        const localChanges = (Array.isArray(compatibleLocal?.changes) ? compatibleLocal.changes : []).filter((change) => !isSupportSourceChange(change));
         setBaseSchema(base);
-        setSchema(local?.schema ? stripSupportSources(local.schema) : base);
+        setSchema(compatibleLocal?.schema ? stripSupportSources(compatibleLocal.schema) : base);
         setChanges(localChanges);
         setLoadedSchemaId(active.item.id);
       })

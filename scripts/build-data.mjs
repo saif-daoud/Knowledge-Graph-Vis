@@ -6,9 +6,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const appRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(appRoot, "..", "..");
-const schemaRoot = process.env.KG_SCHEMA_SOURCE_ROOT
-  ? path.resolve(process.env.KG_SCHEMA_SOURCE_ROOT)
-  : repoRoot;
+const schemaRoots = [
+  path.join(appRoot, "data"),
+  ...(process.env.KG_SCHEMA_SOURCE_ROOT ? [path.resolve(process.env.KG_SCHEMA_SOURCE_ROOT)] : []),
+  repoRoot,
+];
 const outputRoot = path.join(appRoot, "public", "data");
 const schemaOutputRoot = path.join(outputRoot, "schemas");
 
@@ -158,12 +160,22 @@ async function readExistingViewerIndex() {
 async function missingSourceFiles() {
   const missing = [];
   for (const kg of KG_CONFIG) {
-    const filePath = path.join(schemaRoot, kg.finalFile);
-    if (!(await pathExists(filePath))) {
-      missing.push(filePath);
+    const filePath = await resolveSourceFile(kg);
+    if (!filePath) {
+      missing.push(kg.finalFile);
     }
   }
   return missing;
+}
+
+async function resolveSourceFile(kg) {
+  for (const root of schemaRoots) {
+    const filePath = path.join(root, kg.finalFile);
+    if (await pathExists(filePath)) {
+      return filePath;
+    }
+  }
+  return null;
 }
 
 async function preserveExistingViewerDataIfSourceMissing() {
@@ -206,13 +218,16 @@ async function main() {
   const existingIndex = await readExistingViewerIndex();
   const index = {
     generated_at: existingIndex?.generated_at ?? new Date().toISOString(),
-    source_root: schemaRoot,
+    source_root: "data",
     kgs: [],
   };
 
   for (const kg of KG_CONFIG) {
     const items = [];
-    const finalPath = path.join(schemaRoot, kg.finalFile);
+    const finalPath = await resolveSourceFile(kg);
+    if (!finalPath) {
+      throw new Error(`Source schema file not found: ${kg.finalFile}`);
+    }
 
     const raw = await readJson(finalPath);
     const id = kg.id;
