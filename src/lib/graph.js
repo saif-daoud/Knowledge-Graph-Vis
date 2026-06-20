@@ -319,13 +319,13 @@ export function getLayoutOptions(nodeCount) {
   return {
     name: "cose",
     ...common,
-    randomize: false,
-    idealEdgeLength: nodeCount > 120 ? 76 : 118,
-    nodeOverlap: 18,
+    randomize: true,
+    idealEdgeLength: nodeCount > 120 ? 120 : 150,
+    nodeOverlap: 28,
     refresh: 16,
-    componentSpacing: nodeCount > 120 ? 78 : 110,
-    gravity: nodeCount > 120 ? 0.72 : 0.58,
-    numIter: nodeCount > 120 ? 950 : 1100,
+    componentSpacing: nodeCount > 120 ? 130 : 170,
+    gravity: nodeCount > 120 ? 0.36 : 0.28,
+    numIter: nodeCount > 120 ? 1300 : 1500,
     coolingFactor: 0.93,
   };
 }

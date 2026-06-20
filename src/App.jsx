@@ -891,7 +891,7 @@ function GraphCanvas({ graph, query, categoryFilters, selected, setSelected, cyR
       container: containerRef.current,
       elements: graph.elements,
       boxSelectionEnabled: false,
-      autoungrabify: true,
+      autoungrabify: false,
       autounselectify: true,
       selectionType: "single",
       minZoom: 0.03,
